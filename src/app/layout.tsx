@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="dark" style={{colorScheme: "dark"}}>
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -45,7 +45,7 @@ export default function RootLayout({
           href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/thin/style.css"
         />
       </head>
-      <body className="dark bg-slate-900 text-white font-business" data-theme="dark">
+      <body className="dark bg-slate-900 text-white font-business">
         <ThemeProvider>
           <LoadingProvider>
             {children}
