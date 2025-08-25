@@ -2,8 +2,8 @@ import React from 'react'
 
 const ComparisonTable = () => {
     return (
-        <div className="mb-20">
-            <h2 className="text-3xl font-bold mb-8 text-center text-cyan-400">Quantum vs Traditional Hashing</h2>
+        <div className="mb-20 max-w-6xl mx-auto px-4 bg-slate-800/50">
+            <h2 className="text-3xl font-bold mb-8 p-5 text-center text-cyan-400">Quantum vs Traditional Hashing</h2>
             <div className="overflow-x-auto">
                 <table className="w-full bg-slate-800/50 rounded-lg border border-slate-700">
                     <thead>

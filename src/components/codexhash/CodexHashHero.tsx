@@ -3,7 +3,6 @@
 import { ArrowRight, Globe, Shield, Zap } from 'lucide-react'
 import React from 'react'
 import OpenSourceBadge from '../ui/OpenSourceBadge'
-import ApplicationLogo from '../common/ApplicationLogo'
 import { Button } from '../ui/button'
 import Link from 'next/link'
 
@@ -27,7 +26,8 @@ const CodexHashHero: React.FC = () => {
 
         {/* Headline */}
         <h1 className="text-6xl lg:text-8xl xl:text-9xl font-bold mb-8">
-          <ApplicationLogo logo="CodexHash" showIcon={false} size="4xl" />
+          <span className="text-lime-400">Codex</span>
+          <span className="text-white">Hash</span>
           <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent block mt-2">
             Quantum Library
           </span>
