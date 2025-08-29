@@ -19,6 +19,12 @@ export const services: Record<string, ServiceConfig> = {
         description: "RESTful hashing API endpoints",
         icon: "ph ph-code"
     },
+    Verification: {
+        name: "Verification",
+        href: "/services/verification",
+        description: "Hash verification and validation",
+        icon: "ph ph-check-circle"
+    },
     Analytics: {
         name: "Analytics",
         href: "/services/analytics",

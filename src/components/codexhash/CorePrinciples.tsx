@@ -16,29 +16,22 @@ const CorePrinciples = () => {
     }, [])
 
     return (
-        <section className="py-24 relative overflow-hidden min-h-screen">
+        <section className="py-16 bg-slate-900 relative overflow-hidden">
             {/* Parallax Background */}
             <div 
-                className="absolute bg-cover bg-center"
+                className="absolute inset-0 bg-cover bg-center"
                 style={{
                     backgroundImage: "url('/assets/images/360_F_471333224_bQbXMG1TuzIed78bfWp2UVLN1kyhoQYf.jpg')",
-                    transform: `translateY(${scrollY * 0.1}px)`,
+                    transform: `translateY(${scrollY * 0.3}px)`,
                     backgroundAttachment: 'fixed',
-                    backgroundSize: 'cover',
-                    height: '150%',
-                    width: '100%',
-                    top: '-25%',
-                    left: '0',
+                    backgroundSize: '120%',
                     willChange: 'transform'
                 }}
             />
-            {/* Dark overlay for better text readability */}
-            <div className="absolute inset-0 bg-slate-900/30"></div>
-            
             {/* Content overlay */}
             <div className="relative z-10">
                 <div className="container mx-auto px-6">
-                <h2 className="text-4xl font-bold text-white mb-16 text-center">Core Principles</h2>
+                <h2 className="text-4xl font-bold text-white mb-10 text-center">Core Principles</h2>
 
                 {/* Asymmetric Mosaic: 1 hero (left) + 2 stacked (right) */}
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -100,7 +93,7 @@ const CorePrinciples = () => {
                         </p>
                     </article>
                 </div>
-                </div>
+            </div>
             </div>
         </section>
     )

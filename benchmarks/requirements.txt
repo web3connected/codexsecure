@@ -1,0 +1,3 @@
+# CodexHash Benchmark Dependencies
+numpy>=1.21.0
+blake3>=0.3.0  # Optional: for BLAKE3 comparison

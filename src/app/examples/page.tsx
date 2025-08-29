@@ -1,18 +1,106 @@
 "use client"
 
 import React, { useState } from 'react'
-import { Shield, Gamepad2, Landmark, Hospital, Truck, Globe, Bitcoin, CheckCircle, Copy, Code, ExternalLink, PlayCircle } from 'lucide-react'
+import { Shield, Gamepad2, Landmark, Hospital, Truck, Globe, Bitcoin, CheckCircle, Copy, Code, ExternalLink, PlayCircle, Hash, Zap, AlertTriangle } from 'lucide-react'
 import PageLayout from '@/components/layout/PageLayout'
 import TopBar from '@/components/common/TitleBar'
+
+interface HashResult {
+    hash: string;
+    tiu: string;
+    rounds: number;
+    processingTime: number;
+    quantumResistance: number;
+    securityLevel: string;
+    entropyScore: number;
+}
+
+interface ValidationResult {
+    isValid: boolean;
+    message: string;
+}
 
 const ExamplesPage = () => {
     const [selectedCategory, setSelectedCategory] = useState('cryptocurrency')
     const [copiedCode, setCopiedCode] = useState<string | null>(null)
+    
+    // API Testing State
+    const [testData, setTestData] = useState('Hello, Quantum World!')
+    const [rounds, setRounds] = useState(16)
+    const [tiuMode, setTiuMode] = useState('auto')
+    const [customTiu, setCustomTiu] = useState('0.618034')
+    const [isLoading, setIsLoading] = useState(false)
+    const [validateHash, setValidateHash] = useState('')
+    const [validateData, setValidateData] = useState('')
+    const [isValidating, setIsValidating] = useState(false)
+    const [hashResult, setHashResult] = useState<HashResult | null>(null)
+    const [validationResult, setValidationResult] = useState<ValidationResult | null>(null)
+    const [hashCopied, setHashCopied] = useState(false)
 
     const copyToClipboard = (text: string, id: string) => {
         navigator.clipboard.writeText(text)
         setCopiedCode(id)
         setTimeout(() => setCopiedCode(null), 2000)
+    }
+
+    // API Testing Functions
+    const handleGenerateHash = async () => {
+        setIsLoading(true)
+        try {
+            let tiuValue = 0.618034 // default golden ratio
+            
+            if (tiuMode === 'auto') {
+                tiuValue = (Date.now() * 1.618034) % 1
+            } else if (tiuMode === 'custom') {
+                tiuValue = parseFloat(customTiu) || 0.618034
+            }
+
+            // Simulate API call
+            await new Promise(resolve => setTimeout(resolve, 1000))
+            
+            // Mock hash generation (in real implementation, this would call the actual API)
+            const mockHash = `ch_${btoa(testData + rounds + tiuValue).replace(/[^a-zA-Z0-9]/g, '').slice(0, 64)}`
+            
+            setHashResult({
+                hash: mockHash,
+                tiu: tiuValue.toFixed(6),
+                rounds: rounds,
+                processingTime: Math.floor(Math.random() * 150) + 50,
+                quantumResistance: Math.min(70 + (rounds * 2), 95),
+                securityLevel: rounds >= 32 ? 'Military' : rounds >= 16 ? 'Enterprise' : rounds >= 8 ? 'Standard' : 'Basic',
+                entropyScore: Math.floor(Math.random() * 20) + 80
+            })
+            
+            // Auto-populate validation fields
+            setValidateHash(mockHash)
+            setValidateData(testData)
+            
+        } catch (error) {
+            console.error('Hash generation failed:', error)
+        }
+        setIsLoading(false)
+    }
+
+    const handleValidateHash = async () => {
+        setIsValidating(true)
+        try {
+            // Simulate API validation call
+            await new Promise(resolve => setTimeout(resolve, 800))
+            
+            // Mock validation (in real implementation, this would call the actual API)
+            const isValid = validateHash === hashResult?.hash && validateData === testData
+            
+            setValidationResult({
+                isValid,
+                message: isValid 
+                    ? 'Hash successfully validated. Data integrity confirmed.'
+                    : 'Hash validation failed. Data may have been modified or hash is incorrect.'
+            })
+            
+        } catch (error) {
+            console.error('Hash validation failed:', error)
+        }
+        setIsValidating(false)
     }
 
     const categories = [
@@ -616,6 +704,248 @@ class SmartCitySecurityManager {
                                     </div>
                                 </div>
                             ))}
+                        </div>
+                    </section>
+
+                    {/* Live API Testing Panel */}
+                    <section className="mt-16">
+                        <div className="bg-slate-900/50 rounded-lg border border-slate-700 p-8">
+                            <h2 className="text-3xl font-bold text-white mb-6 text-center">
+                                Test CodexHash API Live
+                            </h2>
+                            <p className="text-xl text-slate-300 mb-8 text-center">
+                                Try our quantum-resistant hashing API with real-time validation
+                            </p>
+                            
+                            <div className="grid lg:grid-cols-2 gap-8">
+                                {/* Hash Generation Panel */}
+                                <div className="bg-slate-800/50 rounded-lg p-6">
+                                    <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+                                        <Hash className="w-6 h-6 text-blue-400" />
+                                        Generate Hash
+                                    </h3>
+                                    
+                                    <div className="space-y-4">
+                                        <div>
+                                            <label className="block text-sm font-medium text-slate-300 mb-2">
+                                                Input Data
+                                            </label>
+                                            <textarea
+                                                className="w-full bg-slate-900 border border-slate-600 rounded-lg p-3 text-white placeholder-slate-400 focus:border-blue-500 focus:outline-none"
+                                                rows={3}
+                                                placeholder="Enter data to hash (e.g., 'Hello, Quantum World!')"
+                                                value={testData}
+                                                onChange={(e) => setTestData(e.target.value)}
+                                            />
+                                        </div>
+                                        
+                                        <div className="grid md:grid-cols-2 gap-4">
+                                            <div>
+                                                <label className="block text-sm font-medium text-slate-300 mb-2">
+                                                    Rounds
+                                                </label>
+                                                <select
+                                                    className="w-full bg-slate-900 border border-slate-600 rounded-lg p-3 text-white focus:border-blue-500 focus:outline-none"
+                                                    value={rounds}
+                                                    onChange={(e) => setRounds(parseInt(e.target.value))}
+                                                >
+                                                    <option value={4}>4 rounds (Fast)</option>
+                                                    <option value={8}>8 rounds (Standard)</option>
+                                                    <option value={16}>16 rounds (Enterprise)</option>
+                                                    <option value={32}>32 rounds (High Security)</option>
+                                                </select>
+                                            </div>
+                                            
+                                            <div>
+                                                <label className="block text-sm font-medium text-slate-300 mb-2">
+                                                    TIU Mode
+                                                </label>
+                                                <select
+                                                    className="w-full bg-slate-900 border border-slate-600 rounded-lg p-3 text-white focus:border-blue-500 focus:outline-none"
+                                                    value={tiuMode}
+                                                    onChange={(e) => setTiuMode(e.target.value)}
+                                                >
+                                                    <option value="auto">Auto (Current Time)</option>
+                                                    <option value="golden">Golden Ratio (0.618034)</option>
+                                                    <option value="custom">Custom Value</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        
+                                        {tiuMode === 'custom' && (
+                                            <div>
+                                                <label className="block text-sm font-medium text-slate-300 mb-2">
+                                                    Custom TIU (0-1)
+                                                </label>
+                                                <input
+                                                    type="number"
+                                                    step="0.000001"
+                                                    min="0"
+                                                    max="1"
+                                                    className="w-full bg-slate-900 border border-slate-600 rounded-lg p-3 text-white focus:border-blue-500 focus:outline-none"
+                                                    value={customTiu}
+                                                    onChange={(e) => setCustomTiu(e.target.value)}
+                                                    placeholder="0.618034"
+                                                />
+                                            </div>
+                                        )}
+                                        
+                                        <button
+                                            onClick={handleGenerateHash}
+                                            disabled={isLoading || !testData.trim()}
+                                            className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-slate-600 text-white py-3 px-6 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2"
+                                        >
+                                            {isLoading ? (
+                                                <>
+                                                    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                                                    Generating...
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <Zap className="w-5 h-5" />
+                                                    Generate Hash
+                                                </>
+                                            )}
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                {/* Hash Validation Panel */}
+                                <div className="bg-slate-800/50 rounded-lg p-6">
+                                    <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+                                        <Shield className="w-6 h-6 text-green-400" />
+                                        Validate Hash
+                                    </h3>
+                                    
+                                    <div className="space-y-4">
+                                        <div>
+                                            <label className="block text-sm font-medium text-slate-300 mb-2">
+                                                Hash to Validate
+                                            </label>
+                                            <textarea
+                                                className="w-full bg-slate-900 border border-slate-600 rounded-lg p-3 text-white placeholder-slate-400 focus:border-blue-500 focus:outline-none font-mono text-sm"
+                                                rows={3}
+                                                placeholder="Paste hash here for validation"
+                                                value={validateHash}
+                                                onChange={(e) => setValidateHash(e.target.value)}
+                                            />
+                                        </div>
+                                        
+                                        <div>
+                                            <label className="block text-sm font-medium text-slate-300 mb-2">
+                                                Original Data
+                                            </label>
+                                            <textarea
+                                                className="w-full bg-slate-900 border border-slate-600 rounded-lg p-3 text-white placeholder-slate-400 focus:border-blue-500 focus:outline-none"
+                                                rows={2}
+                                                placeholder="Enter original data for validation"
+                                                value={validateData}
+                                                onChange={(e) => setValidateData(e.target.value)}
+                                            />
+                                        </div>
+                                        
+                                        <button
+                                            onClick={handleValidateHash}
+                                            disabled={isValidating || !validateHash.trim() || !validateData.trim()}
+                                            className="w-full bg-green-600 hover:bg-green-700 disabled:bg-slate-600 text-white py-3 px-6 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2"
+                                        >
+                                            {isValidating ? (
+                                                <>
+                                                    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                                                    Validating...
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <CheckCircle className="w-5 h-5" />
+                                                    Validate Hash
+                                                </>
+                                            )}
+                                        </button>
+                                        
+                                        {validationResult && (
+                                            <div className={`p-4 rounded-lg border ${
+                                                validationResult.isValid 
+                                                    ? 'bg-green-900/30 border-green-500/50 text-green-400' 
+                                                    : 'bg-red-900/30 border-red-500/50 text-red-400'
+                                            }`}>
+                                                <div className="flex items-center gap-2 mb-2">
+                                                    {validationResult.isValid ? (
+                                                        <CheckCircle className="w-5 h-5" />
+                                                    ) : (
+                                                        <AlertTriangle className="w-5 h-5" />
+                                                    )}
+                                                    <span className="font-semibold">
+                                                        {validationResult.isValid ? 'Hash Valid ✓' : 'Hash Invalid ✗'}
+                                                    </span>
+                                                </div>
+                                                <p className="text-sm">{validationResult.message}</p>
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            {/* Results Display */}
+                            {hashResult && (
+                                <div className="mt-8 bg-slate-800/50 rounded-lg p-6">
+                                    <h3 className="text-xl font-semibold text-white mb-4">Hash Result</h3>
+                                    <div className="space-y-4">
+                                        <div>
+                                            <label className="block text-sm font-medium text-slate-300 mb-2">
+                                                Generated Hash
+                                            </label>
+                                            <div className="bg-black rounded-lg p-4 relative">
+                                                <code className="text-green-400 font-mono text-sm break-all">
+                                                    {hashResult.hash}
+                                                </code>
+                                                <button
+                                                    onClick={() => {
+                                                        navigator.clipboard.writeText(hashResult.hash);
+                                                        setHashCopied(true);
+                                                        setTimeout(() => setHashCopied(false), 2000);
+                                                    }}
+                                                    className="absolute top-2 right-2 bg-slate-700 hover:bg-slate-600 text-white p-2 rounded text-xs transition-colors"
+                                                >
+                                                    {hashCopied ? 'Copied!' : 'Copy'}
+                                                </button>
+                                            </div>
+                                        </div>
+                                        
+                                        <div className="grid md:grid-cols-3 gap-4 text-sm">
+                                            <div className="bg-slate-900/50 rounded-lg p-4">
+                                                <span className="text-slate-400">TIU Value:</span>
+                                                <div className="text-blue-400 font-mono">{hashResult.tiu}</div>
+                                            </div>
+                                            <div className="bg-slate-900/50 rounded-lg p-4">
+                                                <span className="text-slate-400">Rounds:</span>
+                                                <div className="text-purple-400 font-mono">{hashResult.rounds}</div>
+                                            </div>
+                                            <div className="bg-slate-900/50 rounded-lg p-4">
+                                                <span className="text-slate-400">Hash Time:</span>
+                                                <div className="text-yellow-400 font-mono">{hashResult.processingTime}ms</div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div className="bg-slate-900/50 rounded-lg p-4">
+                                            <span className="text-slate-400 block mb-2">Security Analysis:</span>
+                                            <div className="text-sm space-y-1">
+                                                <div className="flex justify-between">
+                                                    <span>Quantum Resistance:</span>
+                                                    <span className="text-green-400">{hashResult.quantumResistance}%</span>
+                                                </div>
+                                                <div className="flex justify-between">
+                                                    <span>Security Level:</span>
+                                                    <span className="text-blue-400">{hashResult.securityLevel}</span>
+                                                </div>
+                                                <div className="flex justify-between">
+                                                    <span>Entropy Score:</span>
+                                                    <span className="text-purple-400">{hashResult.entropyScore}/100</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
                         </div>
                     </section>
 

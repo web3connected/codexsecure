@@ -12,7 +12,13 @@
     "dev": "next dev -p 3065",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "python3 run_tests.py",
+    "test:quick": "make quick",
+    "test:full": "make full",
+    "test:kat": "make test",
+    "benchmark": "make benchmark",
+    "setup:test": "make setup"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.15",
