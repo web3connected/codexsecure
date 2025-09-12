@@ -599,7 +599,7 @@ class SmartCitySecurityManager {
         }
     }
 
-    const selectedExample = examples[selectedCategory]
+    const selectedExample = examples[selectedCategory as keyof typeof examples]
 
     return (
         <PageLayout>
