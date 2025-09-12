@@ -50,7 +50,7 @@ jobs:
         python3 benchmarks/harness.py --quick --output-dir reports/ci
     
     - name: Upload test results
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: always()
       with:
         name: test-results-${{ matrix.os }}-node${{ matrix.node-version }}
@@ -96,7 +96,7 @@ jobs:
         python3 benchmarks/plot_results.py reports/nightly/benchmark_results_*.json
     
     - name: Upload benchmark results
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: nightly-benchmark-results
         path: |
@@ -208,7 +208,7 @@ jobs:
         "
     
     - name: Upload security results
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: always()
       with:
         name: security-analysis
