@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { HarmonicHash, QuantumHasher } from '@web3connected/codexhash'
 
 interface HashRequest {
   input: string
@@ -21,21 +20,29 @@ interface HashResponse {
   }
 }
 
-// Generate hash using our HarmonicHash implementation
+// Generate hash by calling the FastAPI backend
 async function generateCodexHash(input: string, salt?: string, tiu: number = 0.618034, iterations: number = 16) {
-  const harmonicHash = new HarmonicHash()
-  const quantumHasher = new QuantumHasher()
+  const backendUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8001'
   
-  // Generate harmonic hash
-  const result = harmonicHash.hash(input, salt, tiu, iterations)
+  const response = await fetch(`${backendUrl}/hash`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      input,
+      salt,
+      tiu,
+      iterations
+    })
+  })
   
-  // Calculate quantum resistance
-  const quantumResistance = quantumHasher.calculateQuantumResistance(result.hash)
-  
-  return {
-    ...result,
-    quantumResistance
+  if (!response.ok) {
+    throw new Error(`Backend hash generation failed: ${response.status}`)
   }
+  
+  const result = await response.json()
+  return result
 }
 
 export async function POST(request: NextRequest) {
