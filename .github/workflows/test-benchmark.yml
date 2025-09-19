@@ -160,9 +160,22 @@ jobs:
         python3 -c "
         import json
         import sys
+        import glob
+        import os
         
-        # Load results
-        with open('benchmarks/reports/security/benchmark_results_*.json', 'r') as f:
+        # Find the results file
+        pattern = 'benchmarks/reports/security/benchmark_results_*.json'
+        files = glob.glob(pattern)
+        
+        if not files:
+            print('No benchmark results found')
+            sys.exit(1)
+        
+        # Load results from the most recent file
+        results_file = sorted(files)[-1]
+        print(f'Loading results from: {results_file}')
+        
+        with open(results_file, 'r') as f:
             results = json.load(f)
         
         # Check critical criteria
