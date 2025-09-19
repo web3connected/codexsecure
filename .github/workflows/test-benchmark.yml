@@ -35,10 +35,7 @@ jobs:
     - name: Install dependencies
       run: |
         npm ci
-        cd NPMPackages/codexhash
-        npm ci
         npm run build
-        cd ../../
         pip install -r benchmarks/requirements.txt
     
     - name: Run Known Answer Tests
@@ -80,10 +77,7 @@ jobs:
     - name: Install dependencies
       run: |
         npm ci
-        cd NPMPackages/codexhash
-        npm ci
         npm run build
-        cd ../../
         pip install -r benchmarks/requirements.txt
         pip install matplotlib seaborn
     
@@ -154,10 +148,7 @@ jobs:
     - name: Install dependencies
       run: |
         npm ci
-        cd NPMPackages/codexhash
-        npm ci
         npm run build
-        cd ../../
         pip install -r benchmarks/requirements.txt
     
     - name: Run Cryptographic Tests
