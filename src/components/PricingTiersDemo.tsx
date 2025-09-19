@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
-import { HarmonicHash, QuantumHasher } from '@web3connected/codexhash';
 
 // Pricing tier interface
 interface PriceTier {
@@ -112,26 +111,32 @@ export default function PricingTiersDemo() {
   useEffect(() => {
     const calculateDynamicPricing = async () => {
       try {
-        // Initialize hashers
-        const harmonicHash = new HarmonicHash();
-        const quantumHasher = new QuantumHasher();
-        
-        // Create user profile hash for pricing
+        // Create user profile hash for pricing using the local API
         const profileData = {
           ...userProfile,
           timestamp: Math.floor(Date.now() / (1000 * 60 * 60 * 24)) // Daily pricing
         };
         
-        const profileHash = harmonicHash.hash(
-          JSON.stringify(profileData),
-          undefined,
-          0.618034, // Golden ratio TIU
-          16
-        );
+        const hashResponse = await fetch('/api/hash', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            input: JSON.stringify(profileData),
+            tiu: 0.618034, // Golden ratio TIU
+            iterations: 16
+          })
+        });
         
-        // Calculate quantum resistance for security analysis
-        const securityHash = quantumHasher.hash(JSON.stringify(userProfile.securityNeeds));
-        const quantumResistance = quantumHasher.calculateQuantumResistance(securityHash);
+        if (!hashResponse.ok) {
+          throw new Error('Hash generation failed');
+        }
+        
+        const profileHash = await hashResponse.json();
+        
+        // Calculate a simple quantum resistance metric (simplified)
+        const quantumResistance = Math.min(0.95, 0.8 + (profileHash.meta.quantumResistance / 100) * 0.15);
         
         // Calculate multipliers
         const industryMultiplier = getIndustryMultiplier(userProfile.industry);
@@ -166,10 +171,10 @@ export default function PricingTiersDemo() {
         });
         
         setQuantumAnalysis({
-          securityHash,
+          securityHash: profileHash.hash.substring(0, 32), // First 32 chars as security hash
           quantumResistance: Math.round(quantumResistance * 100),
           recommendedTier: updatedTiers.find(t => t.recommended),
-          baseFrequency: harmonicHash.getBaseFrequency()
+          baseFrequency: 432.0 // Default harmonic frequency
         });
         
       } catch (error) {
