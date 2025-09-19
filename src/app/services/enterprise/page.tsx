@@ -132,7 +132,7 @@ const EnterprisePage = () => {
     ]
 
     const getColorClasses = (color: string) => {
-        const colors = {
+        const colors: Record<string, string> = {
             blue: 'border-blue-500/30 bg-blue-500/10',
             purple: 'border-purple-500/30 bg-purple-500/10',
             gold: 'border-yellow-500/30 bg-yellow-500/10'
@@ -141,7 +141,7 @@ const EnterprisePage = () => {
     }
 
     const getButtonClasses = (color: string) => {
-        const colors = {
+        const colors: Record<string, string> = {
             blue: 'bg-blue-600 hover:bg-blue-700',
             purple: 'bg-purple-600 hover:bg-purple-700',
             gold: 'bg-yellow-600 hover:bg-yellow-700'

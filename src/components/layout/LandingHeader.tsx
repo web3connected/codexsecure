@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
-import { Button } from '../widgets/ui/button'
+import { Button } from '@/components/widgets/ui/button'
 import Link from 'next/link'
 
 const LandingHeader = () => {

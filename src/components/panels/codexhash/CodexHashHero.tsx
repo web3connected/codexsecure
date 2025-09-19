@@ -2,9 +2,9 @@
 
 import { ArrowRight, Globe, Shield, Zap } from 'lucide-react'
 import React from 'react'
-import OpenSourceBadge from '../ui/OpenSourceBadge'
+import OpenSourceBadge from '@/components/widgets/ui/OpenSourceBadge'
 import ApplicationLogo from '../../common/ApplicationLogo'
-import { Button } from '../ui/button'
+import { Button } from '../../widgets/ui/button'
 import Link from 'next/link'
 
 const CodexHashHero: React.FC = () => {
@@ -41,25 +41,25 @@ const CodexHashHero: React.FC = () => {
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-          <Button
-            asChild
-            size="lg"
-            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
-          >
-            <Link href="/docs/getting-started">
+          <Link href="/docs/getting-started">
+            <Button
+              size="lg"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
+            >
               Get Started
               <ArrowRight className="w-5 h-5 ml-2" />
-            </Link>
-          </Button>
+            </Button>
+          </Link>
 
-          <Button
-            asChild
-            variant="outline"
-            size="lg"
-            className="border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg font-semibold"
-          >
-            <Link href="/tools/generator">View Documentation</Link>
-          </Button>
+          <Link href="/tools/generator">
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg font-semibold"
+            >
+              View Documentation
+            </Button>
+          </Link>
         </div>
 
         {/* Key Features */}

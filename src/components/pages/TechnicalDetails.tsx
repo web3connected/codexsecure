@@ -2,9 +2,9 @@
 
 import React, { useState } from 'react'
 import { Clock, Shield, Zap, Hash, Globe, ArrowRight, CheckCircle, AlertTriangle, Info } from 'lucide-react'
-import { Button } from '../widgets/ui/button'
-import LandingHeader from '../layout/LandingHeader'
-import LandingFooter from '../common/LandingFooter'
+import { Button } from '@/components/widgets/ui/button'
+import LandingHeader from '@/components/layout/LandingHeader'
+import LandingFooter from '@/components/common/LandingFooter'
 import Link from 'next/link'
 
 const TechnicalDetails: React.FC = () => {
