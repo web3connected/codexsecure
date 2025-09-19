@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import crypto from 'crypto'
 
 interface HashRequest {
   input: string
@@ -20,29 +21,61 @@ interface HashResponse {
   }
 }
 
-// Generate hash by calling the FastAPI backend
+// Generate hash by calling the web3connected CodexHash API
 async function generateCodexHash(input: string, salt?: string, tiu: number = 0.618034, iterations: number = 16) {
-  const backendUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8001'
+  const backendUrl = 'https://codexhash.web3connected.com'
   
-  const response = await fetch(`${backendUrl}/hash`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      input,
-      salt,
-      tiu,
-      iterations
+  try {
+    const response = await fetch(`${backendUrl}/hash`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'User-Agent': 'CodexHash-Client/1.0.0'
+      },
+      body: JSON.stringify({
+        input,
+        salt,
+        tiu,
+        iterations
+      })
     })
-  })
-  
-  if (!response.ok) {
-    throw new Error(`Backend hash generation failed: ${response.status}`)
+    
+    if (!response.ok) {
+      const errorText = await response.text()
+      console.error(`Web3Connected API Error ${response.status}:`, errorText)
+      throw new Error(`Backend hash generation failed: ${response.status} - ${errorText}`)
+    }
+    
+    const result = await response.json()
+    return result
+  } catch (error) {
+    console.error('Error calling web3connected API:', error)
+    // Fallback to local hash generation if API fails
+    return generateLocalHash(input, salt, tiu, iterations)
+  }
+}
+
+// Fallback local hash generation
+function generateLocalHash(input: string, salt?: string, tiu: number = 0.618034, iterations: number = 16) {
+  // Generate salt if not provided
+  if (!salt) {
+    salt = crypto.randomBytes(16).toString('hex')
   }
   
-  const result = await response.json()
-  return result
+  // Simple SHA-256 based hash with iterations
+  let hash = input + salt
+  for (let i = 0; i < iterations; i++) {
+    hash = crypto.createHash('sha256').update(hash + tiu.toString()).digest('hex')
+  }
+  
+  return {
+    hash: hash,
+    salt: salt,
+    tiu: tiu.toString(),
+    algorithm: 'SHA-256-Fallback',
+    quantumResistance: 1.0
+  }
 }
 
 export async function POST(request: NextRequest) {

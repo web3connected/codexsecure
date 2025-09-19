@@ -10,7 +10,7 @@ setup:
 	@echo "🔧 Setting up CodexHash test environment..."
 	cd ../NPMPackages/codexhash && npm install && npm run build
 	pip3 install -r benchmarks/requirements.txt
-	chmod +x run_tests.py
+	chmod +x scripts/testing/run_tests.py
 	chmod +x tests/kat_manager.py
 	chmod +x benchmarks/harness.py
 	chmod +x benchmarks/scripts/codex_hash_bridge.js

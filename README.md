@@ -152,8 +152,46 @@ codexhash/
 │   └── lib/                   # Utilities and types
 ├── public/                    # Static assets
 ├── docs/                      # Documentation
+├── scripts/                   # Helper scripts (organized by category)
+│   ├── deployment/           # Deployment scripts
+│   ├── testing/              # Testing utilities
+│   └── management/           # Service management
 └── config/                    # Configuration files
 ```
+
+## 🔧 Scripts & Automation
+
+The project includes organized helper scripts in the `/scripts/` directory:
+
+### Development Scripts
+```bash
+npm run dev              # Start development server
+npm run build           # Build for production
+npm run start           # Start production server
+npm run lint            # Run ESLint
+```
+
+### Testing Scripts
+```bash
+npm run test            # Run all tests
+npm run test:quick      # Quick benchmark tests
+npm run test:full       # Full test suite
+npm run status          # Check service status
+```
+
+### Deployment Scripts
+```bash
+npm run deploy:simple   # Simple deployment
+npm run deploy:prod     # Production deployment
+```
+
+### Service Management
+```bash
+npm run start:services  # Start CodexHash services
+npm run stop:services   # Stop CodexHash services
+```
+
+See [scripts/README.md](./scripts/README.md) for detailed documentation of all available scripts.
 
 ## 🔬 Core Technologies
 
@@ -212,6 +250,14 @@ npm test -- --testNamePattern="HarmonicHash"
 
 ## 📖 Documentation
 
+### 📚 Project Documentation
+- **[Complete Documentation](./docs/)** - Comprehensive project documentation
+- **[Project Blueprint](./docs/CODEXHASH_BLUEPRINT.md)** - Architecture and design
+- **[Setup Guides](./docs/setup/)** - Installation and configuration
+- **[Deployment Docs](./docs/deployment/)** - Production deployment guides
+- **[Testing Framework](./docs/TEST_FRAMEWORK_README.md)** - Testing setup and usage
+
+### 🌐 Live Documentation
 - [Harmonic Hashing Guide](http://localhost:3065/learn/harmonic-hashing)
 - [Quantum Hash Service](http://localhost:3065/services/quantum-hash)
 - [Pricing Tiers Demo](http://localhost:3065/pricing)

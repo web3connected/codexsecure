@@ -1,7 +1,7 @@
 'use client'
 
 import React, { createContext, useContext, useState, useEffect } from 'react'
-import PageLoader from '@/components/ui/PageLoader'
+import PageLoader from '@/components/widgets/ui/PageLoader'
 
 interface LoadingContextType {
   isLoading: boolean

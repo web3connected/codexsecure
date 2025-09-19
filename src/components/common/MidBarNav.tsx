@@ -3,8 +3,8 @@ import React from 'react'
 import { services } from '../../../config/services'
 
 import ApplicationLogo from './ApplicationLogo'
-import MainNavigation from '../navigation/MainNavigation';
-import SearchAndCTA from '../navigation/SearchAndCTA';
+import MainNavigation from './navigation/MainNavigation';
+import SearchAndCTA from './navigation/SearchAndCTA';
 
 // Define menu item types
 interface SubMenuItem {

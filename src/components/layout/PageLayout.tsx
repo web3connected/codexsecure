@@ -12,8 +12,8 @@ interface PageLayoutProps {
 const PageLayout: React.FC<PageLayoutProps> = ({ 
     children, 
     className = "min-h-screen bg-slate-900", 
-    includeHeader = true,
-    includeFooter = true 
+    includeHeader = false,
+    includeFooter = false 
 }) => {
     return (
         <div className={className}>

@@ -2,7 +2,7 @@
 
 import React from 'react'
 import DateGreeter from '../widgets/DateGreeter'
-import WhosLoggedIn from '../profile/WhosLoggedIn'
+import WhosLoggedIn from '../widgets/profile/WhosLoggedIn'
 
 const TopBarNav = () => {
     // Mock user data - replace with your actual auth state

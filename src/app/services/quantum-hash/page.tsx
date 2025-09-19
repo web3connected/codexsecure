@@ -3,7 +3,7 @@
 import React from 'react'
 import PageLayout from '@/components/layout/PageLayout'
 import TitleBar from '@/components/common/TitleBar'
-import MainQuantumHashingContent from '@/components/codexhash/MainQuantumHashingContent'
+import MainQuantumHashingContent from '@/components/panels/codexhash/MainQuantumHashingContent'
 
 const QuantumHashPage = () => {
 
