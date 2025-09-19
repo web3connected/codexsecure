@@ -5,7 +5,7 @@ import LandingHeader from '../layout/LandingHeader'
 import SecureDataHero from '../panels/codexhash/SecureDataHero'
 import CodexHashFeatures from '../panels/codexhash/CodexHashFeatures'
 import ExperienceQuantumResistant from '../panels/codexhash/ExperienceQuantumResistant'
-import TechnologyStack from '../panels/codexhash/TechnologyStack'
+import ComparisonsPanel from '../panels/ComparisonsPanel'
 import LandingFooter from '../common/LandingFooter'
 
 const CodexHashSinglePage: React.FC = () => {
@@ -24,8 +24,8 @@ const CodexHashSinglePage: React.FC = () => {
       {/* Demo Section */}
       <ExperienceQuantumResistant />
 
-      {/* Technology Section */}
-      <TechnologyStack />
+      {/* Comparison Section */}
+      <ComparisonsPanel />
 
       {/* Footer */}
       <LandingFooter />

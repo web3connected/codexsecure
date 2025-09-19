@@ -2,17 +2,31 @@
 
 # CodexHash Startup Script
 # Starts both frontend and backend services
+# Usage: ./start_codexhash.sh [--pm2]
+
+USE_PM2=false
+if [ "$1" = "--pm2" ]; then
+    USE_PM2=true
+fi
 
 echo "🚀 Starting CodexHash Application..."
 
-# Check if processes are already running
-FRONTEND_PID=$(pgrep -f "next dev -p 3065")
-BACKEND_PID=$(pgrep -f "uvicorn.*8001")
-
-if [ ! -z "$FRONTEND_PID" ]; then
-    echo "⚠️  Frontend already running on PID $FRONTEND_PID"
+if [ "$USE_PM2" = true ]; then
+    echo "📦 Starting with PM2..."
+    cd /home/web3codex/projects/codex_hash
+    pm2 start scripts/management/ecosystem.local.config.js
+    pm2 logs --lines 10
 else
-    echo "🌐 Starting Frontend (Next.js) on port 3065..."
+    echo "🔧 Starting in development mode..."
+    
+    # Check if processes are already running
+    FRONTEND_PID=$(pgrep -f "next dev -p 3000")
+    BACKEND_PID=$(pgrep -f "uvicorn.*8001")
+
+    if [ ! -z "$FRONTEND_PID" ]; then
+        echo "⚠️  Frontend already running on PID $FRONTEND_PID"
+    else
+        echo "🌐 Starting Frontend (Next.js) on port 3000..."
     cd /home/web3codex/projects/codex_hash
     npm run dev &
     FRONTEND_PID=$!
@@ -24,7 +38,7 @@ if [ ! -z "$BACKEND_PID" ]; then
 else
     echo "🔗 Starting Backend (FastAPI) on port 8001..."
     cd /home/web3codex/projects/codex_hash/backend
-    uvicorn src.main:app --host 0.0.0.0 --port 8001 &
+    uvicorn src.main:app --host 0.0.0.0 --port 8001 --reload &
     BACKEND_PID=$!
     echo "✅ Backend started with PID $BACKEND_PID"
 fi
@@ -34,14 +48,14 @@ sleep 3
 
 echo ""
 echo "🎉 CodexHash Application Status:"
-echo "Frontend: http://localhost:3065"
+echo "Frontend: http://localhost:3000"
 echo "Backend API: http://localhost:8001"
 echo "Backend Docs: http://localhost:8001/docs"
 echo ""
 
 # Test health endpoints
 echo "🔍 Testing services..."
-if curl -s http://localhost:3065 > /dev/null; then
+if curl -s http://localhost:3000 > /dev/null; then
     echo "✅ Frontend is responsive"
 else
     echo "❌ Frontend is not responding"
@@ -58,4 +72,5 @@ echo "📋 Running processes:"
 ps aux | grep -E "(next|uvicorn)" | grep -v grep | awk '{print "  ", $2, $11, $12}'
 
 echo ""
-echo "🛑 To stop all services, run: ./stop_codexhash.sh"
+echo "🛑 To stop all services, run: ./scripts/management/stop_codexhash.sh"
+fi

@@ -3,13 +3,17 @@
 ## ✅ Current Status: RUNNING SUCCESSFULLY
 
 ### 🚀 Services Status
-- **Frontend (Next.js)**: ✅ Running on http://localhost:3065
+## 🎯 Service Status
+
+- **Frontend (Next.js)**: ✅ Running on http://localhost:3000
 - **Backend (FastAPI)**: ✅ Running on http://localhost:8001
 
 ### 🔗 Available Endpoints
 
 #### Frontend (Next.js)
-- **Main Application**: http://localhost:3065
+## 🌐 Access Points
+
+- **Main Application**: http://localhost:3000
 - **Landing Page**: Professional CodexHash.io interface
 - **Interactive Hash Generator**: Live hashing demonstrations
 - **Dashboard**: Hash management interface
@@ -63,7 +67,7 @@ curl -X POST http://localhost:8001/hash \
 ps aux | grep -E "(next|uvicorn)" | grep -v grep
 
 # Check ports
-netstat -tlnp | grep -E "(3065|8001)"
+netstat -tlnp | grep -E "(3000|8001)"
 ```
 
 ### 📊 Performance Metrics (Last Test)

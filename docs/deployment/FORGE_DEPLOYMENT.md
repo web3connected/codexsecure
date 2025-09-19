@@ -95,7 +95,7 @@ Ensure your package.json has the production start script:
 ```json
 {
   "scripts": {
-    "dev": "next dev -p 3065",
+    "dev": "next dev -p 3000",
     "build": "next build",
     "start": "next start -p 3000",
     "lint": "next lint"

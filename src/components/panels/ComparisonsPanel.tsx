@@ -4,7 +4,9 @@ import Image from 'next/image'
 
 const ComparisonsPanel: React.FC = () => {
   return (
-    <div className="min-h-full flex flex-col justify-center space-y-8 relative overflow-hidden">
+    <div className="min-h-full flex flex-col justify-center space-y-8 relative overflow-hidden" style={{
+      padding: "100px"
+    }}>
       {/* Enhanced Competitive Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-red-900/20 via-orange-900/30 to-yellow-900/20"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-red-500/10 via-transparent to-transparent"></div>

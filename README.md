@@ -91,7 +91,7 @@ npm install
 npm run dev
 ```
 
-Visit `http://localhost:3065` to see the application.
+Visit `http://localhost:3000` to see the application.
 
 ### Build for Production
 
@@ -258,10 +258,10 @@ npm test -- --testNamePattern="HarmonicHash"
 - **[Testing Framework](./docs/TEST_FRAMEWORK_README.md)** - Testing setup and usage
 
 ### 🌐 Live Documentation
-- [Harmonic Hashing Guide](http://localhost:3065/learn/harmonic-hashing)
-- [Quantum Hash Service](http://localhost:3065/services/quantum-hash)
-- [Pricing Tiers Demo](http://localhost:3065/pricing)
-- [API Testing Interface](http://localhost:3065/test-api)
+- [Harmonic Hashing Guide](http://localhost:3000/learn/harmonic-hashing)
+- [Quantum Hash Service](http://localhost:3000/services/quantum-hash)
+- [Pricing Tiers Demo](http://localhost:3000/pricing)
+- [API Testing Interface](http://localhost:3000/test-api)
 
 ## 🤝 Contributing
 
@@ -286,8 +286,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 For support and questions:
 - Create an issue on GitHub
-- Visit the documentation at `http://localhost:3065`
-- Check the API testing interface at `http://localhost:3065/test-api`
+- Visit the documentation at `http://localhost:3000`
+- Check the API testing interface at `http://localhost:3000/test-api`
 
 ---
 

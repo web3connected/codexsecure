@@ -3,8 +3,12 @@
 echo "🧪 CodexHash Site Testing"
 echo "========================"
 
-# Base URL
-BASE_URL="http://localhost:3065"
+#!/bin/bash
+
+# Test CodexHash Site Health
+echo "🔍 Testing CodexHash Site Health..."
+
+BASE_URL="http://localhost:3000"
 
 # Test routes array
 routes=(
