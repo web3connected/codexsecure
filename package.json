@@ -26,7 +26,6 @@
     "status": "python3 scripts/management/check_status.py"
   },
   "dependencies": {
-    "@prisma/client": "^6.16.2",
     "@radix-ui/react-dialog": "^1.1.15",
     "@radix-ui/react-dropdown-menu": "^2.1.16",
     "@radix-ui/react-slot": "^1.2.3",
@@ -38,7 +37,6 @@
     "lucide-react": "^0.539.0",
     "next": "15.4.6",
     "next-themes": "^0.4.6",
-    "prisma": "^6.16.2",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "recharts": "^3.1.2",
