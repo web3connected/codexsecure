@@ -1,17 +1,6 @@
 /* Import Tailwind for utility classes */
 @import "tailwindcss";
 
-/* Import Web3 Codex Unified Design System */
-@import url("/assets/css/core-design-system.css");
-
-/* Import Web3 Codex Theme System */
-@import url("/assets/css/theme.css");
-
-/* Import Indiz Gaming Theme CSS for animations and effects only */
-@import url("/assets/css/swiper.min.css");
-@import url("/assets/css/splitting.min.css");
-@import url("/assets/css/odometer.css");
-
 /* Business Professional Typography */
 * {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;

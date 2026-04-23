@@ -1,6 +1,5 @@
 import React from 'react';
 import PageLayout from '@/components/layout/PageLayout';
-import PricingTiersDemo from '../../components/PricingTiersDemo';
 import TopBar from '@/components/common/TitleBar';
 import { Clock, Bell, Zap } from 'lucide-react';
 

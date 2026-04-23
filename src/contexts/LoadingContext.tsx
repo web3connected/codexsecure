@@ -29,21 +29,27 @@ interface LoadingProviderProps {
 
 export const LoadingProvider: React.FC<LoadingProviderProps> = ({ 
   children, 
-  initialLoading = true,
+  initialLoading = false,
   initialMessage = "Initializing Web3 Codex..."
 }) => {
   const [isLoading, setIsLoading] = useState(initialLoading)
   const [message, setMessage] = useState(initialMessage)
+  const [isMounted, setIsMounted] = useState(false)
+
+  // Prevent hydration mismatch by only rendering loader after mount
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
 
   // Auto-hide initial loader after 2 seconds
   useEffect(() => {
-    if (initialLoading) {
+    if (initialLoading && isMounted) {
       const timer = setTimeout(() => {
         setIsLoading(false)
       }, 2000)
       return () => clearTimeout(timer)
     }
-  }, [initialLoading])
+  }, [initialLoading, isMounted])
 
   const setLoading = (loading: boolean) => {
     setIsLoading(loading)
@@ -71,7 +77,7 @@ export const LoadingProvider: React.FC<LoadingProviderProps> = ({
   return (
     <LoadingContext.Provider value={value}>
       {children}
-      {isLoading && <PageLoader message={message} />}
+      {isMounted && isLoading && <PageLoader message={message} />}
     </LoadingContext.Provider>
   )
 }

@@ -1,45 +1,23 @@
 module.exports = {
-  apps: [
-    {
-      name: 'codexhash-frontend-local',
-      script: 'npm',
-      args: 'run dev',
-      cwd: '/home/web3codex/projects/codex_hash',
-      env: {
-        NODE_ENV: 'development',
-        PORT: 3000,
-        NEXT_PUBLIC_API_URL: 'http://localhost:8001',
-        NEXT_PUBLIC_SITE_URL: 'http://localhost:3000'
-      },
-      error_file: '/home/web3codex/projects/codex_hash/logs/frontend-error.log',
-      out_file: '/home/web3codex/projects/codex_hash/logs/frontend-out.log',
-      log_file: '/home/web3codex/projects/codex_hash/logs/frontend-combined.log',
-      instances: 1,
-      exec_mode: 'fork',
-      autorestart: true,
-      watch: true,
-      ignore_watch: ['node_modules', '.next', 'logs'],
-      max_memory_restart: '512M'
+  apps: [{
+    name: 'codexsecure-dev',
+    script: 'node_modules/.bin/next',
+    args: 'dev --turbopack -p 3003',
+    cwd: __dirname,
+    watch: false,
+    autorestart: true,
+    max_restarts: 10,
+    min_uptime: '10s',
+    max_memory_restart: '500M',
+    env: {
+      NODE_ENV: 'development',
+      NODE_OPTIONS: '--max-old-space-size=4096',
     },
-    {
-      name: 'codexhash-backend-local',
-      script: 'uvicorn',
-      args: 'src.main:app --host 0.0.0.0 --port 8001 --reload',
-      cwd: '/home/web3codex/projects/codex_hash/backend',
-      env: {
-        ENVIRONMENT: 'development',
-        API_HOST: '0.0.0.0',
-        API_PORT: '8001',
-        CORS_ORIGINS: '["http://localhost:3000", "http://127.0.0.1:3000"]'
-      },
-      error_file: '/home/web3codex/projects/codex_hash/logs/backend-error.log',
-      out_file: '/home/web3codex/projects/codex_hash/logs/backend-out.log',
-      log_file: '/home/web3codex/projects/codex_hash/logs/backend-combined.log',
-      instances: 1,
-      exec_mode: 'fork',
-      autorestart: true,
-      watch: false,
-      max_memory_restart: '256M'
-    }
-  ]
-};
+    error_file: './logs/pm2-error.log',
+    out_file: './logs/pm2-out.log',
+    log_date_format: 'YYYY-MM-DD HH:mm:ss Z',
+    merge_logs: true,
+    // Auto-restart on crash
+    exp_backoff_restart_delay: 100,
+  }]
+}

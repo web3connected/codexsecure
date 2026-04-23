@@ -21,6 +21,9 @@ from typing import Dict, Any, Optional
 from pydantic import BaseModel
 import uvicorn
 
+# Import CodexHash library
+from src.codex_hash import CodexHarmonicHash, CodexTime
+
 # Initialize FastAPI app
 app = FastAPI(
     title="CodexHash API",

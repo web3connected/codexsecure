@@ -1,17 +1,25 @@
 {
-  "name": "codexhash",
+  "name": "codexsecure",
   "version": "0.1.0",
   "private": true,
-  "description": "CodexHash - Quantum-Resistant Hashing System & Documentation Platform",
-  "homepage": "https://codexhash.io",
+  "description": "CodexSecure - Security & Privacy Layer Platform",
+  "homepage": "https://codexsecure.io",
   "repository": {
     "type": "git",
-    "url": "https://github.com/web3connected/codexhash.git"
+    "url": "https://github.com/web3connected/codexsecure.git"
   },
   "scripts": {
-    "dev": "next dev -p 3000",
+    "postinstall": "echo '✅ Codex Universal SDK auto-sync: CodexSecure ready'",
+    "copy-components": "echo 'Using @web3codex/universal - no manual copying needed'",
+    "update-codex": "npm update @web3codex/universal && echo '🔄 Codex components updated'",
+    "dev": "next dev --turbopack -p 3002",
+    "dev:stable": "NODE_OPTIONS='--max-old-space-size=4096' next dev --turbopack -p 3002",
+    "dev:pm2": "pm2 start ecosystem.config.js",
+    "dev:stop": "pm2 stop codexsecure-dev",
+    "dev:restart": "pm2 restart codexsecure-dev",
+    "dev:logs": "pm2 logs codexsecure-dev",
     "build": "next build",
-    "start": "next start -p 3000",
+    "start": "next start -p 3003",
     "lint": "next lint",
     "test": "python3 scripts/testing/run_tests.py",
     "test:quick": "make quick",
@@ -26,20 +34,27 @@
     "status": "python3 scripts/management/check_status.py"
   },
   "dependencies": {
+    "@web3codex/universal": "file:../../SDK/codex-universal-sdk",
+    "@fortawesome/fontawesome-svg-core": "^7.1.0",
+    "@fortawesome/free-brands-svg-icons": "^7.1.0",
+    "@fortawesome/react-fontawesome": "^3.1.1",
     "@radix-ui/react-dialog": "^1.1.15",
     "@radix-ui/react-dropdown-menu": "^2.1.16",
     "@radix-ui/react-slot": "^1.2.3",
     "@radix-ui/react-tabs": "^1.1.13",
-    "@web3connected/codexhash": "file:../NPMPackages/codexhash",
+    "@web3codex/components": "file:../../SDK/web3codex-components",
+    "@web3connected/codexhash": "file:../../Archived/NPMPackages/codexhash",
+    "@web3codex/react-codex-auth": "file:../../SDK/react_codex_auth",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "lucide-react": "^0.539.0",
-    "next": "15.4.6",
+    "next": "^15.4.6",
     "next-themes": "^0.4.6",
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "recharts": "^3.1.2",
+    "swiper": "^12.0.3",
     "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
@@ -50,6 +65,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.4.6",
+    "pm2": "^5.4.3",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

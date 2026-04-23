@@ -1,0 +1,1579 @@
+2026-01-08 20:20:43 -05:00:  ⚠ `devIndicators.buildActivityPosition` has been renamed to `devIndicators.position`. Please update your next.config.ts file accordingly.
+2026-01-08 20:20:43 -05:00:  ⚠ The `devIndicators` option `buildActivityPosition` ("bottom-right") conflicts with `position` ("bottom-left"). Using `buildActivityPosition` ("bottom-right") for backward compatibility.
+2026-01-08 20:20:45 -05:00:  ⚠ Webpack is configured while Turbopack is not, which may cause problems.
+2026-01-08 20:20:45 -05:00:  ⚠ See instructions if you need to configure Turbopack:
+2026-01-08 20:20:45 -05:00:   https://nextjs.org/docs/app/api-reference/next-config-js/turbopack
+2026-01-08 20:20:45 -05:00: 
+2026-01-08 20:21:00 -05:00:  ⚠ Found a change in next.config.ts. Restarting the server to apply the changes...
+2026-01-08 20:21:01 -05:00:  ⚠ Webpack is configured while Turbopack is not, which may cause problems.
+2026-01-08 20:21:01 -05:00:  ⚠ See instructions if you need to configure Turbopack:
+2026-01-08 20:21:01 -05:00:   https://nextjs.org/docs/app/api-reference/next-config-js/turbopack
+2026-01-08 20:21:01 -05:00: 
+2026-01-08 20:21:16 -05:00:  ⚠ Webpack is configured while Turbopack is not, which may cause problems.
+2026-01-08 20:21:16 -05:00:  ⚠ See instructions if you need to configure Turbopack:
+2026-01-08 20:21:16 -05:00:   https://nextjs.org/docs/app/api-reference/next-config-js/turbopack
+2026-01-08 20:21:16 -05:00: 
+2026-01-08 20:22:04 -05:00:  ⨯ ./src/app/globals.css:2277:8
+2026-01-08 20:22:04 -05:00: Parsing CSS source code failed
+2026-01-08 20:22:04 -05:00: [0m [90m 2275 |[39m   }
+2026-01-08 20:22:04 -05:00:  [90m 2276 |[39m }
+2026-01-08 20:22:04 -05:00: [31m[1m>[22m[39m[90m 2277 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/core-design-system.css"[39m)[33m;[39m
+2026-01-08 20:22:04 -05:00:  [90m      |[39m        [31m[1m^[22m[39m
+2026-01-08 20:22:04 -05:00:  [90m 2278 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/theme.css"[39m)[33m;[39m
+2026-01-08 20:22:04 -05:00:  [90m 2279 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/swiper.min.css"[39m)[33m;[39m
+2026-01-08 20:22:04 -05:00:  [90m 2280 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/splitting.min.css"[39m)[33m;[39m[0m
+2026-01-08 20:22:04 -05:00: 
+2026-01-08 20:22:04 -05:00: @import rules must precede all rules aside from @charset and @layer statements
+2026-01-08 20:22:04 -05:00: 
+2026-01-08 20:22:04 -05:00: Import trace:
+2026-01-08 20:22:04 -05:00:   Client Component Browser:
+2026-01-08 20:22:04 -05:00:     ./src/app/globals.css [Client Component Browser]
+2026-01-08 20:22:04 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:22:04 -05:00: 
+2026-01-08 20:22:04 -05:00: 
+2026-01-08 20:22:04 -05:00: 
+2026-01-08 20:22:04 -05:00: ./src/components/widgets/ui/PageLoader.tsx:3:1
+2026-01-08 20:22:04 -05:00: Module not found: Can't resolve '@web3codex/components'
+2026-01-08 20:22:04 -05:00: [0m [90m 1 |[39m [32m'use client'[39m
+2026-01-08 20:22:04 -05:00:  [90m 2 |[39m
+2026-01-08 20:22:04 -05:00: [31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { [33mApplicationLogo[39m } [36mfrom[39m [32m'@web3codex/components'[39m
+2026-01-08 20:22:04 -05:00:  [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+2026-01-08 20:22:04 -05:00:  [90m 4 |[39m
+2026-01-08 20:22:04 -05:00:  [90m 5 |[39m [36mexport[39m [36minterface[39m [33mPageLoaderProps[39m {
+2026-01-08 20:22:04 -05:00:  [90m 6 |[39m   message[33m?[39m[33m:[39m string[0m
+2026-01-08 20:22:04 -05:00: 
+2026-01-08 20:22:04 -05:00: 
+2026-01-08 20:22:04 -05:00: 
+2026-01-08 20:22:04 -05:00: Import traces:
+2026-01-08 20:22:04 -05:00:   Client Component Browser:
+2026-01-08 20:22:04 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component Browser]
+2026-01-08 20:22:04 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component Browser]
+2026-01-08 20:22:04 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:22:04 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:22:04 -05:00: 
+2026-01-08 20:22:04 -05:00:   Client Component SSR:
+2026-01-08 20:22:04 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component SSR]
+2026-01-08 20:22:04 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component SSR]
+2026-01-08 20:22:04 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:22:04 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:22:04 -05:00: 
+2026-01-08 20:22:04 -05:00: https://nextjs.org/docs/messages/module-not-found
+2026-01-08 20:22:04 -05:00: 
+2026-01-08 20:22:04 -05:00: 
+2026-01-08 20:23:52 -05:00:  ⚠ Webpack is configured while Turbopack is not, which may cause problems.
+2026-01-08 20:23:52 -05:00:  ⚠ See instructions if you need to configure Turbopack:
+2026-01-08 20:23:52 -05:00:   https://nextjs.org/docs/app/api-reference/next-config-js/turbopack
+2026-01-08 20:23:52 -05:00: 
+2026-01-08 20:23:59 -05:00:  ⚠ Found a change in next.config.ts. Restarting the server to apply the changes...
+2026-01-08 20:24:01 -05:00:  ⚠ Webpack is configured while Turbopack is not, which may cause problems.
+2026-01-08 20:24:01 -05:00:  ⚠ See instructions if you need to configure Turbopack:
+2026-01-08 20:24:01 -05:00:   https://nextjs.org/docs/app/api-reference/next-config-js/turbopack
+2026-01-08 20:24:01 -05:00: 
+2026-01-08 20:24:06 -05:00:  ⨯ ./src/app/globals.css:2277:8
+2026-01-08 20:24:06 -05:00: Parsing CSS source code failed
+2026-01-08 20:24:06 -05:00: [0m [90m 2275 |[39m   }
+2026-01-08 20:24:06 -05:00:  [90m 2276 |[39m }
+2026-01-08 20:24:06 -05:00: [31m[1m>[22m[39m[90m 2277 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/core-design-system.css"[39m)[33m;[39m
+2026-01-08 20:24:06 -05:00:  [90m      |[39m        [31m[1m^[22m[39m
+2026-01-08 20:24:06 -05:00:  [90m 2278 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/odometer.css"[39m)[33m;[39m
+2026-01-08 20:24:06 -05:00:  [90m 2279 |[39m [33m*[39m {
+2026-01-08 20:24:06 -05:00:  [90m 2280 |[39m   font[33m-[39mfamily[33m:[39m [32m'Inter'[39m[33m,[39m system[33m-[39mui[33m,[39m [33m-[39mapple[33m-[39msystem[33m,[39m sans[33m-[39mserif[33m;[39m[0m
+2026-01-08 20:24:06 -05:00: 
+2026-01-08 20:24:06 -05:00: @import rules must precede all rules aside from @charset and @layer statements
+2026-01-08 20:24:06 -05:00: 
+2026-01-08 20:24:06 -05:00: Import trace:
+2026-01-08 20:24:06 -05:00:   Client Component Browser:
+2026-01-08 20:24:06 -05:00:     ./src/app/globals.css [Client Component Browser]
+2026-01-08 20:24:06 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:24:06 -05:00: 
+2026-01-08 20:24:06 -05:00: 
+2026-01-08 20:24:06 -05:00: 
+2026-01-08 20:24:06 -05:00: ./src/components/widgets/ui/PageLoader.tsx:3:1
+2026-01-08 20:24:06 -05:00: Module not found: Can't resolve '@web3codex/components'
+2026-01-08 20:24:06 -05:00: [0m [90m 1 |[39m [32m'use client'[39m
+2026-01-08 20:24:06 -05:00:  [90m 2 |[39m
+2026-01-08 20:24:06 -05:00: [31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { [33mApplicationLogo[39m } [36mfrom[39m [32m'@web3codex/components'[39m
+2026-01-08 20:24:06 -05:00:  [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+2026-01-08 20:24:06 -05:00:  [90m 4 |[39m
+2026-01-08 20:24:06 -05:00:  [90m 5 |[39m [36mexport[39m [36minterface[39m [33mPageLoaderProps[39m {
+2026-01-08 20:24:06 -05:00:  [90m 6 |[39m   message[33m?[39m[33m:[39m string[0m
+2026-01-08 20:24:06 -05:00: 
+2026-01-08 20:24:06 -05:00: 
+2026-01-08 20:24:06 -05:00: 
+2026-01-08 20:24:06 -05:00: Import traces:
+2026-01-08 20:24:06 -05:00:   Client Component Browser:
+2026-01-08 20:24:06 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component Browser]
+2026-01-08 20:24:06 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component Browser]
+2026-01-08 20:24:06 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:24:06 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:24:06 -05:00: 
+2026-01-08 20:24:06 -05:00:   Client Component SSR:
+2026-01-08 20:24:06 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component SSR]
+2026-01-08 20:24:06 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component SSR]
+2026-01-08 20:24:06 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:24:06 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:24:06 -05:00: 
+2026-01-08 20:24:06 -05:00: https://nextjs.org/docs/messages/module-not-found
+2026-01-08 20:24:06 -05:00: 
+2026-01-08 20:24:06 -05:00: 
+2026-01-08 20:24:06 -05:00:  ⨯ ./src/app/globals.css:2277:8
+2026-01-08 20:24:06 -05:00: Parsing CSS source code failed
+2026-01-08 20:24:06 -05:00: [0m [90m 2275 |[39m   }
+2026-01-08 20:24:06 -05:00:  [90m 2276 |[39m }
+2026-01-08 20:24:06 -05:00: [31m[1m>[22m[39m[90m 2277 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/core-design-system.css"[39m)[33m;[39m
+2026-01-08 20:24:06 -05:00:  [90m      |[39m        [31m[1m^[22m[39m
+2026-01-08 20:24:06 -05:00:  [90m 2278 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/odometer.css"[39m)[33m;[39m
+2026-01-08 20:24:06 -05:00:  [90m 2279 |[39m [33m*[39m {
+2026-01-08 20:24:06 -05:00:  [90m 2280 |[39m   font[33m-[39mfamily[33m:[39m [32m'Inter'[39m[33m,[39m system[33m-[39mui[33m,[39m [33m-[39mapple[33m-[39msystem[33m,[39m sans[33m-[39mserif[33m;[39m[0m
+2026-01-08 20:24:06 -05:00: 
+2026-01-08 20:24:06 -05:00: @import rules must precede all rules aside from @charset and @layer statements
+2026-01-08 20:24:06 -05:00: 
+2026-01-08 20:24:06 -05:00: Import trace:
+2026-01-08 20:24:06 -05:00:   Client Component Browser:
+2026-01-08 20:24:06 -05:00:     ./src/app/globals.css [Client Component Browser]
+2026-01-08 20:24:06 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:24:06 -05:00: 
+2026-01-08 20:24:06 -05:00: 
+2026-01-08 20:24:06 -05:00: 
+2026-01-08 20:24:06 -05:00: ./src/components/widgets/ui/PageLoader.tsx:3:1
+2026-01-08 20:24:06 -05:00: Module not found: Can't resolve '@web3codex/components'
+2026-01-08 20:24:06 -05:00: [0m [90m 1 |[39m [32m'use client'[39m
+2026-01-08 20:24:06 -05:00:  [90m 2 |[39m
+2026-01-08 20:24:06 -05:00: [31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { [33mApplicationLogo[39m } [36mfrom[39m [32m'@web3codex/components'[39m
+2026-01-08 20:24:06 -05:00:  [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+2026-01-08 20:24:06 -05:00:  [90m 4 |[39m
+2026-01-08 20:24:06 -05:00:  [90m 5 |[39m [36mexport[39m [36minterface[39m [33mPageLoaderProps[39m {
+2026-01-08 20:24:06 -05:00:  [90m 6 |[39m   message[33m?[39m[33m:[39m string[0m
+2026-01-08 20:24:06 -05:00: 
+2026-01-08 20:24:06 -05:00: 
+2026-01-08 20:24:06 -05:00: 
+2026-01-08 20:24:06 -05:00: Import traces:
+2026-01-08 20:24:06 -05:00:   Client Component Browser:
+2026-01-08 20:24:06 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component Browser]
+2026-01-08 20:24:06 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component Browser]
+2026-01-08 20:24:06 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:24:06 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:24:06 -05:00: 
+2026-01-08 20:24:06 -05:00:   Client Component SSR:
+2026-01-08 20:24:06 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component SSR]
+2026-01-08 20:24:06 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component SSR]
+2026-01-08 20:24:06 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:24:06 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:24:06 -05:00: 
+2026-01-08 20:24:06 -05:00: https://nextjs.org/docs/messages/module-not-found
+2026-01-08 20:24:06 -05:00: 
+2026-01-08 20:24:06 -05:00: 
+2026-01-08 20:24:19 -05:00:  ⨯ ./src/app/globals.css:2277:8
+2026-01-08 20:24:19 -05:00: Parsing CSS source code failed
+2026-01-08 20:24:19 -05:00: [0m [90m 2275 |[39m   }
+2026-01-08 20:24:19 -05:00:  [90m 2276 |[39m }
+2026-01-08 20:24:19 -05:00: [31m[1m>[22m[39m[90m 2277 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/core-design-system.css"[39m)[33m;[39m
+2026-01-08 20:24:19 -05:00:  [90m      |[39m        [31m[1m^[22m[39m
+2026-01-08 20:24:19 -05:00:  [90m 2278 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/odometer.css"[39m)[33m;[39m
+2026-01-08 20:24:19 -05:00:  [90m 2279 |[39m [33m*[39m {
+2026-01-08 20:24:19 -05:00:  [90m 2280 |[39m   font[33m-[39mfamily[33m:[39m [32m'Inter'[39m[33m,[39m system[33m-[39mui[33m,[39m [33m-[39mapple[33m-[39msystem[33m,[39m sans[33m-[39mserif[33m;[39m[0m
+2026-01-08 20:24:19 -05:00: 
+2026-01-08 20:24:19 -05:00: @import rules must precede all rules aside from @charset and @layer statements
+2026-01-08 20:24:19 -05:00: 
+2026-01-08 20:24:19 -05:00: Import trace:
+2026-01-08 20:24:19 -05:00:   Client Component Browser:
+2026-01-08 20:24:19 -05:00:     ./src/app/globals.css [Client Component Browser]
+2026-01-08 20:24:19 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:24:19 -05:00: 
+2026-01-08 20:24:19 -05:00: 
+2026-01-08 20:24:19 -05:00: 
+2026-01-08 20:24:19 -05:00: ./src/components/widgets/ui/PageLoader.tsx:3:1
+2026-01-08 20:24:19 -05:00: Module not found: Can't resolve '@web3codex/components'
+2026-01-08 20:24:19 -05:00: [0m [90m 1 |[39m [32m'use client'[39m
+2026-01-08 20:24:19 -05:00:  [90m 2 |[39m
+2026-01-08 20:24:19 -05:00: [31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { [33mApplicationLogo[39m } [36mfrom[39m [32m'@web3codex/components'[39m
+2026-01-08 20:24:19 -05:00:  [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+2026-01-08 20:24:19 -05:00:  [90m 4 |[39m
+2026-01-08 20:24:19 -05:00:  [90m 5 |[39m [36mexport[39m [36minterface[39m [33mPageLoaderProps[39m {
+2026-01-08 20:24:19 -05:00:  [90m 6 |[39m   message[33m?[39m[33m:[39m string[0m
+2026-01-08 20:24:19 -05:00: 
+2026-01-08 20:24:19 -05:00: 
+2026-01-08 20:24:19 -05:00: 
+2026-01-08 20:24:19 -05:00: Import traces:
+2026-01-08 20:24:19 -05:00:   Client Component Browser:
+2026-01-08 20:24:19 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component Browser]
+2026-01-08 20:24:19 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component Browser]
+2026-01-08 20:24:19 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:24:19 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:24:19 -05:00: 
+2026-01-08 20:24:19 -05:00:   Client Component SSR:
+2026-01-08 20:24:19 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component SSR]
+2026-01-08 20:24:19 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component SSR]
+2026-01-08 20:24:19 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:24:19 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:24:19 -05:00: 
+2026-01-08 20:24:19 -05:00: https://nextjs.org/docs/messages/module-not-found
+2026-01-08 20:24:19 -05:00: 
+2026-01-08 20:24:19 -05:00: 
+2026-01-08 20:24:48 -05:00:  ⚠ Webpack is configured while Turbopack is not, which may cause problems.
+2026-01-08 20:24:48 -05:00:  ⚠ See instructions if you need to configure Turbopack:
+2026-01-08 20:24:48 -05:00:   https://nextjs.org/docs/app/api-reference/next-config-js/turbopack
+2026-01-08 20:24:48 -05:00: 
+2026-01-08 20:24:52 -05:00:  ⨯ ./src/app/globals.css:2277:8
+2026-01-08 20:24:52 -05:00: Parsing CSS source code failed
+2026-01-08 20:24:52 -05:00: [0m [90m 2275 |[39m   }
+2026-01-08 20:24:52 -05:00:  [90m 2276 |[39m }
+2026-01-08 20:24:52 -05:00: [31m[1m>[22m[39m[90m 2277 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/core-design-system.css"[39m)[33m;[39m
+2026-01-08 20:24:52 -05:00:  [90m      |[39m        [31m[1m^[22m[39m
+2026-01-08 20:24:52 -05:00:  [90m 2278 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/odometer.css"[39m)[33m;[39m
+2026-01-08 20:24:52 -05:00:  [90m 2279 |[39m [33m*[39m {
+2026-01-08 20:24:52 -05:00:  [90m 2280 |[39m   font[33m-[39mfamily[33m:[39m [32m'Inter'[39m[33m,[39m system[33m-[39mui[33m,[39m [33m-[39mapple[33m-[39msystem[33m,[39m sans[33m-[39mserif[33m;[39m[0m
+2026-01-08 20:24:52 -05:00: 
+2026-01-08 20:24:52 -05:00: @import rules must precede all rules aside from @charset and @layer statements
+2026-01-08 20:24:52 -05:00: 
+2026-01-08 20:24:52 -05:00: Import trace:
+2026-01-08 20:24:52 -05:00:   Client Component Browser:
+2026-01-08 20:24:52 -05:00:     ./src/app/globals.css [Client Component Browser]
+2026-01-08 20:24:52 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:24:52 -05:00: 
+2026-01-08 20:24:52 -05:00: 
+2026-01-08 20:24:52 -05:00: 
+2026-01-08 20:24:52 -05:00: ./src/components/widgets/ui/PageLoader.tsx:3:1
+2026-01-08 20:24:52 -05:00: Module not found: Can't resolve '@web3codex/components'
+2026-01-08 20:24:52 -05:00: [0m [90m 1 |[39m [32m'use client'[39m
+2026-01-08 20:24:52 -05:00:  [90m 2 |[39m
+2026-01-08 20:24:52 -05:00: [31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { [33mApplicationLogo[39m } [36mfrom[39m [32m'@web3codex/components'[39m
+2026-01-08 20:24:52 -05:00:  [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+2026-01-08 20:24:52 -05:00:  [90m 4 |[39m
+2026-01-08 20:24:52 -05:00:  [90m 5 |[39m [36mexport[39m [36minterface[39m [33mPageLoaderProps[39m {
+2026-01-08 20:24:52 -05:00:  [90m 6 |[39m   message[33m?[39m[33m:[39m string[0m
+2026-01-08 20:24:52 -05:00: 
+2026-01-08 20:24:52 -05:00: 
+2026-01-08 20:24:52 -05:00: 
+2026-01-08 20:24:52 -05:00: Import traces:
+2026-01-08 20:24:52 -05:00:   Client Component Browser:
+2026-01-08 20:24:52 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component Browser]
+2026-01-08 20:24:52 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component Browser]
+2026-01-08 20:24:52 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:24:52 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:24:52 -05:00: 
+2026-01-08 20:24:52 -05:00:   Client Component SSR:
+2026-01-08 20:24:52 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component SSR]
+2026-01-08 20:24:52 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component SSR]
+2026-01-08 20:24:52 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:24:52 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:24:52 -05:00: 
+2026-01-08 20:24:52 -05:00: https://nextjs.org/docs/messages/module-not-found
+2026-01-08 20:24:52 -05:00: 
+2026-01-08 20:24:52 -05:00: 
+2026-01-08 20:24:52 -05:00:  ⨯ ./src/app/globals.css:2277:8
+2026-01-08 20:24:52 -05:00: Parsing CSS source code failed
+2026-01-08 20:24:52 -05:00: [0m [90m 2275 |[39m   }
+2026-01-08 20:24:52 -05:00:  [90m 2276 |[39m }
+2026-01-08 20:24:52 -05:00: [31m[1m>[22m[39m[90m 2277 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/core-design-system.css"[39m)[33m;[39m
+2026-01-08 20:24:52 -05:00:  [90m      |[39m        [31m[1m^[22m[39m
+2026-01-08 20:24:52 -05:00:  [90m 2278 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/odometer.css"[39m)[33m;[39m
+2026-01-08 20:24:52 -05:00:  [90m 2279 |[39m [33m*[39m {
+2026-01-08 20:24:52 -05:00:  [90m 2280 |[39m   font[33m-[39mfamily[33m:[39m [32m'Inter'[39m[33m,[39m system[33m-[39mui[33m,[39m [33m-[39mapple[33m-[39msystem[33m,[39m sans[33m-[39mserif[33m;[39m[0m
+2026-01-08 20:24:52 -05:00: 
+2026-01-08 20:24:52 -05:00: @import rules must precede all rules aside from @charset and @layer statements
+2026-01-08 20:24:52 -05:00: 
+2026-01-08 20:24:52 -05:00: Import trace:
+2026-01-08 20:24:52 -05:00:   Client Component Browser:
+2026-01-08 20:24:52 -05:00:     ./src/app/globals.css [Client Component Browser]
+2026-01-08 20:24:52 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:24:52 -05:00: 
+2026-01-08 20:24:52 -05:00: 
+2026-01-08 20:24:52 -05:00: 
+2026-01-08 20:24:52 -05:00: ./src/components/widgets/ui/PageLoader.tsx:3:1
+2026-01-08 20:24:52 -05:00: Module not found: Can't resolve '@web3codex/components'
+2026-01-08 20:24:52 -05:00: [0m [90m 1 |[39m [32m'use client'[39m
+2026-01-08 20:24:52 -05:00:  [90m 2 |[39m
+2026-01-08 20:24:52 -05:00: [31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { [33mApplicationLogo[39m } [36mfrom[39m [32m'@web3codex/components'[39m
+2026-01-08 20:24:52 -05:00:  [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+2026-01-08 20:24:52 -05:00:  [90m 4 |[39m
+2026-01-08 20:24:52 -05:00:  [90m 5 |[39m [36mexport[39m [36minterface[39m [33mPageLoaderProps[39m {
+2026-01-08 20:24:52 -05:00:  [90m 6 |[39m   message[33m?[39m[33m:[39m string[0m
+2026-01-08 20:24:52 -05:00: 
+2026-01-08 20:24:52 -05:00: 
+2026-01-08 20:24:52 -05:00: 
+2026-01-08 20:24:52 -05:00: Import traces:
+2026-01-08 20:24:52 -05:00:   Client Component Browser:
+2026-01-08 20:24:52 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component Browser]
+2026-01-08 20:24:52 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component Browser]
+2026-01-08 20:24:52 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:24:52 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:24:52 -05:00: 
+2026-01-08 20:24:52 -05:00:   Client Component SSR:
+2026-01-08 20:24:52 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component SSR]
+2026-01-08 20:24:52 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component SSR]
+2026-01-08 20:24:52 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:24:52 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:24:52 -05:00: 
+2026-01-08 20:24:52 -05:00: https://nextjs.org/docs/messages/module-not-found
+2026-01-08 20:24:52 -05:00: 
+2026-01-08 20:24:52 -05:00: 
+2026-01-08 20:24:52 -05:00:  ⨯ ./src/app/globals.css:2277:8
+2026-01-08 20:24:52 -05:00: Parsing CSS source code failed
+2026-01-08 20:24:52 -05:00: [0m [90m 2275 |[39m   }
+2026-01-08 20:24:52 -05:00:  [90m 2276 |[39m }
+2026-01-08 20:24:52 -05:00: [31m[1m>[22m[39m[90m 2277 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/core-design-system.css"[39m)[33m;[39m
+2026-01-08 20:24:52 -05:00:  [90m      |[39m        [31m[1m^[22m[39m
+2026-01-08 20:24:52 -05:00:  [90m 2278 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/odometer.css"[39m)[33m;[39m
+2026-01-08 20:24:52 -05:00:  [90m 2279 |[39m [33m*[39m {
+2026-01-08 20:24:52 -05:00:  [90m 2280 |[39m   font[33m-[39mfamily[33m:[39m [32m'Inter'[39m[33m,[39m system[33m-[39mui[33m,[39m [33m-[39mapple[33m-[39msystem[33m,[39m sans[33m-[39mserif[33m;[39m[0m
+2026-01-08 20:24:52 -05:00: 
+2026-01-08 20:24:52 -05:00: @import rules must precede all rules aside from @charset and @layer statements
+2026-01-08 20:24:52 -05:00: 
+2026-01-08 20:24:52 -05:00: Import trace:
+2026-01-08 20:24:52 -05:00:   Client Component Browser:
+2026-01-08 20:24:52 -05:00:     ./src/app/globals.css [Client Component Browser]
+2026-01-08 20:24:52 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:24:52 -05:00: 
+2026-01-08 20:24:52 -05:00: 
+2026-01-08 20:24:52 -05:00: 
+2026-01-08 20:24:52 -05:00: ./src/components/widgets/ui/PageLoader.tsx:3:1
+2026-01-08 20:24:52 -05:00: Module not found: Can't resolve '@web3codex/components'
+2026-01-08 20:24:52 -05:00: [0m [90m 1 |[39m [32m'use client'[39m
+2026-01-08 20:24:52 -05:00:  [90m 2 |[39m
+2026-01-08 20:24:52 -05:00: [31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { [33mApplicationLogo[39m } [36mfrom[39m [32m'@web3codex/components'[39m
+2026-01-08 20:24:52 -05:00:  [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+2026-01-08 20:24:52 -05:00:  [90m 4 |[39m
+2026-01-08 20:24:52 -05:00:  [90m 5 |[39m [36mexport[39m [36minterface[39m [33mPageLoaderProps[39m {
+2026-01-08 20:24:52 -05:00:  [90m 6 |[39m   message[33m?[39m[33m:[39m string[0m
+2026-01-08 20:24:52 -05:00: 
+2026-01-08 20:24:52 -05:00: 
+2026-01-08 20:24:52 -05:00: 
+2026-01-08 20:24:52 -05:00: Import traces:
+2026-01-08 20:24:52 -05:00:   Client Component Browser:
+2026-01-08 20:24:52 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component Browser]
+2026-01-08 20:24:52 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component Browser]
+2026-01-08 20:24:52 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:24:52 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:24:52 -05:00: 
+2026-01-08 20:24:52 -05:00:   Client Component SSR:
+2026-01-08 20:24:52 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component SSR]
+2026-01-08 20:24:52 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component SSR]
+2026-01-08 20:24:52 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:24:52 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:24:52 -05:00: 
+2026-01-08 20:24:52 -05:00: https://nextjs.org/docs/messages/module-not-found
+2026-01-08 20:24:52 -05:00: 
+2026-01-08 20:24:52 -05:00: 
+2026-01-08 20:25:28 -05:00:  ⨯ ./src/components/widgets/ui/PageLoader.tsx:3:1
+2026-01-08 20:25:28 -05:00: Module not found: Can't resolve 'web3codex-components'
+2026-01-08 20:25:28 -05:00: [0m [90m 1 |[39m [32m'use client'[39m
+2026-01-08 20:25:28 -05:00:  [90m 2 |[39m
+2026-01-08 20:25:28 -05:00: [31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { [33mApplicationLogo[39m } [36mfrom[39m [32m'web3codex-components'[39m
+2026-01-08 20:25:28 -05:00:  [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+2026-01-08 20:25:28 -05:00:  [90m 4 |[39m
+2026-01-08 20:25:28 -05:00:  [90m 5 |[39m [36mexport[39m [36minterface[39m [33mPageLoaderProps[39m {
+2026-01-08 20:25:28 -05:00:  [90m 6 |[39m   message[33m?[39m[33m:[39m string[0m
+2026-01-08 20:25:28 -05:00: 
+2026-01-08 20:25:28 -05:00: 
+2026-01-08 20:25:28 -05:00: 
+2026-01-08 20:25:28 -05:00: Import traces:
+2026-01-08 20:25:28 -05:00:   Client Component Browser:
+2026-01-08 20:25:28 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component Browser]
+2026-01-08 20:25:28 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component Browser]
+2026-01-08 20:25:28 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:25:28 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:25:28 -05:00: 
+2026-01-08 20:25:28 -05:00:   Client Component SSR:
+2026-01-08 20:25:28 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component SSR]
+2026-01-08 20:25:28 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component SSR]
+2026-01-08 20:25:28 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:25:28 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:25:28 -05:00: 
+2026-01-08 20:25:28 -05:00: https://nextjs.org/docs/messages/module-not-found
+2026-01-08 20:25:28 -05:00: 
+2026-01-08 20:25:28 -05:00: 
+2026-01-08 20:25:28 -05:00:  ⨯ ./src/components/widgets/ui/PageLoader.tsx:3:1
+2026-01-08 20:25:28 -05:00: Module not found: Can't resolve 'web3codex-components'
+2026-01-08 20:25:28 -05:00: [0m [90m 1 |[39m [32m'use client'[39m
+2026-01-08 20:25:28 -05:00:  [90m 2 |[39m
+2026-01-08 20:25:28 -05:00: [31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { [33mApplicationLogo[39m } [36mfrom[39m [32m'web3codex-components'[39m
+2026-01-08 20:25:28 -05:00:  [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+2026-01-08 20:25:28 -05:00:  [90m 4 |[39m
+2026-01-08 20:25:28 -05:00:  [90m 5 |[39m [36mexport[39m [36minterface[39m [33mPageLoaderProps[39m {
+2026-01-08 20:25:28 -05:00:  [90m 6 |[39m   message[33m?[39m[33m:[39m string[0m
+2026-01-08 20:25:28 -05:00: 
+2026-01-08 20:25:28 -05:00: 
+2026-01-08 20:25:28 -05:00: 
+2026-01-08 20:25:28 -05:00: Import traces:
+2026-01-08 20:25:28 -05:00:   Client Component Browser:
+2026-01-08 20:25:28 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component Browser]
+2026-01-08 20:25:28 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component Browser]
+2026-01-08 20:25:28 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:25:28 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:25:28 -05:00: 
+2026-01-08 20:25:28 -05:00:   Client Component SSR:
+2026-01-08 20:25:28 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component SSR]
+2026-01-08 20:25:28 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component SSR]
+2026-01-08 20:25:28 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:25:28 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:25:28 -05:00: 
+2026-01-08 20:25:28 -05:00: https://nextjs.org/docs/messages/module-not-found
+2026-01-08 20:25:28 -05:00: 
+2026-01-08 20:25:28 -05:00: 
+2026-01-08 20:25:28 -05:00:  ⨯ ./src/components/widgets/ui/PageLoader.tsx:3:1
+2026-01-08 20:25:28 -05:00: Module not found: Can't resolve 'web3codex-components'
+2026-01-08 20:25:28 -05:00: [0m [90m 1 |[39m [32m'use client'[39m
+2026-01-08 20:25:28 -05:00:  [90m 2 |[39m
+2026-01-08 20:25:28 -05:00: [31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { [33mApplicationLogo[39m } [36mfrom[39m [32m'web3codex-components'[39m
+2026-01-08 20:25:28 -05:00:  [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+2026-01-08 20:25:28 -05:00:  [90m 4 |[39m
+2026-01-08 20:25:28 -05:00:  [90m 5 |[39m [36mexport[39m [36minterface[39m [33mPageLoaderProps[39m {
+2026-01-08 20:25:28 -05:00:  [90m 6 |[39m   message[33m?[39m[33m:[39m string[0m
+2026-01-08 20:25:28 -05:00: 
+2026-01-08 20:25:28 -05:00: 
+2026-01-08 20:25:28 -05:00: 
+2026-01-08 20:25:28 -05:00: Import traces:
+2026-01-08 20:25:28 -05:00:   Client Component Browser:
+2026-01-08 20:25:28 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component Browser]
+2026-01-08 20:25:28 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component Browser]
+2026-01-08 20:25:28 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:25:28 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:25:28 -05:00: 
+2026-01-08 20:25:28 -05:00:   Client Component SSR:
+2026-01-08 20:25:28 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component SSR]
+2026-01-08 20:25:28 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component SSR]
+2026-01-08 20:25:28 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:25:28 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:25:28 -05:00: 
+2026-01-08 20:25:28 -05:00: https://nextjs.org/docs/messages/module-not-found
+2026-01-08 20:25:28 -05:00: 
+2026-01-08 20:25:28 -05:00: 
+2026-01-08 20:25:28 -05:00:  ⨯ ./src/components/widgets/ui/PageLoader.tsx:3:1
+2026-01-08 20:25:28 -05:00: Module not found: Can't resolve 'web3codex-components'
+2026-01-08 20:25:28 -05:00: [0m [90m 1 |[39m [32m'use client'[39m
+2026-01-08 20:25:28 -05:00:  [90m 2 |[39m
+2026-01-08 20:25:28 -05:00: [31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { [33mApplicationLogo[39m } [36mfrom[39m [32m'web3codex-components'[39m
+2026-01-08 20:25:28 -05:00:  [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+2026-01-08 20:25:28 -05:00:  [90m 4 |[39m
+2026-01-08 20:25:28 -05:00:  [90m 5 |[39m [36mexport[39m [36minterface[39m [33mPageLoaderProps[39m {
+2026-01-08 20:25:28 -05:00:  [90m 6 |[39m   message[33m?[39m[33m:[39m string[0m
+2026-01-08 20:25:28 -05:00: 
+2026-01-08 20:25:28 -05:00: 
+2026-01-08 20:25:28 -05:00: 
+2026-01-08 20:25:28 -05:00: Import traces:
+2026-01-08 20:25:28 -05:00:   Client Component Browser:
+2026-01-08 20:25:28 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component Browser]
+2026-01-08 20:25:28 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component Browser]
+2026-01-08 20:25:28 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:25:28 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:25:28 -05:00: 
+2026-01-08 20:25:28 -05:00:   Client Component SSR:
+2026-01-08 20:25:28 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component SSR]
+2026-01-08 20:25:28 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component SSR]
+2026-01-08 20:25:28 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:25:28 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:25:28 -05:00: 
+2026-01-08 20:25:28 -05:00: https://nextjs.org/docs/messages/module-not-found
+2026-01-08 20:25:28 -05:00: 
+2026-01-08 20:25:28 -05:00: 
+2026-01-08 20:25:46 -05:00:  ⨯ ./src/app/globals.css:2277:8
+2026-01-08 20:25:46 -05:00: Parsing CSS source code failed
+2026-01-08 20:25:46 -05:00: [0m [90m 2275 |[39m   }
+2026-01-08 20:25:46 -05:00:  [90m 2276 |[39m }
+2026-01-08 20:25:46 -05:00: [31m[1m>[22m[39m[90m 2277 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/core-design-system.css"[39m)[33m;[39m
+2026-01-08 20:25:46 -05:00:  [90m      |[39m        [31m[1m^[22m[39m
+2026-01-08 20:25:46 -05:00:  [90m 2278 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/odometer.css"[39m)[33m;[39m
+2026-01-08 20:25:46 -05:00:  [90m 2279 |[39m [33m*[39m {
+2026-01-08 20:25:46 -05:00:  [90m 2280 |[39m   font[33m-[39mfamily[33m:[39m [32m'Inter'[39m[33m,[39m system[33m-[39mui[33m,[39m [33m-[39mapple[33m-[39msystem[33m,[39m sans[33m-[39mserif[33m;[39m[0m
+2026-01-08 20:25:46 -05:00: 
+2026-01-08 20:25:46 -05:00: @import rules must precede all rules aside from @charset and @layer statements
+2026-01-08 20:25:46 -05:00: 
+2026-01-08 20:25:46 -05:00: Import trace:
+2026-01-08 20:25:46 -05:00:   Client Component Browser:
+2026-01-08 20:25:46 -05:00:     ./src/app/globals.css [Client Component Browser]
+2026-01-08 20:25:46 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:25:46 -05:00: 
+2026-01-08 20:25:46 -05:00: 
+2026-01-08 20:25:46 -05:00: 
+2026-01-08 20:25:46 -05:00: ./src/components/widgets/ui/PageLoader.tsx:3:1
+2026-01-08 20:25:46 -05:00: Module not found: Can't resolve 'web3codex-components'
+2026-01-08 20:25:46 -05:00: [0m [90m 1 |[39m [32m'use client'[39m
+2026-01-08 20:25:46 -05:00:  [90m 2 |[39m
+2026-01-08 20:25:46 -05:00: [31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { [33mApplicationLogo[39m } [36mfrom[39m [32m'web3codex-components'[39m
+2026-01-08 20:25:46 -05:00:  [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+2026-01-08 20:25:46 -05:00:  [90m 4 |[39m
+2026-01-08 20:25:46 -05:00:  [90m 5 |[39m [36mexport[39m [36minterface[39m [33mPageLoaderProps[39m {
+2026-01-08 20:25:46 -05:00:  [90m 6 |[39m   message[33m?[39m[33m:[39m string[0m
+2026-01-08 20:25:46 -05:00: 
+2026-01-08 20:25:46 -05:00: 
+2026-01-08 20:25:46 -05:00: 
+2026-01-08 20:25:46 -05:00: Import traces:
+2026-01-08 20:25:46 -05:00:   Client Component Browser:
+2026-01-08 20:25:46 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component Browser]
+2026-01-08 20:25:46 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component Browser]
+2026-01-08 20:25:46 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:25:46 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:25:46 -05:00: 
+2026-01-08 20:25:46 -05:00:   Client Component SSR:
+2026-01-08 20:25:46 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component SSR]
+2026-01-08 20:25:46 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component SSR]
+2026-01-08 20:25:46 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:25:46 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:25:46 -05:00: 
+2026-01-08 20:25:46 -05:00: https://nextjs.org/docs/messages/module-not-found
+2026-01-08 20:25:46 -05:00: 
+2026-01-08 20:25:46 -05:00: 
+2026-01-08 20:25:47 -05:00:  ⨯ ./src/app/globals.css:2277:8
+2026-01-08 20:25:47 -05:00: Parsing CSS source code failed
+2026-01-08 20:25:47 -05:00: [0m [90m 2275 |[39m   }
+2026-01-08 20:25:47 -05:00:  [90m 2276 |[39m }
+2026-01-08 20:25:47 -05:00: [31m[1m>[22m[39m[90m 2277 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/core-design-system.css"[39m)[33m;[39m
+2026-01-08 20:25:47 -05:00:  [90m      |[39m        [31m[1m^[22m[39m
+2026-01-08 20:25:47 -05:00:  [90m 2278 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/odometer.css"[39m)[33m;[39m
+2026-01-08 20:25:47 -05:00:  [90m 2279 |[39m [33m*[39m {
+2026-01-08 20:25:47 -05:00:  [90m 2280 |[39m   font[33m-[39mfamily[33m:[39m [32m'Inter'[39m[33m,[39m system[33m-[39mui[33m,[39m [33m-[39mapple[33m-[39msystem[33m,[39m sans[33m-[39mserif[33m;[39m[0m
+2026-01-08 20:25:47 -05:00: 
+2026-01-08 20:25:47 -05:00: @import rules must precede all rules aside from @charset and @layer statements
+2026-01-08 20:25:47 -05:00: 
+2026-01-08 20:25:47 -05:00: Import trace:
+2026-01-08 20:25:47 -05:00:   Client Component Browser:
+2026-01-08 20:25:47 -05:00:     ./src/app/globals.css [Client Component Browser]
+2026-01-08 20:25:47 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:25:47 -05:00: 
+2026-01-08 20:25:47 -05:00: 
+2026-01-08 20:25:47 -05:00: 
+2026-01-08 20:25:47 -05:00: ./src/components/widgets/ui/PageLoader.tsx:3:1
+2026-01-08 20:25:47 -05:00: Module not found: Can't resolve 'web3codex-components'
+2026-01-08 20:25:47 -05:00: [0m [90m 1 |[39m [32m'use client'[39m
+2026-01-08 20:25:47 -05:00:  [90m 2 |[39m
+2026-01-08 20:25:47 -05:00: [31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { [33mApplicationLogo[39m } [36mfrom[39m [32m'web3codex-components'[39m
+2026-01-08 20:25:47 -05:00:  [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+2026-01-08 20:25:47 -05:00:  [90m 4 |[39m
+2026-01-08 20:25:47 -05:00:  [90m 5 |[39m [36mexport[39m [36minterface[39m [33mPageLoaderProps[39m {
+2026-01-08 20:25:47 -05:00:  [90m 6 |[39m   message[33m?[39m[33m:[39m string[0m
+2026-01-08 20:25:47 -05:00: 
+2026-01-08 20:25:47 -05:00: 
+2026-01-08 20:25:47 -05:00: 
+2026-01-08 20:25:47 -05:00: Import traces:
+2026-01-08 20:25:47 -05:00:   Client Component Browser:
+2026-01-08 20:25:47 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component Browser]
+2026-01-08 20:25:47 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component Browser]
+2026-01-08 20:25:47 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:25:47 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:25:47 -05:00: 
+2026-01-08 20:25:47 -05:00:   Client Component SSR:
+2026-01-08 20:25:47 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component SSR]
+2026-01-08 20:25:47 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component SSR]
+2026-01-08 20:25:47 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:25:47 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:25:47 -05:00: 
+2026-01-08 20:25:47 -05:00: https://nextjs.org/docs/messages/module-not-found
+2026-01-08 20:25:47 -05:00: 
+2026-01-08 20:25:47 -05:00: 
+2026-01-08 20:25:52 -05:00:  ⨯ ./src/app/globals.css:2277:8
+2026-01-08 20:25:52 -05:00: Parsing CSS source code failed
+2026-01-08 20:25:52 -05:00: [0m [90m 2275 |[39m   }
+2026-01-08 20:25:52 -05:00:  [90m 2276 |[39m }
+2026-01-08 20:25:52 -05:00: [31m[1m>[22m[39m[90m 2277 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/core-design-system.css"[39m)[33m;[39m
+2026-01-08 20:25:52 -05:00:  [90m      |[39m        [31m[1m^[22m[39m
+2026-01-08 20:25:52 -05:00:  [90m 2278 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/odometer.css"[39m)[33m;[39m
+2026-01-08 20:25:52 -05:00:  [90m 2279 |[39m [33m*[39m {
+2026-01-08 20:25:52 -05:00:  [90m 2280 |[39m   font[33m-[39mfamily[33m:[39m [32m'Inter'[39m[33m,[39m system[33m-[39mui[33m,[39m [33m-[39mapple[33m-[39msystem[33m,[39m sans[33m-[39mserif[33m;[39m[0m
+2026-01-08 20:25:52 -05:00: 
+2026-01-08 20:25:52 -05:00: @import rules must precede all rules aside from @charset and @layer statements
+2026-01-08 20:25:52 -05:00: 
+2026-01-08 20:25:52 -05:00: Import trace:
+2026-01-08 20:25:52 -05:00:   Client Component Browser:
+2026-01-08 20:25:52 -05:00:     ./src/app/globals.css [Client Component Browser]
+2026-01-08 20:25:52 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:25:52 -05:00: 
+2026-01-08 20:25:52 -05:00: 
+2026-01-08 20:25:52 -05:00: 
+2026-01-08 20:25:52 -05:00: ./src/components/widgets/ui/PageLoader.tsx:3:1
+2026-01-08 20:25:52 -05:00: Module not found: Can't resolve 'web3codex-components'
+2026-01-08 20:25:52 -05:00: [0m [90m 1 |[39m [32m'use client'[39m
+2026-01-08 20:25:52 -05:00:  [90m 2 |[39m
+2026-01-08 20:25:52 -05:00: [31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { [33mApplicationLogo[39m } [36mfrom[39m [32m'web3codex-components'[39m
+2026-01-08 20:25:52 -05:00:  [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+2026-01-08 20:25:52 -05:00:  [90m 4 |[39m
+2026-01-08 20:25:52 -05:00:  [90m 5 |[39m [36mexport[39m [36minterface[39m [33mPageLoaderProps[39m {
+2026-01-08 20:25:52 -05:00:  [90m 6 |[39m   message[33m?[39m[33m:[39m string[0m
+2026-01-08 20:25:52 -05:00: 
+2026-01-08 20:25:52 -05:00: 
+2026-01-08 20:25:52 -05:00: 
+2026-01-08 20:25:52 -05:00: Import traces:
+2026-01-08 20:25:52 -05:00:   Client Component Browser:
+2026-01-08 20:25:52 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component Browser]
+2026-01-08 20:25:52 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component Browser]
+2026-01-08 20:25:52 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:25:52 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:25:52 -05:00: 
+2026-01-08 20:25:52 -05:00:   Client Component SSR:
+2026-01-08 20:25:52 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component SSR]
+2026-01-08 20:25:52 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component SSR]
+2026-01-08 20:25:52 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:25:52 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:25:52 -05:00: 
+2026-01-08 20:25:52 -05:00: https://nextjs.org/docs/messages/module-not-found
+2026-01-08 20:25:52 -05:00: 
+2026-01-08 20:25:52 -05:00: 
+2026-01-08 20:25:55 -05:00:  ⨯ ./src/app/globals.css:2277:8
+2026-01-08 20:25:55 -05:00: Parsing CSS source code failed
+2026-01-08 20:25:55 -05:00: [0m [90m 2275 |[39m   }
+2026-01-08 20:25:55 -05:00:  [90m 2276 |[39m }
+2026-01-08 20:25:55 -05:00: [31m[1m>[22m[39m[90m 2277 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/core-design-system.css"[39m)[33m;[39m
+2026-01-08 20:25:55 -05:00:  [90m      |[39m        [31m[1m^[22m[39m
+2026-01-08 20:25:55 -05:00:  [90m 2278 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/odometer.css"[39m)[33m;[39m
+2026-01-08 20:25:55 -05:00:  [90m 2279 |[39m [33m*[39m {
+2026-01-08 20:25:55 -05:00:  [90m 2280 |[39m   font[33m-[39mfamily[33m:[39m [32m'Inter'[39m[33m,[39m system[33m-[39mui[33m,[39m [33m-[39mapple[33m-[39msystem[33m,[39m sans[33m-[39mserif[33m;[39m[0m
+2026-01-08 20:25:55 -05:00: 
+2026-01-08 20:25:55 -05:00: @import rules must precede all rules aside from @charset and @layer statements
+2026-01-08 20:25:55 -05:00: 
+2026-01-08 20:25:55 -05:00: Import trace:
+2026-01-08 20:25:55 -05:00:   Client Component Browser:
+2026-01-08 20:25:55 -05:00:     ./src/app/globals.css [Client Component Browser]
+2026-01-08 20:25:55 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:25:55 -05:00: 
+2026-01-08 20:25:55 -05:00: 
+2026-01-08 20:25:55 -05:00: 
+2026-01-08 20:25:55 -05:00: ./src/components/widgets/ui/PageLoader.tsx:3:1
+2026-01-08 20:25:55 -05:00: Module not found: Can't resolve 'web3codex-components'
+2026-01-08 20:25:55 -05:00: [0m [90m 1 |[39m [32m'use client'[39m
+2026-01-08 20:25:55 -05:00:  [90m 2 |[39m
+2026-01-08 20:25:55 -05:00: [31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { [33mApplicationLogo[39m } [36mfrom[39m [32m'web3codex-components'[39m
+2026-01-08 20:25:55 -05:00:  [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+2026-01-08 20:25:55 -05:00:  [90m 4 |[39m
+2026-01-08 20:25:55 -05:00:  [90m 5 |[39m [36mexport[39m [36minterface[39m [33mPageLoaderProps[39m {
+2026-01-08 20:25:55 -05:00:  [90m 6 |[39m   message[33m?[39m[33m:[39m string[0m
+2026-01-08 20:25:55 -05:00: 
+2026-01-08 20:25:55 -05:00: 
+2026-01-08 20:25:55 -05:00: 
+2026-01-08 20:25:55 -05:00: Import traces:
+2026-01-08 20:25:55 -05:00:   Client Component Browser:
+2026-01-08 20:25:55 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component Browser]
+2026-01-08 20:25:55 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component Browser]
+2026-01-08 20:25:55 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:25:55 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:25:55 -05:00: 
+2026-01-08 20:25:55 -05:00:   Client Component SSR:
+2026-01-08 20:25:55 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component SSR]
+2026-01-08 20:25:55 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component SSR]
+2026-01-08 20:25:55 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:25:55 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:25:55 -05:00: 
+2026-01-08 20:25:55 -05:00: https://nextjs.org/docs/messages/module-not-found
+2026-01-08 20:25:55 -05:00: 
+2026-01-08 20:25:55 -05:00: 
+2026-01-08 20:28:19 -05:00:  ⨯ ./src/app/globals.css:2277:8
+2026-01-08 20:28:19 -05:00: Parsing CSS source code failed
+2026-01-08 20:28:19 -05:00: [0m [90m 2275 |[39m   }
+2026-01-08 20:28:19 -05:00:  [90m 2276 |[39m }
+2026-01-08 20:28:19 -05:00: [31m[1m>[22m[39m[90m 2277 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/core-design-system.css"[39m)[33m;[39m
+2026-01-08 20:28:19 -05:00:  [90m      |[39m        [31m[1m^[22m[39m
+2026-01-08 20:28:19 -05:00:  [90m 2278 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/odometer.css"[39m)[33m;[39m
+2026-01-08 20:28:19 -05:00:  [90m 2279 |[39m [33m*[39m {
+2026-01-08 20:28:19 -05:00:  [90m 2280 |[39m   font[33m-[39mfamily[33m:[39m [32m'Inter'[39m[33m,[39m system[33m-[39mui[33m,[39m [33m-[39mapple[33m-[39msystem[33m,[39m sans[33m-[39mserif[33m;[39m[0m
+2026-01-08 20:28:19 -05:00: 
+2026-01-08 20:28:19 -05:00: @import rules must precede all rules aside from @charset and @layer statements
+2026-01-08 20:28:19 -05:00: 
+2026-01-08 20:28:19 -05:00: Import trace:
+2026-01-08 20:28:19 -05:00:   Client Component Browser:
+2026-01-08 20:28:19 -05:00:     ./src/app/globals.css [Client Component Browser]
+2026-01-08 20:28:19 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:28:19 -05:00: 
+2026-01-08 20:28:19 -05:00: 
+2026-01-08 20:28:19 -05:00: 
+2026-01-08 20:28:19 -05:00: ./src/components/widgets/ui/PageLoader.tsx:3:1
+2026-01-08 20:28:19 -05:00: Module not found: Can't resolve 'web3codex-components'
+2026-01-08 20:28:19 -05:00: [0m [90m 1 |[39m [32m'use client'[39m
+2026-01-08 20:28:19 -05:00:  [90m 2 |[39m
+2026-01-08 20:28:19 -05:00: [31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { [33mApplicationLogo[39m } [36mfrom[39m [32m'web3codex-components'[39m
+2026-01-08 20:28:19 -05:00:  [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+2026-01-08 20:28:19 -05:00:  [90m 4 |[39m
+2026-01-08 20:28:19 -05:00:  [90m 5 |[39m [36mexport[39m [36minterface[39m [33mPageLoaderProps[39m {
+2026-01-08 20:28:19 -05:00:  [90m 6 |[39m   message[33m?[39m[33m:[39m string[0m
+2026-01-08 20:28:19 -05:00: 
+2026-01-08 20:28:19 -05:00: 
+2026-01-08 20:28:19 -05:00: 
+2026-01-08 20:28:19 -05:00: Import traces:
+2026-01-08 20:28:19 -05:00:   Client Component Browser:
+2026-01-08 20:28:19 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component Browser]
+2026-01-08 20:28:19 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component Browser]
+2026-01-08 20:28:19 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:28:19 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:28:19 -05:00: 
+2026-01-08 20:28:19 -05:00:   Client Component SSR:
+2026-01-08 20:28:19 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component SSR]
+2026-01-08 20:28:19 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component SSR]
+2026-01-08 20:28:19 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:28:19 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:28:19 -05:00: 
+2026-01-08 20:28:19 -05:00: https://nextjs.org/docs/messages/module-not-found
+2026-01-08 20:28:19 -05:00: 
+2026-01-08 20:28:19 -05:00: 
+2026-01-08 20:29:13 -05:00:  ⨯ ./src/app/globals.css:2277:8
+2026-01-08 20:29:13 -05:00: Parsing CSS source code failed
+2026-01-08 20:29:13 -05:00: [0m [90m 2275 |[39m   }
+2026-01-08 20:29:13 -05:00:  [90m 2276 |[39m }
+2026-01-08 20:29:13 -05:00: [31m[1m>[22m[39m[90m 2277 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/core-design-system.css"[39m)[33m;[39m
+2026-01-08 20:29:13 -05:00:  [90m      |[39m        [31m[1m^[22m[39m
+2026-01-08 20:29:13 -05:00:  [90m 2278 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/odometer.css"[39m)[33m;[39m
+2026-01-08 20:29:13 -05:00:  [90m 2279 |[39m [33m*[39m {
+2026-01-08 20:29:13 -05:00:  [90m 2280 |[39m   font[33m-[39mfamily[33m:[39m [32m'Inter'[39m[33m,[39m system[33m-[39mui[33m,[39m [33m-[39mapple[33m-[39msystem[33m,[39m sans[33m-[39mserif[33m;[39m[0m
+2026-01-08 20:29:13 -05:00: 
+2026-01-08 20:29:13 -05:00: @import rules must precede all rules aside from @charset and @layer statements
+2026-01-08 20:29:13 -05:00: 
+2026-01-08 20:29:13 -05:00: Import trace:
+2026-01-08 20:29:13 -05:00:   Client Component Browser:
+2026-01-08 20:29:13 -05:00:     ./src/app/globals.css [Client Component Browser]
+2026-01-08 20:29:13 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:29:13 -05:00: 
+2026-01-08 20:29:13 -05:00: 
+2026-01-08 20:29:13 -05:00: 
+2026-01-08 20:29:13 -05:00: ./src/components/widgets/ui/PageLoader.tsx:3:1
+2026-01-08 20:29:13 -05:00: Module not found: Can't resolve 'web3codex-components'
+2026-01-08 20:29:13 -05:00: [0m [90m 1 |[39m [32m'use client'[39m
+2026-01-08 20:29:13 -05:00:  [90m 2 |[39m
+2026-01-08 20:29:13 -05:00: [31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { [33mApplicationLogo[39m } [36mfrom[39m [32m'web3codex-components'[39m
+2026-01-08 20:29:13 -05:00:  [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+2026-01-08 20:29:13 -05:00:  [90m 4 |[39m
+2026-01-08 20:29:13 -05:00:  [90m 5 |[39m [36mexport[39m [36minterface[39m [33mPageLoaderProps[39m {
+2026-01-08 20:29:13 -05:00:  [90m 6 |[39m   message[33m?[39m[33m:[39m string[0m
+2026-01-08 20:29:13 -05:00: 
+2026-01-08 20:29:13 -05:00: 
+2026-01-08 20:29:13 -05:00: 
+2026-01-08 20:29:13 -05:00: Import traces:
+2026-01-08 20:29:13 -05:00:   Client Component Browser:
+2026-01-08 20:29:13 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component Browser]
+2026-01-08 20:29:13 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component Browser]
+2026-01-08 20:29:13 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:29:13 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:29:13 -05:00: 
+2026-01-08 20:29:13 -05:00:   Client Component SSR:
+2026-01-08 20:29:13 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component SSR]
+2026-01-08 20:29:13 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component SSR]
+2026-01-08 20:29:13 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:29:13 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:29:13 -05:00: 
+2026-01-08 20:29:13 -05:00: https://nextjs.org/docs/messages/module-not-found
+2026-01-08 20:29:13 -05:00: 
+2026-01-08 20:29:13 -05:00: 
+2026-01-08 20:29:26 -05:00:  ⚠ Found a change in next.config.ts. Restarting the server to apply the changes...
+2026-01-08 20:29:29 -05:00:  ⚠ Webpack is configured while Turbopack is not, which may cause problems.
+2026-01-08 20:29:29 -05:00:  ⚠ See instructions if you need to configure Turbopack:
+2026-01-08 20:29:29 -05:00:   https://nextjs.org/docs/app/api-reference/next-config-js/turbopack
+2026-01-08 20:29:29 -05:00: 
+2026-01-08 20:29:38 -05:00:  ⚠ Webpack is configured while Turbopack is not, which may cause problems.
+2026-01-08 20:29:38 -05:00:  ⚠ See instructions if you need to configure Turbopack:
+2026-01-08 20:29:38 -05:00:   https://nextjs.org/docs/app/api-reference/next-config-js/turbopack
+2026-01-08 20:29:38 -05:00: 
+2026-01-08 20:29:44 -05:00:  ⨯ ./src/app/globals.css:2277:8
+2026-01-08 20:29:44 -05:00: Parsing CSS source code failed
+2026-01-08 20:29:44 -05:00: [0m [90m 2275 |[39m   }
+2026-01-08 20:29:44 -05:00:  [90m 2276 |[39m }
+2026-01-08 20:29:44 -05:00: [31m[1m>[22m[39m[90m 2277 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/core-design-system.css"[39m)[33m;[39m
+2026-01-08 20:29:44 -05:00:  [90m      |[39m        [31m[1m^[22m[39m
+2026-01-08 20:29:44 -05:00:  [90m 2278 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/odometer.css"[39m)[33m;[39m
+2026-01-08 20:29:44 -05:00:  [90m 2279 |[39m [33m*[39m {
+2026-01-08 20:29:44 -05:00:  [90m 2280 |[39m   font[33m-[39mfamily[33m:[39m [32m'Inter'[39m[33m,[39m system[33m-[39mui[33m,[39m [33m-[39mapple[33m-[39msystem[33m,[39m sans[33m-[39mserif[33m;[39m[0m
+2026-01-08 20:29:44 -05:00: 
+2026-01-08 20:29:44 -05:00: @import rules must precede all rules aside from @charset and @layer statements
+2026-01-08 20:29:44 -05:00: 
+2026-01-08 20:29:44 -05:00: Import trace:
+2026-01-08 20:29:44 -05:00:   Client Component Browser:
+2026-01-08 20:29:44 -05:00:     ./src/app/globals.css [Client Component Browser]
+2026-01-08 20:29:44 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:29:44 -05:00: 
+2026-01-08 20:29:44 -05:00: 
+2026-01-08 20:29:44 -05:00: 
+2026-01-08 20:29:44 -05:00: ./src/components/widgets/ui/PageLoader.tsx:3:1
+2026-01-08 20:29:44 -05:00: Module not found: Can't resolve 'web3codex-components'
+2026-01-08 20:29:44 -05:00: [0m [90m 1 |[39m [32m'use client'[39m
+2026-01-08 20:29:44 -05:00:  [90m 2 |[39m
+2026-01-08 20:29:44 -05:00: [31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { [33mApplicationLogo[39m } [36mfrom[39m [32m'web3codex-components'[39m
+2026-01-08 20:29:44 -05:00:  [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+2026-01-08 20:29:44 -05:00:  [90m 4 |[39m
+2026-01-08 20:29:44 -05:00:  [90m 5 |[39m [36mexport[39m [36minterface[39m [33mPageLoaderProps[39m {
+2026-01-08 20:29:44 -05:00:  [90m 6 |[39m   message[33m?[39m[33m:[39m string[0m
+2026-01-08 20:29:44 -05:00: 
+2026-01-08 20:29:44 -05:00: 
+2026-01-08 20:29:44 -05:00: 
+2026-01-08 20:29:44 -05:00: Import traces:
+2026-01-08 20:29:44 -05:00:   Client Component Browser:
+2026-01-08 20:29:44 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component Browser]
+2026-01-08 20:29:44 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component Browser]
+2026-01-08 20:29:44 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:29:44 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:29:44 -05:00: 
+2026-01-08 20:29:44 -05:00:   Client Component SSR:
+2026-01-08 20:29:44 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component SSR]
+2026-01-08 20:29:44 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component SSR]
+2026-01-08 20:29:44 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:29:44 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:29:44 -05:00: 
+2026-01-08 20:29:44 -05:00: https://nextjs.org/docs/messages/module-not-found
+2026-01-08 20:29:44 -05:00: 
+2026-01-08 20:29:44 -05:00: 
+2026-01-08 20:29:46 -05:00:  ⚠ Found a change in next.config.ts. Restarting the server to apply the changes...
+2026-01-08 20:29:48 -05:00:  ⚠ Webpack is configured while Turbopack is not, which may cause problems.
+2026-01-08 20:29:48 -05:00:  ⚠ See instructions if you need to configure Turbopack:
+2026-01-08 20:29:48 -05:00:   https://nextjs.org/docs/app/api-reference/next-config-js/turbopack
+2026-01-08 20:29:48 -05:00: 
+2026-01-08 20:30:16 -05:00:  ⨯ ./src/app/globals.css:2277:8
+2026-01-08 20:30:16 -05:00: Parsing CSS source code failed
+2026-01-08 20:30:16 -05:00: [0m [90m 2275 |[39m   }
+2026-01-08 20:30:16 -05:00:  [90m 2276 |[39m }
+2026-01-08 20:30:16 -05:00: [31m[1m>[22m[39m[90m 2277 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/core-design-system.css"[39m)[33m;[39m
+2026-01-08 20:30:16 -05:00:  [90m      |[39m        [31m[1m^[22m[39m
+2026-01-08 20:30:16 -05:00:  [90m 2278 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/odometer.css"[39m)[33m;[39m
+2026-01-08 20:30:16 -05:00:  [90m 2279 |[39m [33m*[39m {
+2026-01-08 20:30:16 -05:00:  [90m 2280 |[39m   font[33m-[39mfamily[33m:[39m [32m'Inter'[39m[33m,[39m system[33m-[39mui[33m,[39m [33m-[39mapple[33m-[39msystem[33m,[39m sans[33m-[39mserif[33m;[39m[0m
+2026-01-08 20:30:16 -05:00: 
+2026-01-08 20:30:16 -05:00: @import rules must precede all rules aside from @charset and @layer statements
+2026-01-08 20:30:16 -05:00: 
+2026-01-08 20:30:16 -05:00: Import trace:
+2026-01-08 20:30:16 -05:00:   Client Component Browser:
+2026-01-08 20:30:16 -05:00:     ./src/app/globals.css [Client Component Browser]
+2026-01-08 20:30:16 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:30:16 -05:00: 
+2026-01-08 20:30:16 -05:00: 
+2026-01-08 20:30:16 -05:00: 
+2026-01-08 20:30:16 -05:00: ./src/components/widgets/ui/PageLoader.tsx:3:1
+2026-01-08 20:30:16 -05:00: Module not found: Can't resolve 'web3codex-components'
+2026-01-08 20:30:16 -05:00: [0m [90m 1 |[39m [32m'use client'[39m
+2026-01-08 20:30:16 -05:00:  [90m 2 |[39m
+2026-01-08 20:30:16 -05:00: [31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { [33mApplicationLogo[39m } [36mfrom[39m [32m'web3codex-components'[39m
+2026-01-08 20:30:16 -05:00:  [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+2026-01-08 20:30:16 -05:00:  [90m 4 |[39m
+2026-01-08 20:30:16 -05:00:  [90m 5 |[39m [36mexport[39m [36minterface[39m [33mPageLoaderProps[39m {
+2026-01-08 20:30:16 -05:00:  [90m 6 |[39m   message[33m?[39m[33m:[39m string[0m
+2026-01-08 20:30:16 -05:00: 
+2026-01-08 20:30:16 -05:00: 
+2026-01-08 20:30:16 -05:00: 
+2026-01-08 20:30:16 -05:00: Import traces:
+2026-01-08 20:30:16 -05:00:   Client Component Browser:
+2026-01-08 20:30:16 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component Browser]
+2026-01-08 20:30:16 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component Browser]
+2026-01-08 20:30:16 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:30:16 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:30:16 -05:00: 
+2026-01-08 20:30:16 -05:00:   Client Component SSR:
+2026-01-08 20:30:16 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component SSR]
+2026-01-08 20:30:16 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component SSR]
+2026-01-08 20:30:16 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:30:16 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:30:16 -05:00: 
+2026-01-08 20:30:16 -05:00: https://nextjs.org/docs/messages/module-not-found
+2026-01-08 20:30:16 -05:00: 
+2026-01-08 20:30:16 -05:00: 
+2026-01-08 20:30:53 -05:00:  ⨯ ./src/app/globals.css:2277:8
+2026-01-08 20:30:53 -05:00: Parsing CSS source code failed
+2026-01-08 20:30:53 -05:00: [0m [90m 2275 |[39m   }
+2026-01-08 20:30:53 -05:00:  [90m 2276 |[39m }
+2026-01-08 20:30:53 -05:00: [31m[1m>[22m[39m[90m 2277 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/core-design-system.css"[39m)[33m;[39m
+2026-01-08 20:30:53 -05:00:  [90m      |[39m        [31m[1m^[22m[39m
+2026-01-08 20:30:53 -05:00:  [90m 2278 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/odometer.css"[39m)[33m;[39m
+2026-01-08 20:30:53 -05:00:  [90m 2279 |[39m [33m*[39m {
+2026-01-08 20:30:53 -05:00:  [90m 2280 |[39m   font[33m-[39mfamily[33m:[39m [32m'Inter'[39m[33m,[39m system[33m-[39mui[33m,[39m [33m-[39mapple[33m-[39msystem[33m,[39m sans[33m-[39mserif[33m;[39m[0m
+2026-01-08 20:30:53 -05:00: 
+2026-01-08 20:30:53 -05:00: @import rules must precede all rules aside from @charset and @layer statements
+2026-01-08 20:30:53 -05:00: 
+2026-01-08 20:30:53 -05:00: Import trace:
+2026-01-08 20:30:53 -05:00:   Client Component Browser:
+2026-01-08 20:30:53 -05:00:     ./src/app/globals.css [Client Component Browser]
+2026-01-08 20:30:53 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:30:53 -05:00: 
+2026-01-08 20:30:53 -05:00: 
+2026-01-08 20:30:53 -05:00: 
+2026-01-08 20:30:53 -05:00: ./src/components/widgets/ui/PageLoader.tsx:3:1
+2026-01-08 20:30:53 -05:00: Module not found: Can't resolve 'web3codex-components'
+2026-01-08 20:30:53 -05:00: [0m [90m 1 |[39m [32m'use client'[39m
+2026-01-08 20:30:53 -05:00:  [90m 2 |[39m
+2026-01-08 20:30:53 -05:00: [31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { [33mApplicationLogo[39m } [36mfrom[39m [32m'web3codex-components'[39m
+2026-01-08 20:30:53 -05:00:  [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+2026-01-08 20:30:53 -05:00:  [90m 4 |[39m
+2026-01-08 20:30:53 -05:00:  [90m 5 |[39m [36mexport[39m [36minterface[39m [33mPageLoaderProps[39m {
+2026-01-08 20:30:53 -05:00:  [90m 6 |[39m   message[33m?[39m[33m:[39m string[0m
+2026-01-08 20:30:53 -05:00: 
+2026-01-08 20:30:53 -05:00: 
+2026-01-08 20:30:53 -05:00: 
+2026-01-08 20:30:53 -05:00: Import traces:
+2026-01-08 20:30:53 -05:00:   Client Component Browser:
+2026-01-08 20:30:53 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component Browser]
+2026-01-08 20:30:53 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component Browser]
+2026-01-08 20:30:53 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:30:53 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:30:53 -05:00: 
+2026-01-08 20:30:53 -05:00:   Client Component SSR:
+2026-01-08 20:30:53 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component SSR]
+2026-01-08 20:30:53 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component SSR]
+2026-01-08 20:30:53 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:30:53 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:30:53 -05:00: 
+2026-01-08 20:30:53 -05:00: https://nextjs.org/docs/messages/module-not-found
+2026-01-08 20:30:53 -05:00: 
+2026-01-08 20:30:53 -05:00: 
+2026-01-08 20:32:02 -05:00:  ⨯ ./src/components/widgets/ui/PageLoader.tsx:3:1
+2026-01-08 20:32:02 -05:00: Module not found: Can't resolve '@web3codex/components'
+2026-01-08 20:32:02 -05:00: [0m [90m 1 |[39m [32m'use client'[39m
+2026-01-08 20:32:02 -05:00:  [90m 2 |[39m
+2026-01-08 20:32:02 -05:00: [31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { [33mApplicationLogo[39m } [36mfrom[39m [32m'@web3codex/components'[39m
+2026-01-08 20:32:02 -05:00:  [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+2026-01-08 20:32:02 -05:00:  [90m 4 |[39m
+2026-01-08 20:32:02 -05:00:  [90m 5 |[39m [36mexport[39m [36minterface[39m [33mPageLoaderProps[39m {
+2026-01-08 20:32:02 -05:00:  [90m 6 |[39m   message[33m?[39m[33m:[39m string[0m
+2026-01-08 20:32:02 -05:00: 
+2026-01-08 20:32:02 -05:00: 
+2026-01-08 20:32:02 -05:00: 
+2026-01-08 20:32:02 -05:00: Import traces:
+2026-01-08 20:32:02 -05:00:   Client Component Browser:
+2026-01-08 20:32:02 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component Browser]
+2026-01-08 20:32:02 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component Browser]
+2026-01-08 20:32:02 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:32:02 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:32:02 -05:00: 
+2026-01-08 20:32:02 -05:00:   Client Component SSR:
+2026-01-08 20:32:02 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component SSR]
+2026-01-08 20:32:02 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component SSR]
+2026-01-08 20:32:02 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:32:02 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:32:02 -05:00: 
+2026-01-08 20:32:02 -05:00: https://nextjs.org/docs/messages/module-not-found
+2026-01-08 20:32:02 -05:00: 
+2026-01-08 20:32:02 -05:00: 
+2026-01-08 20:32:02 -05:00:  ⨯ ./src/components/widgets/ui/PageLoader.tsx:3:1
+2026-01-08 20:32:02 -05:00: Module not found: Can't resolve '@web3codex/components'
+2026-01-08 20:32:02 -05:00: [0m [90m 1 |[39m [32m'use client'[39m
+2026-01-08 20:32:02 -05:00:  [90m 2 |[39m
+2026-01-08 20:32:02 -05:00: [31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { [33mApplicationLogo[39m } [36mfrom[39m [32m'@web3codex/components'[39m
+2026-01-08 20:32:02 -05:00:  [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+2026-01-08 20:32:02 -05:00:  [90m 4 |[39m
+2026-01-08 20:32:02 -05:00:  [90m 5 |[39m [36mexport[39m [36minterface[39m [33mPageLoaderProps[39m {
+2026-01-08 20:32:02 -05:00:  [90m 6 |[39m   message[33m?[39m[33m:[39m string[0m
+2026-01-08 20:32:02 -05:00: 
+2026-01-08 20:32:02 -05:00: 
+2026-01-08 20:32:02 -05:00: 
+2026-01-08 20:32:02 -05:00: Import traces:
+2026-01-08 20:32:02 -05:00:   Client Component Browser:
+2026-01-08 20:32:02 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component Browser]
+2026-01-08 20:32:02 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component Browser]
+2026-01-08 20:32:02 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:32:02 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:32:02 -05:00: 
+2026-01-08 20:32:02 -05:00:   Client Component SSR:
+2026-01-08 20:32:02 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component SSR]
+2026-01-08 20:32:02 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component SSR]
+2026-01-08 20:32:02 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:32:02 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:32:02 -05:00: 
+2026-01-08 20:32:02 -05:00: https://nextjs.org/docs/messages/module-not-found
+2026-01-08 20:32:02 -05:00: 
+2026-01-08 20:32:02 -05:00: 
+2026-01-08 20:32:02 -05:00:  ⨯ ./src/components/widgets/ui/PageLoader.tsx:3:1
+2026-01-08 20:32:02 -05:00: Module not found: Can't resolve '@web3codex/components'
+2026-01-08 20:32:02 -05:00: [0m [90m 1 |[39m [32m'use client'[39m
+2026-01-08 20:32:02 -05:00:  [90m 2 |[39m
+2026-01-08 20:32:02 -05:00: [31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { [33mApplicationLogo[39m } [36mfrom[39m [32m'@web3codex/components'[39m
+2026-01-08 20:32:02 -05:00:  [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+2026-01-08 20:32:02 -05:00:  [90m 4 |[39m
+2026-01-08 20:32:02 -05:00:  [90m 5 |[39m [36mexport[39m [36minterface[39m [33mPageLoaderProps[39m {
+2026-01-08 20:32:02 -05:00:  [90m 6 |[39m   message[33m?[39m[33m:[39m string[0m
+2026-01-08 20:32:02 -05:00: 
+2026-01-08 20:32:02 -05:00: 
+2026-01-08 20:32:02 -05:00: 
+2026-01-08 20:32:02 -05:00: Import traces:
+2026-01-08 20:32:02 -05:00:   Client Component Browser:
+2026-01-08 20:32:02 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component Browser]
+2026-01-08 20:32:02 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component Browser]
+2026-01-08 20:32:02 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:32:02 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:32:02 -05:00: 
+2026-01-08 20:32:02 -05:00:   Client Component SSR:
+2026-01-08 20:32:02 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component SSR]
+2026-01-08 20:32:02 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component SSR]
+2026-01-08 20:32:02 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:32:02 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:32:02 -05:00: 
+2026-01-08 20:32:02 -05:00: https://nextjs.org/docs/messages/module-not-found
+2026-01-08 20:32:02 -05:00: 
+2026-01-08 20:32:02 -05:00: 
+2026-01-08 20:32:02 -05:00:  ⨯ ./src/components/widgets/ui/PageLoader.tsx:3:1
+2026-01-08 20:32:02 -05:00: Module not found: Can't resolve '@web3codex/components'
+2026-01-08 20:32:02 -05:00: [0m [90m 1 |[39m [32m'use client'[39m
+2026-01-08 20:32:02 -05:00:  [90m 2 |[39m
+2026-01-08 20:32:02 -05:00: [31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { [33mApplicationLogo[39m } [36mfrom[39m [32m'@web3codex/components'[39m
+2026-01-08 20:32:02 -05:00:  [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+2026-01-08 20:32:02 -05:00:  [90m 4 |[39m
+2026-01-08 20:32:02 -05:00:  [90m 5 |[39m [36mexport[39m [36minterface[39m [33mPageLoaderProps[39m {
+2026-01-08 20:32:02 -05:00:  [90m 6 |[39m   message[33m?[39m[33m:[39m string[0m
+2026-01-08 20:32:02 -05:00: 
+2026-01-08 20:32:02 -05:00: 
+2026-01-08 20:32:02 -05:00: 
+2026-01-08 20:32:02 -05:00: Import traces:
+2026-01-08 20:32:02 -05:00:   Client Component Browser:
+2026-01-08 20:32:02 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component Browser]
+2026-01-08 20:32:02 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component Browser]
+2026-01-08 20:32:02 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:32:02 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:32:02 -05:00: 
+2026-01-08 20:32:02 -05:00:   Client Component SSR:
+2026-01-08 20:32:02 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component SSR]
+2026-01-08 20:32:02 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component SSR]
+2026-01-08 20:32:02 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:32:02 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:32:02 -05:00: 
+2026-01-08 20:32:02 -05:00: https://nextjs.org/docs/messages/module-not-found
+2026-01-08 20:32:02 -05:00: 
+2026-01-08 20:32:02 -05:00: 
+2026-01-08 20:32:14 -05:00:  ⚠ Found a change in next.config.ts. Restarting the server to apply the changes...
+2026-01-08 20:32:17 -05:00:  ⚠ Webpack is configured while Turbopack is not, which may cause problems.
+2026-01-08 20:32:17 -05:00:  ⚠ See instructions if you need to configure Turbopack:
+2026-01-08 20:32:17 -05:00:   https://nextjs.org/docs/app/api-reference/next-config-js/turbopack
+2026-01-08 20:32:17 -05:00: 
+2026-01-08 20:32:24 -05:00:  ⚠ Webpack is configured while Turbopack is not, which may cause problems.
+2026-01-08 20:32:24 -05:00:  ⚠ See instructions if you need to configure Turbopack:
+2026-01-08 20:32:24 -05:00:   https://nextjs.org/docs/app/api-reference/next-config-js/turbopack
+2026-01-08 20:32:24 -05:00: 
+2026-01-08 20:32:31 -05:00:  ⨯ ./src/app/globals.css:2277:8
+2026-01-08 20:32:31 -05:00: Parsing CSS source code failed
+2026-01-08 20:32:31 -05:00: [0m [90m 2275 |[39m   }
+2026-01-08 20:32:31 -05:00:  [90m 2276 |[39m }
+2026-01-08 20:32:31 -05:00: [31m[1m>[22m[39m[90m 2277 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/core-design-system.css"[39m)[33m;[39m
+2026-01-08 20:32:31 -05:00:  [90m      |[39m        [31m[1m^[22m[39m
+2026-01-08 20:32:31 -05:00:  [90m 2278 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/odometer.css"[39m)[33m;[39m
+2026-01-08 20:32:31 -05:00:  [90m 2279 |[39m [33m*[39m {
+2026-01-08 20:32:31 -05:00:  [90m 2280 |[39m   font[33m-[39mfamily[33m:[39m [32m'Inter'[39m[33m,[39m system[33m-[39mui[33m,[39m [33m-[39mapple[33m-[39msystem[33m,[39m sans[33m-[39mserif[33m;[39m[0m
+2026-01-08 20:32:31 -05:00: 
+2026-01-08 20:32:31 -05:00: @import rules must precede all rules aside from @charset and @layer statements
+2026-01-08 20:32:31 -05:00: 
+2026-01-08 20:32:31 -05:00: Import trace:
+2026-01-08 20:32:31 -05:00:   Client Component Browser:
+2026-01-08 20:32:31 -05:00:     ./src/app/globals.css [Client Component Browser]
+2026-01-08 20:32:31 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:32:31 -05:00: 
+2026-01-08 20:32:31 -05:00: 
+2026-01-08 20:32:31 -05:00: 
+2026-01-08 20:32:31 -05:00: ./src/components/widgets/ui/PageLoader.tsx:3:1
+2026-01-08 20:32:31 -05:00: Module not found: Can't resolve '@web3codex/components'
+2026-01-08 20:32:31 -05:00: [0m [90m 1 |[39m [32m'use client'[39m
+2026-01-08 20:32:31 -05:00:  [90m 2 |[39m
+2026-01-08 20:32:31 -05:00: [31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { [33mApplicationLogo[39m } [36mfrom[39m [32m'@web3codex/components'[39m
+2026-01-08 20:32:31 -05:00:  [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+2026-01-08 20:32:31 -05:00:  [90m 4 |[39m
+2026-01-08 20:32:31 -05:00:  [90m 5 |[39m [36mexport[39m [36minterface[39m [33mPageLoaderProps[39m {
+2026-01-08 20:32:31 -05:00:  [90m 6 |[39m   message[33m?[39m[33m:[39m string[0m
+2026-01-08 20:32:31 -05:00: 
+2026-01-08 20:32:31 -05:00: 
+2026-01-08 20:32:31 -05:00: 
+2026-01-08 20:32:31 -05:00: Import traces:
+2026-01-08 20:32:31 -05:00:   Client Component Browser:
+2026-01-08 20:32:31 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component Browser]
+2026-01-08 20:32:31 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component Browser]
+2026-01-08 20:32:31 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:32:31 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:32:31 -05:00: 
+2026-01-08 20:32:31 -05:00:   Client Component SSR:
+2026-01-08 20:32:31 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component SSR]
+2026-01-08 20:32:31 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component SSR]
+2026-01-08 20:32:31 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:32:31 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:32:31 -05:00: 
+2026-01-08 20:32:31 -05:00: https://nextjs.org/docs/messages/module-not-found
+2026-01-08 20:32:31 -05:00: 
+2026-01-08 20:32:31 -05:00: 
+2026-01-08 20:32:31 -05:00:  ⨯ ./src/app/globals.css:2277:8
+2026-01-08 20:32:31 -05:00: Parsing CSS source code failed
+2026-01-08 20:32:31 -05:00: [0m [90m 2275 |[39m   }
+2026-01-08 20:32:31 -05:00:  [90m 2276 |[39m }
+2026-01-08 20:32:31 -05:00: [31m[1m>[22m[39m[90m 2277 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/core-design-system.css"[39m)[33m;[39m
+2026-01-08 20:32:31 -05:00:  [90m      |[39m        [31m[1m^[22m[39m
+2026-01-08 20:32:31 -05:00:  [90m 2278 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/odometer.css"[39m)[33m;[39m
+2026-01-08 20:32:31 -05:00:  [90m 2279 |[39m [33m*[39m {
+2026-01-08 20:32:31 -05:00:  [90m 2280 |[39m   font[33m-[39mfamily[33m:[39m [32m'Inter'[39m[33m,[39m system[33m-[39mui[33m,[39m [33m-[39mapple[33m-[39msystem[33m,[39m sans[33m-[39mserif[33m;[39m[0m
+2026-01-08 20:32:31 -05:00: 
+2026-01-08 20:32:31 -05:00: @import rules must precede all rules aside from @charset and @layer statements
+2026-01-08 20:32:31 -05:00: 
+2026-01-08 20:32:31 -05:00: Import trace:
+2026-01-08 20:32:31 -05:00:   Client Component Browser:
+2026-01-08 20:32:31 -05:00:     ./src/app/globals.css [Client Component Browser]
+2026-01-08 20:32:31 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:32:31 -05:00: 
+2026-01-08 20:32:31 -05:00: 
+2026-01-08 20:32:31 -05:00: 
+2026-01-08 20:32:31 -05:00: ./src/components/widgets/ui/PageLoader.tsx:3:1
+2026-01-08 20:32:31 -05:00: Module not found: Can't resolve '@web3codex/components'
+2026-01-08 20:32:31 -05:00: [0m [90m 1 |[39m [32m'use client'[39m
+2026-01-08 20:32:31 -05:00:  [90m 2 |[39m
+2026-01-08 20:32:31 -05:00: [31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { [33mApplicationLogo[39m } [36mfrom[39m [32m'@web3codex/components'[39m
+2026-01-08 20:32:31 -05:00:  [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+2026-01-08 20:32:31 -05:00:  [90m 4 |[39m
+2026-01-08 20:32:31 -05:00:  [90m 5 |[39m [36mexport[39m [36minterface[39m [33mPageLoaderProps[39m {
+2026-01-08 20:32:31 -05:00:  [90m 6 |[39m   message[33m?[39m[33m:[39m string[0m
+2026-01-08 20:32:31 -05:00: 
+2026-01-08 20:32:31 -05:00: 
+2026-01-08 20:32:31 -05:00: 
+2026-01-08 20:32:31 -05:00: Import traces:
+2026-01-08 20:32:31 -05:00:   Client Component Browser:
+2026-01-08 20:32:31 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component Browser]
+2026-01-08 20:32:31 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component Browser]
+2026-01-08 20:32:31 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:32:31 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:32:31 -05:00: 
+2026-01-08 20:32:31 -05:00:   Client Component SSR:
+2026-01-08 20:32:31 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component SSR]
+2026-01-08 20:32:31 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component SSR]
+2026-01-08 20:32:31 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:32:31 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:32:31 -05:00: 
+2026-01-08 20:32:31 -05:00: https://nextjs.org/docs/messages/module-not-found
+2026-01-08 20:32:31 -05:00: 
+2026-01-08 20:32:31 -05:00: 
+2026-01-08 20:34:27 -05:00:  ⨯ ./src/app/globals.css:2277:8
+2026-01-08 20:34:27 -05:00: Parsing CSS source code failed
+2026-01-08 20:34:27 -05:00: [0m [90m 2275 |[39m   }
+2026-01-08 20:34:27 -05:00:  [90m 2276 |[39m }
+2026-01-08 20:34:27 -05:00: [31m[1m>[22m[39m[90m 2277 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/core-design-system.css"[39m)[33m;[39m
+2026-01-08 20:34:27 -05:00:  [90m      |[39m        [31m[1m^[22m[39m
+2026-01-08 20:34:27 -05:00:  [90m 2278 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/odometer.css"[39m)[33m;[39m
+2026-01-08 20:34:27 -05:00:  [90m 2279 |[39m [33m*[39m {
+2026-01-08 20:34:27 -05:00:  [90m 2280 |[39m   font[33m-[39mfamily[33m:[39m [32m'Inter'[39m[33m,[39m system[33m-[39mui[33m,[39m [33m-[39mapple[33m-[39msystem[33m,[39m sans[33m-[39mserif[33m;[39m[0m
+2026-01-08 20:34:27 -05:00: 
+2026-01-08 20:34:27 -05:00: @import rules must precede all rules aside from @charset and @layer statements
+2026-01-08 20:34:27 -05:00: 
+2026-01-08 20:34:27 -05:00: Import trace:
+2026-01-08 20:34:27 -05:00:   Client Component Browser:
+2026-01-08 20:34:27 -05:00:     ./src/app/globals.css [Client Component Browser]
+2026-01-08 20:34:27 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:34:27 -05:00: 
+2026-01-08 20:34:27 -05:00: 
+2026-01-08 20:34:27 -05:00: 
+2026-01-08 20:34:27 -05:00: ./src/components/widgets/ui/PageLoader.tsx:3:1
+2026-01-08 20:34:27 -05:00: Module not found: Can't resolve '@web3codex/components'
+2026-01-08 20:34:27 -05:00: [0m [90m 1 |[39m [32m'use client'[39m
+2026-01-08 20:34:27 -05:00:  [90m 2 |[39m
+2026-01-08 20:34:27 -05:00: [31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { [33mApplicationLogo[39m } [36mfrom[39m [32m'@web3codex/components'[39m
+2026-01-08 20:34:27 -05:00:  [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+2026-01-08 20:34:27 -05:00:  [90m 4 |[39m
+2026-01-08 20:34:27 -05:00:  [90m 5 |[39m [36mexport[39m [36minterface[39m [33mPageLoaderProps[39m {
+2026-01-08 20:34:27 -05:00:  [90m 6 |[39m   message[33m?[39m[33m:[39m string[0m
+2026-01-08 20:34:27 -05:00: 
+2026-01-08 20:34:27 -05:00: 
+2026-01-08 20:34:27 -05:00: 
+2026-01-08 20:34:27 -05:00: Import traces:
+2026-01-08 20:34:27 -05:00:   Client Component Browser:
+2026-01-08 20:34:27 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component Browser]
+2026-01-08 20:34:27 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component Browser]
+2026-01-08 20:34:27 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:34:27 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:34:27 -05:00: 
+2026-01-08 20:34:27 -05:00:   Client Component SSR:
+2026-01-08 20:34:27 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component SSR]
+2026-01-08 20:34:27 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component SSR]
+2026-01-08 20:34:27 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:34:27 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:34:27 -05:00: 
+2026-01-08 20:34:27 -05:00: https://nextjs.org/docs/messages/module-not-found
+2026-01-08 20:34:27 -05:00: 
+2026-01-08 20:34:27 -05:00: 
+2026-01-08 20:34:28 -05:00:  ⚠ Found a change in next.config.ts. Restarting the server to apply the changes...
+2026-01-08 20:34:30 -05:00:  ⚠ Webpack is configured while Turbopack is not, which may cause problems.
+2026-01-08 20:34:30 -05:00:  ⚠ See instructions if you need to configure Turbopack:
+2026-01-08 20:34:30 -05:00:   https://nextjs.org/docs/app/api-reference/next-config-js/turbopack
+2026-01-08 20:34:30 -05:00: 
+2026-01-08 20:36:47 -05:00:  ⚠ Webpack is configured while Turbopack is not, which may cause problems.
+2026-01-08 20:36:47 -05:00:  ⚠ See instructions if you need to configure Turbopack:
+2026-01-08 20:36:47 -05:00:   https://nextjs.org/docs/app/api-reference/next-config-js/turbopack
+2026-01-08 20:36:47 -05:00: 
+2026-01-08 20:36:54 -05:00:  ⨯ ./src/app/globals.css:2277:8
+2026-01-08 20:36:54 -05:00: Parsing CSS source code failed
+2026-01-08 20:36:54 -05:00: [0m [90m 2275 |[39m   }
+2026-01-08 20:36:54 -05:00:  [90m 2276 |[39m }
+2026-01-08 20:36:54 -05:00: [31m[1m>[22m[39m[90m 2277 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/core-design-system.css"[39m)[33m;[39m
+2026-01-08 20:36:54 -05:00:  [90m      |[39m        [31m[1m^[22m[39m
+2026-01-08 20:36:54 -05:00:  [90m 2278 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/odometer.css"[39m)[33m;[39m
+2026-01-08 20:36:54 -05:00:  [90m 2279 |[39m [33m*[39m {
+2026-01-08 20:36:54 -05:00:  [90m 2280 |[39m   font[33m-[39mfamily[33m:[39m [32m'Inter'[39m[33m,[39m system[33m-[39mui[33m,[39m [33m-[39mapple[33m-[39msystem[33m,[39m sans[33m-[39mserif[33m;[39m[0m
+2026-01-08 20:36:54 -05:00: 
+2026-01-08 20:36:54 -05:00: @import rules must precede all rules aside from @charset and @layer statements
+2026-01-08 20:36:54 -05:00: 
+2026-01-08 20:36:54 -05:00: Import trace:
+2026-01-08 20:36:54 -05:00:   Client Component Browser:
+2026-01-08 20:36:54 -05:00:     ./src/app/globals.css [Client Component Browser]
+2026-01-08 20:36:54 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:36:54 -05:00: 
+2026-01-08 20:36:54 -05:00: 
+2026-01-08 20:36:54 -05:00:  ⨯ ./src/app/globals.css:2277:8
+2026-01-08 20:36:54 -05:00: Parsing CSS source code failed
+2026-01-08 20:36:54 -05:00: [0m [90m 2275 |[39m   }
+2026-01-08 20:36:54 -05:00:  [90m 2276 |[39m }
+2026-01-08 20:36:54 -05:00: [31m[1m>[22m[39m[90m 2277 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/core-design-system.css"[39m)[33m;[39m
+2026-01-08 20:36:54 -05:00:  [90m      |[39m        [31m[1m^[22m[39m
+2026-01-08 20:36:54 -05:00:  [90m 2278 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/odometer.css"[39m)[33m;[39m
+2026-01-08 20:36:54 -05:00:  [90m 2279 |[39m [33m*[39m {
+2026-01-08 20:36:54 -05:00:  [90m 2280 |[39m   font[33m-[39mfamily[33m:[39m [32m'Inter'[39m[33m,[39m system[33m-[39mui[33m,[39m [33m-[39mapple[33m-[39msystem[33m,[39m sans[33m-[39mserif[33m;[39m[0m
+2026-01-08 20:36:54 -05:00: 
+2026-01-08 20:36:54 -05:00: @import rules must precede all rules aside from @charset and @layer statements
+2026-01-08 20:36:54 -05:00: 
+2026-01-08 20:36:54 -05:00: Import trace:
+2026-01-08 20:36:54 -05:00:   Client Component Browser:
+2026-01-08 20:36:54 -05:00:     ./src/app/globals.css [Client Component Browser]
+2026-01-08 20:36:54 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:36:54 -05:00: 
+2026-01-08 20:36:54 -05:00: 
+2026-01-08 20:36:54 -05:00:  ⨯ ./src/app/globals.css:2277:8
+2026-01-08 20:36:54 -05:00: Parsing CSS source code failed
+2026-01-08 20:36:54 -05:00: [0m [90m 2275 |[39m   }
+2026-01-08 20:36:54 -05:00:  [90m 2276 |[39m }
+2026-01-08 20:36:54 -05:00: [31m[1m>[22m[39m[90m 2277 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/core-design-system.css"[39m)[33m;[39m
+2026-01-08 20:36:54 -05:00:  [90m      |[39m        [31m[1m^[22m[39m
+2026-01-08 20:36:54 -05:00:  [90m 2278 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/odometer.css"[39m)[33m;[39m
+2026-01-08 20:36:54 -05:00:  [90m 2279 |[39m [33m*[39m {
+2026-01-08 20:36:54 -05:00:  [90m 2280 |[39m   font[33m-[39mfamily[33m:[39m [32m'Inter'[39m[33m,[39m system[33m-[39mui[33m,[39m [33m-[39mapple[33m-[39msystem[33m,[39m sans[33m-[39mserif[33m;[39m[0m
+2026-01-08 20:36:54 -05:00: 
+2026-01-08 20:36:54 -05:00: @import rules must precede all rules aside from @charset and @layer statements
+2026-01-08 20:36:54 -05:00: 
+2026-01-08 20:36:54 -05:00: Import trace:
+2026-01-08 20:36:54 -05:00:   Client Component Browser:
+2026-01-08 20:36:54 -05:00:     ./src/app/globals.css [Client Component Browser]
+2026-01-08 20:36:54 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:36:54 -05:00: 
+2026-01-08 20:36:54 -05:00: 
+2026-01-08 20:39:16 -05:00:  ⨯ ./src/app/globals.css:2277:8
+2026-01-08 20:39:16 -05:00: Parsing CSS source code failed
+2026-01-08 20:39:16 -05:00: [0m [90m 2275 |[39m   }
+2026-01-08 20:39:16 -05:00:  [90m 2276 |[39m }
+2026-01-08 20:39:16 -05:00: [31m[1m>[22m[39m[90m 2277 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/core-design-system.css"[39m)[33m;[39m
+2026-01-08 20:39:16 -05:00:  [90m      |[39m        [31m[1m^[22m[39m
+2026-01-08 20:39:16 -05:00:  [90m 2278 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/odometer.css"[39m)[33m;[39m
+2026-01-08 20:39:16 -05:00:  [90m 2279 |[39m [33m*[39m {
+2026-01-08 20:39:16 -05:00:  [90m 2280 |[39m   font[33m-[39mfamily[33m:[39m [32m'Inter'[39m[33m,[39m system[33m-[39mui[33m,[39m [33m-[39mapple[33m-[39msystem[33m,[39m sans[33m-[39mserif[33m;[39m[0m
+2026-01-08 20:39:16 -05:00: 
+2026-01-08 20:39:16 -05:00: @import rules must precede all rules aside from @charset and @layer statements
+2026-01-08 20:39:16 -05:00: 
+2026-01-08 20:39:16 -05:00: Import trace:
+2026-01-08 20:39:16 -05:00:   Client Component Browser:
+2026-01-08 20:39:16 -05:00:     ./src/app/globals.css [Client Component Browser]
+2026-01-08 20:39:16 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:39:16 -05:00: 
+2026-01-08 20:39:16 -05:00: 
+2026-01-08 20:39:34 -05:00:  ⨯ ./src/app/globals.css:2277:8
+2026-01-08 20:39:34 -05:00: Parsing CSS source code failed
+2026-01-08 20:39:34 -05:00: [0m [90m 2275 |[39m   }
+2026-01-08 20:39:34 -05:00:  [90m 2276 |[39m }
+2026-01-08 20:39:34 -05:00: [31m[1m>[22m[39m[90m 2277 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/core-design-system.css"[39m)[33m;[39m
+2026-01-08 20:39:34 -05:00:  [90m      |[39m        [31m[1m^[22m[39m
+2026-01-08 20:39:34 -05:00:  [90m 2278 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/odometer.css"[39m)[33m;[39m
+2026-01-08 20:39:34 -05:00:  [90m 2279 |[39m [33m*[39m {
+2026-01-08 20:39:34 -05:00:  [90m 2280 |[39m   font[33m-[39mfamily[33m:[39m [32m'Inter'[39m[33m,[39m system[33m-[39mui[33m,[39m [33m-[39mapple[33m-[39msystem[33m,[39m sans[33m-[39mserif[33m;[39m[0m
+2026-01-08 20:39:34 -05:00: 
+2026-01-08 20:39:34 -05:00: @import rules must precede all rules aside from @charset and @layer statements
+2026-01-08 20:39:34 -05:00: 
+2026-01-08 20:39:34 -05:00: Import trace:
+2026-01-08 20:39:34 -05:00:   Client Component Browser:
+2026-01-08 20:39:34 -05:00:     ./src/app/globals.css [Client Component Browser]
+2026-01-08 20:39:34 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:39:34 -05:00: 
+2026-01-08 20:39:34 -05:00: 
+2026-01-08 20:40:19 -05:00:  ⨯ ./src/components/widgets/ui/PageLoader.tsx:3:1
+2026-01-08 20:40:19 -05:00: Module not found: Can't resolve '@web3codex/components'
+2026-01-08 20:40:19 -05:00: [0m [90m 1 |[39m [32m'use client'[39m
+2026-01-08 20:40:19 -05:00:  [90m 2 |[39m
+2026-01-08 20:40:19 -05:00: [31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { [33mApplicationLogo[39m } [36mfrom[39m [32m'@web3codex/components'[39m
+2026-01-08 20:40:19 -05:00:  [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+2026-01-08 20:40:19 -05:00:  [90m 4 |[39m
+2026-01-08 20:40:19 -05:00:  [90m 5 |[39m [36mexport[39m [36minterface[39m [33mPageLoaderProps[39m {
+2026-01-08 20:40:19 -05:00:  [90m 6 |[39m   message[33m?[39m[33m:[39m string[0m
+2026-01-08 20:40:19 -05:00: 
+2026-01-08 20:40:19 -05:00: 
+2026-01-08 20:40:19 -05:00: 
+2026-01-08 20:40:19 -05:00: Import traces:
+2026-01-08 20:40:19 -05:00:   Client Component Browser:
+2026-01-08 20:40:19 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component Browser]
+2026-01-08 20:40:19 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component Browser]
+2026-01-08 20:40:19 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:40:19 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:40:19 -05:00: 
+2026-01-08 20:40:19 -05:00:   Client Component SSR:
+2026-01-08 20:40:19 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component SSR]
+2026-01-08 20:40:19 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component SSR]
+2026-01-08 20:40:19 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:40:19 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:40:19 -05:00: 
+2026-01-08 20:40:19 -05:00: https://nextjs.org/docs/messages/module-not-found
+2026-01-08 20:40:19 -05:00: 
+2026-01-08 20:40:19 -05:00: 
+2026-01-08 20:40:19 -05:00:  ⨯ ./src/components/widgets/ui/PageLoader.tsx:3:1
+2026-01-08 20:40:19 -05:00: Module not found: Can't resolve '@web3codex/components'
+2026-01-08 20:40:19 -05:00: [0m [90m 1 |[39m [32m'use client'[39m
+2026-01-08 20:40:19 -05:00:  [90m 2 |[39m
+2026-01-08 20:40:19 -05:00: [31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { [33mApplicationLogo[39m } [36mfrom[39m [32m'@web3codex/components'[39m
+2026-01-08 20:40:19 -05:00:  [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+2026-01-08 20:40:19 -05:00:  [90m 4 |[39m
+2026-01-08 20:40:19 -05:00:  [90m 5 |[39m [36mexport[39m [36minterface[39m [33mPageLoaderProps[39m {
+2026-01-08 20:40:19 -05:00:  [90m 6 |[39m   message[33m?[39m[33m:[39m string[0m
+2026-01-08 20:40:19 -05:00: 
+2026-01-08 20:40:19 -05:00: 
+2026-01-08 20:40:19 -05:00: 
+2026-01-08 20:40:19 -05:00: Import traces:
+2026-01-08 20:40:19 -05:00:   Client Component Browser:
+2026-01-08 20:40:19 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component Browser]
+2026-01-08 20:40:19 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component Browser]
+2026-01-08 20:40:19 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:40:19 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:40:19 -05:00: 
+2026-01-08 20:40:19 -05:00:   Client Component SSR:
+2026-01-08 20:40:19 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component SSR]
+2026-01-08 20:40:19 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component SSR]
+2026-01-08 20:40:19 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:40:19 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:40:19 -05:00: 
+2026-01-08 20:40:19 -05:00: https://nextjs.org/docs/messages/module-not-found
+2026-01-08 20:40:19 -05:00: 
+2026-01-08 20:40:19 -05:00: 
+2026-01-08 20:40:19 -05:00:  ⨯ ./src/components/widgets/ui/PageLoader.tsx:3:1
+2026-01-08 20:40:19 -05:00: Module not found: Can't resolve '@web3codex/components'
+2026-01-08 20:40:19 -05:00: [0m [90m 1 |[39m [32m'use client'[39m
+2026-01-08 20:40:19 -05:00:  [90m 2 |[39m
+2026-01-08 20:40:19 -05:00: [31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { [33mApplicationLogo[39m } [36mfrom[39m [32m'@web3codex/components'[39m
+2026-01-08 20:40:19 -05:00:  [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+2026-01-08 20:40:19 -05:00:  [90m 4 |[39m
+2026-01-08 20:40:19 -05:00:  [90m 5 |[39m [36mexport[39m [36minterface[39m [33mPageLoaderProps[39m {
+2026-01-08 20:40:19 -05:00:  [90m 6 |[39m   message[33m?[39m[33m:[39m string[0m
+2026-01-08 20:40:19 -05:00: 
+2026-01-08 20:40:19 -05:00: 
+2026-01-08 20:40:19 -05:00: 
+2026-01-08 20:40:19 -05:00: Import traces:
+2026-01-08 20:40:19 -05:00:   Client Component Browser:
+2026-01-08 20:40:19 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component Browser]
+2026-01-08 20:40:19 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component Browser]
+2026-01-08 20:40:19 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:40:19 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:40:19 -05:00: 
+2026-01-08 20:40:19 -05:00:   Client Component SSR:
+2026-01-08 20:40:19 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component SSR]
+2026-01-08 20:40:19 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component SSR]
+2026-01-08 20:40:19 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:40:19 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:40:19 -05:00: 
+2026-01-08 20:40:19 -05:00: https://nextjs.org/docs/messages/module-not-found
+2026-01-08 20:40:19 -05:00: 
+2026-01-08 20:40:19 -05:00: 
+2026-01-08 20:40:19 -05:00:  ⨯ ./src/components/widgets/ui/PageLoader.tsx:3:1
+2026-01-08 20:40:19 -05:00: Module not found: Can't resolve '@web3codex/components'
+2026-01-08 20:40:19 -05:00: [0m [90m 1 |[39m [32m'use client'[39m
+2026-01-08 20:40:19 -05:00:  [90m 2 |[39m
+2026-01-08 20:40:19 -05:00: [31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { [33mApplicationLogo[39m } [36mfrom[39m [32m'@web3codex/components'[39m
+2026-01-08 20:40:19 -05:00:  [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+2026-01-08 20:40:19 -05:00:  [90m 4 |[39m
+2026-01-08 20:40:19 -05:00:  [90m 5 |[39m [36mexport[39m [36minterface[39m [33mPageLoaderProps[39m {
+2026-01-08 20:40:19 -05:00:  [90m 6 |[39m   message[33m?[39m[33m:[39m string[0m
+2026-01-08 20:40:19 -05:00: 
+2026-01-08 20:40:19 -05:00: 
+2026-01-08 20:40:19 -05:00: 
+2026-01-08 20:40:19 -05:00: Import traces:
+2026-01-08 20:40:19 -05:00:   Client Component Browser:
+2026-01-08 20:40:19 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component Browser]
+2026-01-08 20:40:19 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component Browser]
+2026-01-08 20:40:19 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:40:19 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:40:19 -05:00: 
+2026-01-08 20:40:19 -05:00:   Client Component SSR:
+2026-01-08 20:40:19 -05:00:     ./src/components/widgets/ui/PageLoader.tsx [Client Component SSR]
+2026-01-08 20:40:19 -05:00:     ./src/contexts/LoadingContext.tsx [Client Component SSR]
+2026-01-08 20:40:19 -05:00:     ./src/contexts/LoadingContext.tsx [Server Component]
+2026-01-08 20:40:19 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:40:19 -05:00: 
+2026-01-08 20:40:19 -05:00: https://nextjs.org/docs/messages/module-not-found
+2026-01-08 20:40:19 -05:00: 
+2026-01-08 20:40:19 -05:00: 
+2026-01-08 20:40:34 -05:00:  ⚠ Webpack is configured while Turbopack is not, which may cause problems.
+2026-01-08 20:40:34 -05:00:  ⚠ See instructions if you need to configure Turbopack:
+2026-01-08 20:40:34 -05:00:   https://nextjs.org/docs/app/api-reference/next-config-js/turbopack
+2026-01-08 20:40:34 -05:00: 
+2026-01-08 20:40:41 -05:00:  ⨯ ./src/app/globals.css:2277:8
+2026-01-08 20:40:41 -05:00: Parsing CSS source code failed
+2026-01-08 20:40:41 -05:00: [0m [90m 2275 |[39m   }
+2026-01-08 20:40:41 -05:00:  [90m 2276 |[39m }
+2026-01-08 20:40:41 -05:00: [31m[1m>[22m[39m[90m 2277 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/core-design-system.css"[39m)[33m;[39m
+2026-01-08 20:40:41 -05:00:  [90m      |[39m        [31m[1m^[22m[39m
+2026-01-08 20:40:41 -05:00:  [90m 2278 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/odometer.css"[39m)[33m;[39m
+2026-01-08 20:40:41 -05:00:  [90m 2279 |[39m [33m*[39m {
+2026-01-08 20:40:41 -05:00:  [90m 2280 |[39m   font[33m-[39mfamily[33m:[39m [32m'Inter'[39m[33m,[39m system[33m-[39mui[33m,[39m [33m-[39mapple[33m-[39msystem[33m,[39m sans[33m-[39mserif[33m;[39m[0m
+2026-01-08 20:40:41 -05:00: 
+2026-01-08 20:40:41 -05:00: @import rules must precede all rules aside from @charset and @layer statements
+2026-01-08 20:40:41 -05:00: 
+2026-01-08 20:40:41 -05:00: Import trace:
+2026-01-08 20:40:41 -05:00:   Client Component Browser:
+2026-01-08 20:40:41 -05:00:     ./src/app/globals.css [Client Component Browser]
+2026-01-08 20:40:41 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:40:41 -05:00: 
+2026-01-08 20:40:41 -05:00: 
+2026-01-08 20:40:41 -05:00:  ⨯ ./src/app/globals.css:2277:8
+2026-01-08 20:40:41 -05:00: Parsing CSS source code failed
+2026-01-08 20:40:41 -05:00: [0m [90m 2275 |[39m   }
+2026-01-08 20:40:41 -05:00:  [90m 2276 |[39m }
+2026-01-08 20:40:41 -05:00: [31m[1m>[22m[39m[90m 2277 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/core-design-system.css"[39m)[33m;[39m
+2026-01-08 20:40:41 -05:00:  [90m      |[39m        [31m[1m^[22m[39m
+2026-01-08 20:40:41 -05:00:  [90m 2278 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/odometer.css"[39m)[33m;[39m
+2026-01-08 20:40:41 -05:00:  [90m 2279 |[39m [33m*[39m {
+2026-01-08 20:40:41 -05:00:  [90m 2280 |[39m   font[33m-[39mfamily[33m:[39m [32m'Inter'[39m[33m,[39m system[33m-[39mui[33m,[39m [33m-[39mapple[33m-[39msystem[33m,[39m sans[33m-[39mserif[33m;[39m[0m
+2026-01-08 20:40:41 -05:00: 
+2026-01-08 20:40:41 -05:00: @import rules must precede all rules aside from @charset and @layer statements
+2026-01-08 20:40:41 -05:00: 
+2026-01-08 20:40:41 -05:00: Import trace:
+2026-01-08 20:40:41 -05:00:   Client Component Browser:
+2026-01-08 20:40:41 -05:00:     ./src/app/globals.css [Client Component Browser]
+2026-01-08 20:40:41 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:40:41 -05:00: 
+2026-01-08 20:40:41 -05:00: 
+2026-01-08 20:40:44 -05:00:  ⨯ ./src/app/globals.css:2277:8
+2026-01-08 20:40:44 -05:00: Parsing CSS source code failed
+2026-01-08 20:40:44 -05:00: [0m [90m 2275 |[39m   }
+2026-01-08 20:40:44 -05:00:  [90m 2276 |[39m }
+2026-01-08 20:40:44 -05:00: [31m[1m>[22m[39m[90m 2277 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/core-design-system.css"[39m)[33m;[39m
+2026-01-08 20:40:44 -05:00:  [90m      |[39m        [31m[1m^[22m[39m
+2026-01-08 20:40:44 -05:00:  [90m 2278 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/odometer.css"[39m)[33m;[39m
+2026-01-08 20:40:44 -05:00:  [90m 2279 |[39m [33m*[39m {
+2026-01-08 20:40:44 -05:00:  [90m 2280 |[39m   font[33m-[39mfamily[33m:[39m [32m'Inter'[39m[33m,[39m system[33m-[39mui[33m,[39m [33m-[39mapple[33m-[39msystem[33m,[39m sans[33m-[39mserif[33m;[39m[0m
+2026-01-08 20:40:44 -05:00: 
+2026-01-08 20:40:44 -05:00: @import rules must precede all rules aside from @charset and @layer statements
+2026-01-08 20:40:44 -05:00: 
+2026-01-08 20:40:44 -05:00: Import trace:
+2026-01-08 20:40:44 -05:00:   Client Component Browser:
+2026-01-08 20:40:44 -05:00:     ./src/app/globals.css [Client Component Browser]
+2026-01-08 20:40:44 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:40:44 -05:00: 
+2026-01-08 20:40:44 -05:00: 
+2026-01-08 20:40:53 -05:00:  ⨯ ./src/app/globals.css:2277:8
+2026-01-08 20:40:53 -05:00: Parsing CSS source code failed
+2026-01-08 20:40:53 -05:00: [0m [90m 2275 |[39m   }
+2026-01-08 20:40:53 -05:00:  [90m 2276 |[39m }
+2026-01-08 20:40:53 -05:00: [31m[1m>[22m[39m[90m 2277 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/core-design-system.css"[39m)[33m;[39m
+2026-01-08 20:40:53 -05:00:  [90m      |[39m        [31m[1m^[22m[39m
+2026-01-08 20:40:53 -05:00:  [90m 2278 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/odometer.css"[39m)[33m;[39m
+2026-01-08 20:40:53 -05:00:  [90m 2279 |[39m [33m*[39m {
+2026-01-08 20:40:53 -05:00:  [90m 2280 |[39m   font[33m-[39mfamily[33m:[39m [32m'Inter'[39m[33m,[39m system[33m-[39mui[33m,[39m [33m-[39mapple[33m-[39msystem[33m,[39m sans[33m-[39mserif[33m;[39m[0m
+2026-01-08 20:40:53 -05:00: 
+2026-01-08 20:40:53 -05:00: @import rules must precede all rules aside from @charset and @layer statements
+2026-01-08 20:40:53 -05:00: 
+2026-01-08 20:40:53 -05:00: Import trace:
+2026-01-08 20:40:53 -05:00:   Client Component Browser:
+2026-01-08 20:40:53 -05:00:     ./src/app/globals.css [Client Component Browser]
+2026-01-08 20:40:53 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:40:53 -05:00: 
+2026-01-08 20:40:53 -05:00: 
+2026-01-08 20:40:56 -05:00:  ⨯ ./src/app/globals.css:367:8
+2026-01-08 20:40:56 -05:00: Parsing CSS source code failed
+2026-01-08 20:40:56 -05:00: [0m [90m 365 |[39m   }
+2026-01-08 20:40:56 -05:00:  [90m 366 |[39m }
+2026-01-08 20:40:56 -05:00: [31m[1m>[22m[39m[90m 367 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/core-design-system.css"[39m)[33m;[39m
+2026-01-08 20:40:56 -05:00:  [90m     |[39m        [31m[1m^[22m[39m
+2026-01-08 20:40:56 -05:00:  [90m 368 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/odometer.css"[39m)[33m;[39m
+2026-01-08 20:40:56 -05:00:  [90m 369 |[39m [33m*[39m {
+2026-01-08 20:40:56 -05:00:  [90m 370 |[39m   font[33m-[39mfamily[33m:[39m [32m'Inter'[39m[33m,[39m system[33m-[39mui[33m,[39m [33m-[39mapple[33m-[39msystem[33m,[39m sans[33m-[39mserif[33m;[39m[0m
+2026-01-08 20:40:56 -05:00: 
+2026-01-08 20:40:56 -05:00: @import rules must precede all rules aside from @charset and @layer statements
+2026-01-08 20:40:56 -05:00: 
+2026-01-08 20:40:56 -05:00: Import trace:
+2026-01-08 20:40:56 -05:00:   Client Component Browser:
+2026-01-08 20:40:56 -05:00:     ./src/app/globals.css [Client Component Browser]
+2026-01-08 20:40:56 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:40:56 -05:00: 
+2026-01-08 20:40:56 -05:00: 
+2026-01-08 20:40:57 -05:00:  ⨯ ./src/app/globals.css:367:8
+2026-01-08 20:40:57 -05:00: Parsing CSS source code failed
+2026-01-08 20:40:57 -05:00: [0m [90m 365 |[39m   }
+2026-01-08 20:40:57 -05:00:  [90m 366 |[39m }
+2026-01-08 20:40:57 -05:00: [31m[1m>[22m[39m[90m 367 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/core-design-system.css"[39m)[33m;[39m
+2026-01-08 20:40:57 -05:00:  [90m     |[39m        [31m[1m^[22m[39m
+2026-01-08 20:40:57 -05:00:  [90m 368 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/odometer.css"[39m)[33m;[39m
+2026-01-08 20:40:57 -05:00:  [90m 369 |[39m [33m*[39m {
+2026-01-08 20:40:57 -05:00:  [90m 370 |[39m   font[33m-[39mfamily[33m:[39m [32m'Inter'[39m[33m,[39m system[33m-[39mui[33m,[39m [33m-[39mapple[33m-[39msystem[33m,[39m sans[33m-[39mserif[33m;[39m[0m
+2026-01-08 20:40:57 -05:00: 
+2026-01-08 20:40:57 -05:00: @import rules must precede all rules aside from @charset and @layer statements
+2026-01-08 20:40:57 -05:00: 
+2026-01-08 20:40:57 -05:00: Import trace:
+2026-01-08 20:40:57 -05:00:   Client Component Browser:
+2026-01-08 20:40:57 -05:00:     ./src/app/globals.css [Client Component Browser]
+2026-01-08 20:40:57 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:40:57 -05:00: 
+2026-01-08 20:40:57 -05:00: 
+2026-01-08 20:41:00 -05:00:  ⨯ ./src/app/globals.css:367:8
+2026-01-08 20:41:00 -05:00: Parsing CSS source code failed
+2026-01-08 20:41:00 -05:00: [0m [90m 365 |[39m   }
+2026-01-08 20:41:00 -05:00:  [90m 366 |[39m }
+2026-01-08 20:41:00 -05:00: [31m[1m>[22m[39m[90m 367 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/core-design-system.css"[39m)[33m;[39m
+2026-01-08 20:41:00 -05:00:  [90m     |[39m        [31m[1m^[22m[39m
+2026-01-08 20:41:00 -05:00:  [90m 368 |[39m [33m@[39m[36mimport[39m url([32m"/assets/css/odometer.css"[39m)[33m;[39m
+2026-01-08 20:41:00 -05:00:  [90m 369 |[39m [33m*[39m {
+2026-01-08 20:41:00 -05:00:  [90m 370 |[39m   font[33m-[39mfamily[33m:[39m [32m'Inter'[39m[33m,[39m system[33m-[39mui[33m,[39m [33m-[39mapple[33m-[39msystem[33m,[39m sans[33m-[39mserif[33m;[39m[0m
+2026-01-08 20:41:00 -05:00: 
+2026-01-08 20:41:00 -05:00: @import rules must precede all rules aside from @charset and @layer statements
+2026-01-08 20:41:00 -05:00: 
+2026-01-08 20:41:00 -05:00: Import trace:
+2026-01-08 20:41:00 -05:00:   Client Component Browser:
+2026-01-08 20:41:00 -05:00:     ./src/app/globals.css [Client Component Browser]
+2026-01-08 20:41:00 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:41:00 -05:00: 
+2026-01-08 20:41:00 -05:00: 
+2026-01-08 20:42:53 -05:00: Error: "./base" is not exported under the condition "style" from package /home/web3codex/projects/NextJs/codexhash/node_modules/tailwindcss (see exports field in /home/web3codex/projects/NextJs/codexhash/node_modules/tailwindcss/package.json)
+2026-01-08 20:42:53 -05:00:     [2m[at /home/web3codex/projects/NextJs/codexhash/node_modules/enhanced-resolve/lib/ExportsFieldPlugin.js:123:7][0m
+2026-01-08 20:42:53 -05:00:     [2m[at Hook.eval [as callAsync] (eval at create (/home/web3codex/projects/NextJs/codexhash/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:22:1)][0m
+2026-01-08 20:42:53 -05:00:     [2m[at Resolver.doResolve (/home/web3codex/projects/NextJs/codexhash/node_modules/enhanced-resolve/lib/Resolver.js:715:16)][0m
+2026-01-08 20:42:53 -05:00:     [2m[at /home/web3codex/projects/NextJs/codexhash/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:80:17][0m
+2026-01-08 20:42:53 -05:00:     [2m[at /home/web3codex/projects/NextJs/codexhash/node_modules/enhanced-resolve/lib/DescriptionFileUtils.js:161:24][0m
+2026-01-08 20:42:53 -05:00:     [2m[at /home/web3codex/projects/NextJs/codexhash/node_modules/enhanced-resolve/lib/forEachBail.js:39:13][0m
+2026-01-08 20:42:53 -05:00:     [2m[at onJson (/home/web3codex/projects/NextJs/codexhash/node_modules/enhanced-resolve/lib/DescriptionFileUtils.js:96:6)][0m
+2026-01-08 20:42:53 -05:00:     [2m[at /home/web3codex/projects/NextJs/codexhash/node_modules/enhanced-resolve/lib/DescriptionFileUtils.js:123:7][0m
+2026-01-08 20:42:53 -05:00:     [2m[at SyncAsyncFileSystemDecorator.readJson (/home/web3codex/projects/NextJs/codexhash/node_modules/enhanced-resolve/lib/SyncAsyncFileSystemDecorator.js:204:6)][0m
+2026-01-08 20:42:53 -05:00:     [2m[at /home/web3codex/projects/NextJs/codexhash/node_modules/enhanced-resolve/lib/DescriptionFileUtils.js:104:26][0m
+2026-01-08 20:42:54 -05:00: Error: "./base" is not exported under the condition "style" from package /home/web3codex/projects/NextJs/codexhash/node_modules/tailwindcss (see exports field in /home/web3codex/projects/NextJs/codexhash/node_modules/tailwindcss/package.json)
+2026-01-08 20:42:54 -05:00:     [2m[at /home/web3codex/projects/NextJs/codexhash/node_modules/enhanced-resolve/lib/ExportsFieldPlugin.js:123:7][0m
+2026-01-08 20:42:54 -05:00:     [2m[at Hook.eval [as callAsync] (eval at create (/home/web3codex/projects/NextJs/codexhash/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:22:1)][0m
+2026-01-08 20:42:54 -05:00:     [2m[at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/home/web3codex/projects/NextJs/codexhash/node_modules/tapable/lib/Hook.js:21:14)][0m
+2026-01-08 20:42:54 -05:00:     [2m[at Resolver.doResolve (/home/web3codex/projects/NextJs/codexhash/node_modules/enhanced-resolve/lib/Resolver.js:715:16)][0m
+2026-01-08 20:42:54 -05:00:     [2m[at /home/web3codex/projects/NextJs/codexhash/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:80:17][0m
+2026-01-08 20:42:54 -05:00:     [2m[at /home/web3codex/projects/NextJs/codexhash/node_modules/enhanced-resolve/lib/DescriptionFileUtils.js:161:24][0m
+2026-01-08 20:42:54 -05:00:     [2m[at /home/web3codex/projects/NextJs/codexhash/node_modules/enhanced-resolve/lib/forEachBail.js:39:13][0m
+2026-01-08 20:42:54 -05:00:     [2m[at onJson (/home/web3codex/projects/NextJs/codexhash/node_modules/enhanced-resolve/lib/DescriptionFileUtils.js:96:6)][0m
+2026-01-08 20:42:54 -05:00:     [2m[at /home/web3codex/projects/NextJs/codexhash/node_modules/enhanced-resolve/lib/DescriptionFileUtils.js:123:7][0m
+2026-01-08 20:42:54 -05:00:     [2m[at SyncAsyncFileSystemDecorator.readJson (/home/web3codex/projects/NextJs/codexhash/node_modules/enhanced-resolve/lib/SyncAsyncFileSystemDecorator.js:204:6)][0m
+2026-01-08 20:43:16 -05:00:  ⚠ Webpack is configured while Turbopack is not, which may cause problems.
+2026-01-08 20:43:16 -05:00:  ⚠ See instructions if you need to configure Turbopack:
+2026-01-08 20:43:16 -05:00:   https://nextjs.org/docs/app/api-reference/next-config-js/turbopack
+2026-01-08 20:43:16 -05:00: 
+2026-01-08 20:43:22 -05:00: Error: "./base" is not exported under the condition "style" from package /home/web3codex/projects/NextJs/codexhash/node_modules/tailwindcss (see exports field in /home/web3codex/projects/NextJs/codexhash/node_modules/tailwindcss/package.json)
+2026-01-08 20:43:22 -05:00:     [2m[at /home/web3codex/projects/NextJs/codexhash/node_modules/enhanced-resolve/lib/ExportsFieldPlugin.js:123:7][0m
+2026-01-08 20:43:22 -05:00:     [2m[at Hook.eval [as callAsync] (eval at create (/home/web3codex/projects/NextJs/codexhash/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:22:1)][0m
+2026-01-08 20:43:22 -05:00:     [2m[at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/home/web3codex/projects/NextJs/codexhash/node_modules/tapable/lib/Hook.js:21:14)][0m
+2026-01-08 20:43:22 -05:00:     [2m[at Resolver.doResolve (/home/web3codex/projects/NextJs/codexhash/node_modules/enhanced-resolve/lib/Resolver.js:715:16)][0m
+2026-01-08 20:43:22 -05:00:     [2m[at /home/web3codex/projects/NextJs/codexhash/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:80:17][0m
+2026-01-08 20:43:22 -05:00:     [2m[at /home/web3codex/projects/NextJs/codexhash/node_modules/enhanced-resolve/lib/DescriptionFileUtils.js:161:24][0m
+2026-01-08 20:43:22 -05:00:     [2m[at /home/web3codex/projects/NextJs/codexhash/node_modules/enhanced-resolve/lib/forEachBail.js:39:13][0m
+2026-01-08 20:43:22 -05:00:     [2m[at onJson (/home/web3codex/projects/NextJs/codexhash/node_modules/enhanced-resolve/lib/DescriptionFileUtils.js:96:6)][0m
+2026-01-08 20:43:22 -05:00:     [2m[at /home/web3codex/projects/NextJs/codexhash/node_modules/enhanced-resolve/lib/DescriptionFileUtils.js:123:7][0m
+2026-01-08 20:43:22 -05:00:     [2m[at SyncAsyncFileSystemDecorator.readJson (/home/web3codex/projects/NextJs/codexhash/node_modules/enhanced-resolve/lib/SyncAsyncFileSystemDecorator.js:204:6)][0m
+2026-01-08 20:43:23 -05:00:  ⨯ ./src/app/globals.css
+2026-01-08 20:43:23 -05:00: Error evaluating Node.js code
+2026-01-08 20:43:23 -05:00: CssSyntaxError: tailwindcss: /home/web3codex/projects/NextJs/codexhash/src/app/globals.css:1:1: "./base" is not exported under the condition "style" from package /home/web3codex/projects/NextJs/codexhash/node_modules/tailwindcss (see exports field in /home/web3codex/projects/NextJs/codexhash/node_modules/tailwindcss/package.json)
+2026-01-08 20:43:23 -05:00:     [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+2026-01-08 20:43:23 -05:00:     [at Root.error (turbopack:///[project]/node_modules/postcss/lib/node.js:146:32)]
+2026-01-08 20:43:23 -05:00:     [at Object.Once (/home/web3codex/projects/NextJs/codexhash/node_modules/@tailwindcss/postcss/dist/index.js:10:6911)]
+2026-01-08 20:43:23 -05:00:     [at process.processTicksAndRejections (node:internal/process/task_queues:105:5)]
+2026-01-08 20:43:23 -05:00:     [at async LazyResult.runAsync (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:293:11)]
+2026-01-08 20:43:23 -05:00:     [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+2026-01-08 20:43:23 -05:00:     [at async run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:23)]
+2026-01-08 20:43:23 -05:00: 
+2026-01-08 20:43:23 -05:00: Import trace:
+2026-01-08 20:43:23 -05:00:   Client Component Browser:
+2026-01-08 20:43:23 -05:00:     ./src/app/globals.css [Client Component Browser]
+2026-01-08 20:43:23 -05:00:     ./src/app/layout.tsx [Server Component]
+2026-01-08 20:43:23 -05:00: 
+2026-01-08 20:43:23 -05:00: 
+2026-01-08 20:43:47 -05:00:  ⚠ Webpack is configured while Turbopack is not, which may cause problems.
+2026-01-08 20:43:47 -05:00:  ⚠ See instructions if you need to configure Turbopack:
+2026-01-08 20:43:47 -05:00:   https://nextjs.org/docs/app/api-reference/next-config-js/turbopack
+2026-01-08 20:43:47 -05:00: 
+2026-01-08 20:47:41 -05:00:  ⚠ Webpack is configured while Turbopack is not, which may cause problems.
+2026-01-08 20:47:41 -05:00:  ⚠ See instructions if you need to configure Turbopack:
+2026-01-08 20:47:41 -05:00:   https://nextjs.org/docs/app/api-reference/next-config-js/turbopack
+2026-01-08 20:47:41 -05:00: 
+2026-01-08 20:48:50 -05:00:  ⚠ Webpack is configured while Turbopack is not, which may cause problems.
+2026-01-08 20:48:50 -05:00:  ⚠ See instructions if you need to configure Turbopack:
+2026-01-08 20:48:50 -05:00:   https://nextjs.org/docs/app/api-reference/next-config-js/turbopack
+2026-01-08 20:48:50 -05:00: 
+2026-01-08 20:51:04 -05:00:  ⚠ Webpack is configured while Turbopack is not, which may cause problems.
+2026-01-08 20:51:04 -05:00:  ⚠ See instructions if you need to configure Turbopack:
+2026-01-08 20:51:04 -05:00:   https://nextjs.org/docs/app/api-reference/next-config-js/turbopack
+2026-01-08 20:51:04 -05:00: 
