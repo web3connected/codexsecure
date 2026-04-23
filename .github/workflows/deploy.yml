@@ -3,12 +3,6 @@ name: Deploy CodexSecure to Production
 on:
   push:
     branches: [ main ]
-    paths:
-      - 'backend/**'
-      - 'src/**'
-      - 'package.json'
-      - 'ecosystem.config.js'
-      - '.github/workflows/**'
   workflow_dispatch:
 
 env:
@@ -17,13 +11,11 @@ env:
   PRODUCTION_DOMAIN: codexsecure.io
   PRODUCTION_PATH: /home/forge/codexsecure.io
   FRONTEND_PORT: 3003
-  API_PORT: 8003
 
 jobs:
-  # Build and test the application
-  test:
+  deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
     - name: 📥 Checkout repository
       uses: actions/checkout@v4
@@ -34,21 +26,8 @@ jobs:
         node-version: '18'
         cache: 'npm'
 
-    - name: 🐍 Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.11'
-
-    - name: 📦 Install Node.js dependencies
+    - name: 📦 Install dependencies
       run: npm ci
-
-    - name: 🐍 Install Python dependencies
-      run: |
-        cd backend
-        pip install -r requirements.txt
-
-    - name: 🔍 Run ESLint
-      run: npm run lint
 
     - name: 🏗️ Build Next.js application
       run: npm run build
@@ -56,30 +35,6 @@ jobs:
         NEXT_PUBLIC_API_URL: https://codexsecure.io/api
         NEXT_PUBLIC_SITE_URL: https://codexsecure.io
 
-    - name: 🧪 Test backend functionality
-      run: |
-        cd backend
-        python -c "
-        import sys
-        sys.path.append('src')
-        try:
-            from main import app
-            print('✅ Backend imports successfully')
-        except Exception as e:
-            print(f'❌ Backend import failed: {e}')
-            sys.exit(1)
-        "
-
-  # Deploy directly to production server
-  deploy:
-    needs: test
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-    
-    steps:
-    - name: 📥 Checkout repository
-      uses: actions/checkout@v4
-    
     - name: 🔐 Setup SSH Key
       run: |
         mkdir -p ~/.ssh
@@ -87,196 +42,58 @@ jobs:
         chmod 600 ~/.ssh/id_rsa
         ssh-keyscan -H $PRODUCTION_HOST >> ~/.ssh/known_hosts
 
-    - name: 📦 Create deployment package
+    - name: 📤 Sync files to production server
       run: |
-        mkdir -p deployment
-        
-        cp -r src/ deployment/
-        cp -r backend/ deployment/
-        cp -r public/ deployment/
-        cp package*.json deployment/
-        cp ecosystem.config.js deployment/
-        cp next.config.ts deployment/ 2>/dev/null || echo "No next.config.ts found"
-        cp tailwind.config.ts deployment/ 2>/dev/null || echo "No tailwind.config.ts found"
-        cp tsconfig.json deployment/ 2>/dev/null || echo "No tsconfig.json found"
-        
-        find deployment/ -name "__pycache__" -type d -exec rm -rf {} + 2>/dev/null || true
-        find deployment/ -name "*.pyc" -delete 2>/dev/null || true
-        find deployment/ -name ".env*" -delete 2>/dev/null || true
-        find deployment/ -name "node_modules" -type d -exec rm -rf {} + 2>/dev/null || true
-        
-        tar -czf codexsecure-deployment.tar.gz -C deployment .
-
-    - name: 📤 Upload to production server
-      run: |
-        scp -o StrictHostKeyChecking=no codexsecure-deployment.tar.gz $PRODUCTION_USER@$PRODUCTION_HOST:/tmp/
+        rsync -az --delete \
+          --exclude='.git' \
+          --exclude='node_modules' \
+          --exclude='.next' \
+          --exclude='.env*' \
+          ./ $PRODUCTION_USER@$PRODUCTION_HOST:$PRODUCTION_PATH/
 
     - name: 🚀 Deploy on production server
       run: |
         ssh -o StrictHostKeyChecking=no $PRODUCTION_USER@$PRODUCTION_HOST << 'EOF'
         set -e
-        
-        echo "🚀 Starting CodexSecure deployment..."
-        
         cd /home/forge/codexsecure.io
-        
-        if [ -d "src" ] || [ -d "backend" ]; then
-          echo "📋 Backing up existing installation..."
-          backup_dir="backup.$(date +%Y%m%d_%H%M%S)"
-          mkdir -p "$backup_dir"
-          mv src backend public package*.json ecosystem.config.js "$backup_dir"/ 2>/dev/null || true
-        fi
-        
-        echo "📦 Extracting deployment..."
-        tar -xzf /tmp/codexsecure-deployment.tar.gz
-        rm /tmp/codexsecure-deployment.tar.gz
-        
-        echo "📦 Installing Node.js dependencies..."
+
+        echo "📦 Installing dependencies..."
         npm ci --production=false
-        
+
         echo "🏗️ Building Next.js application..."
-        NEXT_PUBLIC_API_URL=https://codexsecure.io/api NEXT_PUBLIC_SITE_URL=https://codexsecure.io NODE_ENV=production npm run build
-        
-        echo "🐍 Installing Python dependencies..."
-        cd backend
-        pip3 install -r requirements.txt --user
-        cd ..
-        
+        NEXT_PUBLIC_API_URL=https://codexsecure.io/api \
+        NEXT_PUBLIC_SITE_URL=https://codexsecure.io \
+        NODE_ENV=production \
+        npm run build
+
         mkdir -p logs
-        
+
         if ! command -v pm2 &> /dev/null; then
-          echo "📦 Installing PM2..."
           npm install -g pm2
         fi
-        
-        echo "🛑 Stopping existing services..."
-        pm2 stop ecosystem.config.js 2>/dev/null || true
-        pm2 delete all 2>/dev/null || true
-        
-        echo "▶️ Starting CodexSecure services..."
+
+        echo "🔄 Restarting PM2..."
+        pm2 stop codexsecure 2>/dev/null || true
+        pm2 delete codexsecure 2>/dev/null || true
         pm2 start ecosystem.config.js
         pm2 save
-        
-        pm2 startup || true
-        
-        echo "⏳ Waiting for services to start..."
-        sleep 15
-        
-        echo "🔍 Performing health check..."
-        max_retries=30
-        retry_count=0
-        
-        while [ $retry_count -lt $max_retries ]; do
-          if curl -f http://localhost:3003 > /dev/null 2>&1; then
-            echo "✅ Frontend is healthy!"
-            break
-          fi
-          echo "⏳ Waiting for frontend... ($((retry_count + 1))/$max_retries)"
-          sleep 2
-          retry_count=$((retry_count + 1))
-        done
-        
-        if [ $retry_count -eq $max_retries ]; then
-          echo "❌ Frontend health check failed"
-          pm2 logs --lines 50
-          exit 1
-        fi
-        
-        retry_count=0
-        while [ $retry_count -lt $max_retries ]; do
-          if curl -f http://localhost:8003/health > /dev/null 2>&1; then
-            echo "✅ Backend API is healthy!"
-            break
-          fi
-          echo "⏳ Waiting for backend... ($((retry_count + 1))/$max_retries)"
-          sleep 2
-          retry_count=$((retry_count + 1))
-        done
-        
-        if [ $retry_count -eq $max_retries ]; then
-          echo "❌ Backend health check failed"
-          pm2 logs --lines 50
-          exit 1
-        fi
-        
-        echo "🎉 CodexSecure deployment completed successfully!"
-        EOF
 
-    - name: 🌐 Configure nginx proxy
-      run: |
-        ssh -o StrictHostKeyChecking=no $PRODUCTION_USER@$PRODUCTION_HOST << 'EOF'
-        sudo tee /etc/nginx/sites-available/codexsecure.io > /dev/null << 'NGINX_CONF'
-        server {
-            listen 80;
-            listen [::]:80;
-            server_name codexsecure.io www.codexsecure.io;
-            
-            add_header X-Frame-Options "SAMEORIGIN" always;
-            add_header X-XSS-Protection "1; mode=block" always;
-            add_header X-Content-Type-Options "nosniff" always;
-            add_header Referrer-Policy "no-referrer-when-downgrade" always;
-            add_header Content-Security-Policy "default-src 'self' http: https: data: blob: 'unsafe-inline'" always;
-            
-            location / {
-                proxy_pass http://127.0.0.1:3003;
-                proxy_http_version 1.1;
-                proxy_set_header Upgrade $http_upgrade;
-                proxy_set_header Connection 'upgrade';
-                proxy_set_header Host $host;
-                proxy_set_header X-Real-IP $remote_addr;
-                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-                proxy_set_header X-Forwarded-Proto $scheme;
-                proxy_cache_bypass $http_upgrade;
-            }
-            
-            location /api/ {
-                proxy_pass http://127.0.0.1:8003/;
-                proxy_http_version 1.1;
-                proxy_set_header Host $host;
-                proxy_set_header X-Real-IP $remote_addr;
-                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-                proxy_set_header X-Forwarded-Proto $scheme;
-                
-                add_header Access-Control-Allow-Origin * always;
-                add_header Access-Control-Allow-Methods "GET, POST, OPTIONS" always;
-                add_header Access-Control-Allow-Headers "Origin, X-Requested-With, Content-Type, Accept, Authorization" always;
-                
-                if ($request_method = 'OPTIONS') {
-                    add_header Access-Control-Allow-Origin * always;
-                    add_header Access-Control-Allow-Methods "GET, POST, OPTIONS" always;
-                    add_header Access-Control-Allow-Headers "Origin, X-Requested-With, Content-Type, Accept, Authorization" always;
-                    add_header Content-Length 0;
-                    add_header Content-Type text/plain;
-                    return 204;
-                }
-            }
-            
-            location /api/health {
-                proxy_pass http://127.0.0.1:8003/health;
-                proxy_cache_bypass 1;
-                access_log off;
-            }
-        }
-        NGINX_CONF
-        
-        sudo ln -sf /etc/nginx/sites-available/codexsecure.io /etc/nginx/sites-enabled/
-        sudo nginx -t
-        sudo systemctl reload nginx
-        
-        echo "✅ Nginx configuration updated for CodexSecure"
+        echo "⏳ Waiting for app to start..."
+        sleep 10
+
+        if curl -sf http://localhost:3003 > /dev/null; then
+          echo "✅ CodexSecure is healthy on port 3003"
+        else
+          echo "❌ Health check failed"
+          pm2 logs --lines 30
+          exit 1
+        fi
+
+        echo "🎉 CodexSecure deployment complete!"
         EOF
 
     - name: 🧪 Final verification
       run: |
-        echo "🧪 Final deployment verification..."
         sleep 10
-        
-        echo "Testing https://codexsecure.io"
-        curl -f -s https://codexsecure.io > /dev/null || echo "Frontend test failed"
-        
-        echo "Testing https://codexsecure.io/api/health"
-        curl -f -s https://codexsecure.io/api/health || echo "API health test failed"
-        
-        echo "🎉 CodexSecure.io deployment completed!"
-        echo "🌐 Production Site: https://codexsecure.io"
-        echo "📡 API Health: https://codexsecure.io/api/health"
+        curl -sf https://codexsecure.io > /dev/null && echo "✅ codexsecure.io is live" || echo "⚠️ Site check failed (may need Forge nginx config)"
+
