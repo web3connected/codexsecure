@@ -5,9 +5,9 @@
 
 set -e
 
-SERVER="forge@45.79.180.207"
+SERVER="forge@172.104.27.176"
 SERVER_PATH="~/codexsecure.io"
-SSH_KEY="${SSH_KEY:-~/.ssh/id_rsa}"
+SSH_KEY="${SSH_KEY:-~/.ssh/codexweb3-ssh}"
 APP_NAME="codexsecure-prod"
 PORT=3003
 ARCHIVE="codexsecure_build.tar.gz"
@@ -34,6 +34,8 @@ echo ""
 # ── 2. Pack the build ─────────────────────────────────────────────────────────
 echo "📦 Creating deployment archive..."
 tar -czf "$ARCHIVE" \
+    --exclude='node_modules' \
+    --exclude='.git' \
     .next/ \
     public/ \
     src/ \
@@ -43,9 +45,7 @@ tar -czf "$ARCHIVE" \
     tailwind.config.ts \
     postcss.config.mjs \
     tsconfig.json \
-    ecosystem.config.js \
-    --exclude='node_modules' \
-    --exclude='.git'
+    ecosystem.config.js
 
 echo "✅ Archive created: $ARCHIVE"
 echo ""
