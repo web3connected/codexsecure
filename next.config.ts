@@ -9,10 +9,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  transpilePackages: ['@web3codex/global-assets', '@web3codex/react-codex-auth', '@web3codex/components'],
-  experimental: {
-    externalDir: true,
-  },
+  experimental: {},
   webpack: (config, { dev, isServer }) => {
     // Allow importing from external directories (GlobalAssets)
     config.resolve.modules.push(path.resolve('./node_modules'));

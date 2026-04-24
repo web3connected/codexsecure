@@ -73,8 +73,12 @@ jobs:
         fi
 
         echo "🔄 Restarting PM2 (prod only)..."
+        pm2 stop codexsecure-dev 2>/dev/null || true
+        pm2 delete codexsecure-dev 2>/dev/null || true
         pm2 stop codexsecure-prod 2>/dev/null || true
         pm2 delete codexsecure-prod 2>/dev/null || true
+        pm2 stop codexsecure 2>/dev/null || true
+        pm2 delete codexsecure 2>/dev/null || true
         pm2 start ecosystem.config.js --only codexsecure-prod
         pm2 save
 
