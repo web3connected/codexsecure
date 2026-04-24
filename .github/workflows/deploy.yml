@@ -1,78 +1,74 @@
 name: Deploy CodexSecure to Production
 
+# Required GitHub Secrets:
+#   DEPLOY_PRIVATE_KEY  — private SSH key for forge@45.79.180.207
+#   FORGE_DEPLOY_HOOK   — (optional) Forge webhook URL to trigger server-side deploy
+
 on:
   push:
     branches: [ main ]
   workflow_dispatch:
 
 env:
-  PRODUCTION_HOST: ${{ secrets.DEPLOY_HOST || '45.79.180.207' }}
-  PRODUCTION_USER: ${{ secrets.DEPLOY_USER || 'forge' }}
-  PRODUCTION_DOMAIN: codexsecure.io
+  PRODUCTION_HOST: 45.79.180.207
+  PRODUCTION_USER: forge
   PRODUCTION_PATH: /home/forge/codexsecure.io
-  FRONTEND_PORT: 3003
+  PORT: 3003
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: 📥 Checkout repository
+    - name: 📥 Checkout
       uses: actions/checkout@v4
 
-    - name: 🟢 Set up Node.js
+    - name: 🟢 Node.js 20
       uses: actions/setup-node@v4
       with:
-        node-version: '18'
+        node-version: '20'
         cache: 'npm'
 
-    - name: 📦 Install dependencies
+    - name: 📦 Install
       run: npm ci
 
-    - name: 🏗️ Build Next.js application
+    - name: 🏗️ Build
       run: npm run build
       env:
         NEXT_PUBLIC_API_URL: https://codexsecure.io/api
         NEXT_PUBLIC_SITE_URL: https://codexsecure.io
+        NODE_ENV: production
 
-    - name: 🔐 Setup SSH Key
+    - name: 🔐 Setup SSH
+      if: ${{ secrets.DEPLOY_PRIVATE_KEY != '' }}
       run: |
         mkdir -p ~/.ssh
         echo "${{ secrets.DEPLOY_PRIVATE_KEY }}" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
         ssh-keyscan -H $PRODUCTION_HOST >> ~/.ssh/known_hosts
 
-    - name: 📤 Sync files to production server
+    - name: 📤 Sync to server
+      if: ${{ secrets.DEPLOY_PRIVATE_KEY != '' }}
       run: |
         rsync -az --delete \
           --exclude='.git' \
           --exclude='node_modules' \
-          --exclude='.next' \
           --exclude='.env*' \
+          -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" \
           ./ $PRODUCTION_USER@$PRODUCTION_HOST:$PRODUCTION_PATH/
 
-    - name: 🚀 Deploy on production server
+    - name: 🚀 Server deploy
+      if: ${{ secrets.DEPLOY_PRIVATE_KEY != '' }}
       run: |
-        ssh -o StrictHostKeyChecking=no $PRODUCTION_USER@$PRODUCTION_HOST << 'EOF'
+        ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no \
+          $PRODUCTION_USER@$PRODUCTION_HOST << 'ENDSSH'
         set -e
         cd /home/forge/codexsecure.io
-
-        echo "📦 Installing dependencies..."
         npm ci --production=false
-
-        echo "🏗️ Building Next.js application..."
         NEXT_PUBLIC_API_URL=https://codexsecure.io/api \
         NEXT_PUBLIC_SITE_URL=https://codexsecure.io \
-        NODE_ENV=production \
-        npm run build
-
+        NODE_ENV=production npm run build
         mkdir -p logs
-
-        if ! command -v pm2 &> /dev/null; then
-          npm install -g pm2
-        fi
-
-        echo "🔄 Restarting PM2 (prod only)..."
         pm2 stop codexsecure-dev 2>/dev/null || true
         pm2 delete codexsecure-dev 2>/dev/null || true
         pm2 stop codexsecure-prod 2>/dev/null || true
@@ -81,23 +77,11 @@ jobs:
         pm2 delete codexsecure 2>/dev/null || true
         pm2 start ecosystem.config.js --only codexsecure-prod
         pm2 save
+        sleep 8
+        curl -sf http://localhost:3003 && echo '✅ healthy' || (pm2 logs codexsecure-prod --lines 20 --nostream; exit 1)
+        ENDSSH
 
-        echo "⏳ Waiting for app to start..."
-        sleep 10
-
-        if curl -sf http://localhost:3003 > /dev/null; then
-          echo "✅ CodexSecure is healthy on port 3003"
-        else
-          echo "❌ Health check failed"
-          pm2 logs --lines 30
-          exit 1
-        fi
-
-        echo "🎉 CodexSecure deployment complete!"
-        EOF
-
-    - name: 🧪 Final verification
-      run: |
-        sleep 10
-        curl -sf https://codexsecure.io > /dev/null && echo "✅ codexsecure.io is live" || echo "⚠️ Site check failed (may need Forge nginx config)"
+    - name: 🪝 Forge webhook (fallback)
+      if: ${{ secrets.DEPLOY_PRIVATE_KEY == '' && secrets.FORGE_DEPLOY_HOOK != '' }}
+      run: curl -s "${{ secrets.FORGE_DEPLOY_HOOK }}"
 
