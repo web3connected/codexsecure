@@ -1,60 +1,63 @@
-"use client";
+import MainSliderComponent from '@/components/codex/shared/Sliders/MainSliderComponent';
+import { ThreePanelCardDesign } from '@/components/codex/shared/panels/ThreePanelCardDesign';
+import { NumberedStepsPanel } from '@/components/codex/shared/panels/NumberedStepsPanel';
+import { CenteredCtaPanel } from '@/components/codex/shared/panels/CenteredCtaPanel';
+import { SplitTextStatsPanel } from '@/components/codex/shared/panels/SplitTextStatsPanel';
+import HeroSlide from '@/data/slides/HeroSlide';
+import ZoneSlide from '@/data/slides/ZoneSlide';
+import AnalyzerSlide from '@/data/slides/AnalyzerSlide';
+import {
+  coreConcepts,
+  howItWorksSteps,
+  howItWorksFormula,
+  byTheNumbersEyebrow,
+  byTheNumbersTitle,
+  byTheNumbersParagraphs,
+  byTheNumbersHighlight,
+  byTheNumbersStats,
+  ctaEyebrow,
+  ctaTitle,
+  ctaSubtitle,
+  ctaButtons,
+} from '@/data/home.data';
 
-import { useAuth } from "@/hooks";
+const slides = [HeroSlide, ZoneSlide, AnalyzerSlide];
 
-export default function Home() {
-  const { user, isAuthenticated, currentSite } = useAuth();
-
+export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      <div className="container mx-auto px-4 py-16">
-        {/* Hero Section */}
-        <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-white mb-6">
-            Welcome to CodexSecure
-          </h1>
-          <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-            Zone-based security, threat detection, and privacy framework for
-            enterprise blockchain applications.
-          </p>
-          {isAuthenticated && (
-            <p className="mt-4 text-green-400">Welcome back, {user?.name}!</p>
-          )}
-        </div>
+    <>
+      {/* Header = 40px topbar + 100px nav = 140px total */}
+      <MainSliderComponent slides={slides} height="calc(100vh - 140px)" />
 
-        {/* Simple Content Grid */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-lg p-6">
-            <div className="text-4xl mb-4">🛡️</div>
-            <h3 className="text-xl font-semibold text-white mb-3">
-              Security Zones
-            </h3>
-            <p className="text-slate-300">
-              Implement granular security controls across your infrastructure.
-            </p>
-          </div>
+      {/* Core Concepts — 3 feature cards */}
+      <ThreePanelCardDesign cards={coreConcepts} />
 
-          <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-lg p-6">
-            <div className="text-4xl mb-4">🔐</div>
-            <h3 className="text-xl font-semibold text-white mb-3">
-              Threat Detection
-            </h3>
-            <p className="text-slate-300">
-              Real-time monitoring and automated threat response systems.
-            </p>
-          </div>
+      {/* How It Works — 4 numbered steps + zone tier model */}
+      <NumberedStepsPanel
+        title="How It Works"
+        subtitle="From inbound request to enforced zone policy — in a single middleware pass."
+        steps={howItWorksSteps}
+        formulaTitle={howItWorksFormula.title}
+        formulaLines={howItWorksFormula.lines}
+        backgroundImage="/assets/images/quantum-computing.jpg"
+      />
 
-          <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-lg p-6">
-            <div className="text-4xl mb-4">🔒</div>
-            <h3 className="text-xl font-semibold text-white mb-3">
-              Privacy Framework
-            </h3>
-            <p className="text-slate-300">
-              Built-in compliance and data protection mechanisms.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+      {/* By the Numbers */}
+      <SplitTextStatsPanel
+        eyebrow={byTheNumbersEyebrow}
+        title={byTheNumbersTitle}
+        paragraphs={byTheNumbersParagraphs}
+        highlight={byTheNumbersHighlight}
+        statCards={byTheNumbersStats}
+      />
+
+      {/* CTA */}
+      <CenteredCtaPanel
+        eyebrow={ctaEyebrow}
+        title={ctaTitle}
+        subtitle={ctaSubtitle}
+        buttons={ctaButtons}
+      />
+    </>
   );
 }

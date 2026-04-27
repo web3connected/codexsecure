@@ -1,13 +1,46 @@
 import type { Metadata } from "next";
-import Script from "next/script";
-import { ClientLayout } from "@/components/layout/ClientLayout";
+import { Inter, Poppins, JetBrains_Mono, Orbitron } from "next/font/google";
+import CodexSecureDataLayer from "./CodexSecureDataLayer";
 import "./globals.css";
 
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-poppins",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains",
+  display: "swap",
+});
+
+const orbitron = Orbitron({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "900"],
+  variable: "--font-orbitron",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  title: "CodexSecure - Security & Privacy Layer",
-  description: "Zone-based security, threat detection, and privacy framework for enterprise blockchain applications.",
+  title: "CodexSecure - Zone-Based Security Platform",
+  description: "Intelligent zone-based security, route analysis, and threat detection for distributed systems and blockchain applications.",
+  keywords: "security zones, threat detection, route analysis, blockchain security, distributed systems, web3",
   icons: {
     icon: "/assets/icons/codexIcon.png",
+  },
+  openGraph: {
+    title: "CodexSecure - Zone-Based Security",
+    description: "Intelligent zone-based security for distributed systems",
+    type: "website",
+    locale: "en_US",
   },
 };
 
@@ -17,46 +50,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" data-theme="dark" style={{colorScheme: "dark"}}>
+    <html
+      lang="en"
+      data-theme="dark"
+      style={{ colorScheme: "dark" }}
+      className={`${inter.variable} ${poppins.variable} ${jetbrainsMono.variable} ${orbitron.variable}`}
+    >
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
-          rel="shortcut icon"
-          href="/assets/icons/codexIcon.png"
-          type="image/x-icon"
-        />
-        
-        {/* Phosphor Icons */}
-        <link
-          rel="stylesheet"
-          type="text/css"
-          href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
-        />
-        <link
-          rel="stylesheet"
-          type="text/css"
-          href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
-        />
-        <link
-          rel="stylesheet"
-          type="text/css"
-          href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/thin/style.css"
-        />
-        
-        {/* Web3 Codex Design System */}
-        <link rel="stylesheet" href="/assets/css/core-design-system.css" />
-        <link rel="stylesheet" href="/assets/css/odometer.css" />
       </head>
-      <body className="dark bg-slate-900 text-white font-business">
-        <ClientLayout>
+      <body className="bg-secure-bg text-foreground font-body antialiased">
+        <CodexSecureDataLayer>
           {children}
-        </ClientLayout>
-        
-        {/* Only load scripts that actually exist */}
-        <Script src="/assets/js/index.js" strategy="beforeInteractive" />
+        </CodexSecureDataLayer>
       </body>
     </html>
   );
 }
-  

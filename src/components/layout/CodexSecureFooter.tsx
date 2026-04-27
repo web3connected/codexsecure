@@ -1,42 +1,148 @@
-"use client";
+'use client';
+
+import React from 'react';
+import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faTwitter, faDiscord } from '@fortawesome/free-brands-svg-icons';
+
+const footerLinks = {
+  product: [
+    { label: 'Security Zones',  href: '/zones' },
+    { label: 'Getting Started', href: '/getting-started' },
+    { label: 'API Docs',        href: '/docs' },
+    { label: 'About',           href: '/about' },
+  ],
+  sdks: [
+    { label: 'Go Client',               href: 'https://github.com/web3connected/codexsecure', external: true },
+    { label: 'JavaScript / TypeScript', href: 'https://github.com/web3connected/codexsecure', external: true },
+  ],
+  company: [
+    { label: 'About', href: '/about' },
+    { label: 'Blog',  href: 'https://web3connected.com/blog', external: true },
+  ],
+  legal: [
+    { label: 'Terms of Service', href: '/terms' },
+    { label: 'Privacy Policy',   href: '/privacy' },
+  ],
+};
+
+const socialLinks = {
+  github:  'https://github.com/web3connected',
+  twitter: 'https://twitter.com/web3codex',
+  discord: 'https://discord.gg/web3codex',
+};
 
 export default function CodexSecureFooter() {
   return (
-    <footer className="bg-slate-900 border-t border-slate-800">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid md:grid-cols-4 gap-8">
-          <div>
-            <h3 className="text-white font-semibold mb-4">Product</h3>
-            <ul className="space-y-2">
-              <li><a href="/zones" className="text-slate-400 hover:text-purple-400 transition-colors">Security Zones</a></li>
-              <li><a href="/pricing" className="text-slate-400 hover:text-purple-400 transition-colors">Pricing</a></li>
-              <li><a href="/docs" className="text-slate-400 hover:text-purple-400 transition-colors">Documentation</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-white font-semibold mb-4">Company</h3>
-            <ul className="space-y-2">
-              <li><a href="/about" className="text-slate-400 hover:text-purple-400 transition-colors">About</a></li>
-              <li><a href="/support" className="text-slate-400 hover:text-purple-400 transition-colors">Support</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-white font-semibold mb-4">Legal</h3>
-            <ul className="space-y-2">
-              <li><a href="/privacy" className="text-slate-400 hover:text-purple-400 transition-colors">Privacy</a></li>
-              <li><a href="/terms" className="text-slate-400 hover:text-purple-400 transition-colors">Terms</a></li>
-              <li><a href="/security" className="text-slate-400 hover:text-purple-400 transition-colors">Security</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-white font-semibold mb-4">Connect</h3>
-            <p className="text-slate-400 text-sm mb-4">
-              Enterprise security infrastructure
+    <footer className="bg-secure-bg border-t border-secure-border">
+      <div className="container mx-auto px-6 py-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-10">
+
+          {/* Brand Column */}
+          <div className="col-span-2 md:col-span-3 lg:col-span-2 mb-8 lg:mb-0">
+            <Link href="/" className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-secure-primary to-secure-accent flex items-center justify-center">
+                <span className="text-white font-brand font-bold text-lg">S</span>
+              </div>
+              <span className="font-brand text-2xl font-semibold text-secure-primary">
+                CodexSecure
+              </span>
+            </Link>
+            <p className="text-foreground/60 text-sm mb-6 max-w-xs">
+              Zone-based security and intelligent route analysis for distributed systems and blockchain applications.
             </p>
+            <div className="flex items-center gap-4">
+              <a href={socialLinks.github} target="_blank" rel="noopener noreferrer"
+                className="text-foreground/40 hover:text-secure-primary transition-colors">
+                <FontAwesomeIcon icon={faGithub} className="w-5 h-5" />
+              </a>
+              <a href={socialLinks.twitter} target="_blank" rel="noopener noreferrer"
+                className="text-foreground/40 hover:text-secure-primary transition-colors">
+                <FontAwesomeIcon icon={faTwitter} className="w-5 h-5" />
+              </a>
+              <a href={socialLinks.discord} target="_blank" rel="noopener noreferrer"
+                className="text-foreground/40 hover:text-secure-primary transition-colors">
+                <FontAwesomeIcon icon={faDiscord} className="w-5 h-5" />
+              </a>
+            </div>
           </div>
+
+          {/* Product Column */}
+          <div>
+            <h4 className="text-foreground/90 font-semibold text-sm uppercase tracking-wider mb-4">Product</h4>
+            <ul className="space-y-3">
+              {footerLinks.product.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-foreground/50 hover:text-secure-primary text-sm transition-colors">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* SDKs Column */}
+          <div>
+            <h4 className="text-foreground/90 font-semibold text-sm uppercase tracking-wider mb-4">SDKs</h4>
+            <ul className="space-y-3">
+              {footerLinks.sdks.map((link) => (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    target={link.external ? '_blank' : undefined}
+                    rel={link.external ? 'noopener noreferrer' : undefined}
+                    className="text-foreground/50 hover:text-secure-primary text-sm transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Company Column */}
+          <div>
+            <h4 className="text-foreground/90 font-semibold text-sm uppercase tracking-wider mb-4">Company</h4>
+            <ul className="space-y-3">
+              {footerLinks.company.map((link) => (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    target={'external' in link && link.external ? '_blank' : undefined}
+                    rel={'external' in link && link.external ? 'noopener noreferrer' : undefined}
+                    className="text-foreground/50 hover:text-secure-primary text-sm transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Legal Column */}
+          <div>
+            <h4 className="text-foreground/90 font-semibold text-sm uppercase tracking-wider mb-4">Legal</h4>
+            <ul className="space-y-3">
+              {footerLinks.legal.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-foreground/50 hover:text-secure-primary text-sm transition-colors">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
         </div>
-        <div className="border-t border-slate-800 mt-8 pt-8 text-center text-slate-400 text-sm">
-          <p>© {new Date().getFullYear()} CodexSecure. All rights reserved.</p>
+
+        {/* Bottom bar */}
+        <div className="border-t border-secure-border mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-foreground/40 text-sm">
+            © {new Date().getFullYear()} CodexSecure. All rights reserved.
+          </p>
+          <p className="text-foreground/30 text-xs">
+            Built on the Codex Zone Framework · Z1–Z12
+          </p>
         </div>
       </div>
     </footer>
