@@ -14,7 +14,7 @@ export const aboutMissionHighlight = 'CodexSecure';
 
 export const aboutStatCards: StatCard[] = [
   { value: 'Z1–Z12', label: 'Twelve structured zones from public to private ledger', color: 'text-secure-primary' },
-  { value: '1 pass', label: 'Single middleware pass — fingerprint, classify, enforce', color: 'text-secure-secondary' },
+  { value: '32ms',   label: 'Measured response time — full 12-zone enforcement, zero perceptible overhead', color: 'text-secure-secondary' },
   { value: '0 drift', label: 'Phase-locked zones cannot be downgraded mid-session', color: 'text-white' },
 ];
 
