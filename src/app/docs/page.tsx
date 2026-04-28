@@ -212,12 +212,11 @@ export default function DocsPage() {
           <ApiEndpointTablePanel
             title="API Reference"
             subtitle="codexsecure-api · Go/Gin · port 8084"
-            baseUrl="http://localhost:8084"
             endpoints={apiEndpoints.map((ep) => ({
-              method:      ep.method,
-              path:        ep.path,
+              method:      ep.method as 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH',
+              endpoint:    ep.path,
               description: ep.description,
-              notes:       ep.notes,
+              parameters:  ep.notes ? [{ name: 'notes', type: 'string', required: false, description: ep.notes }] : [],
             }))}
           />
         )}

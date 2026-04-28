@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useState } from 'react';
-import type { ZoneEntry } from '@/data/zones.data';
+import type { ZoneEntry } from './ZoneAccordionPanel';
 
-// ─── Sub-components (shared with ZoneAccordionPanel) ─────────────────────────
+// ─── Sub-components ───────────────────────────────────────────────────────────
 
 function MethodPill({ method }: { method: string }) {
   const colors: Record<string, string> = {
@@ -57,7 +57,6 @@ function ZoneItem({
         backdropFilter: 'blur(6px)',
       }}
     >
-      {/* Header */}
       <button
         type="button"
         onClick={onToggle}
@@ -111,7 +110,6 @@ function ZoneItem({
         </span>
       </button>
 
-      {/* Body */}
       {isOpen && (
         <div className="px-4 pb-4 border-t" style={{ borderColor: `${zone.tierColor}20` }}>
           <div className="pt-4 space-y-4">
@@ -154,8 +152,6 @@ function ZoneItem({
     </div>
   );
 }
-
-// ─── One column ───────────────────────────────────────────────────────────────
 
 function ZoneColumn({ zones }: { zones: ZoneEntry[] }) {
   const [openId, setOpenId] = useState<number | null>(null);
@@ -202,7 +198,6 @@ export function ZoneDualAccordionPanel({ eyebrow, title, subtitle, zones }: Zone
       <div className="absolute inset-0" style={{ backgroundColor: 'rgba(8,13,26,0.62)' }} />
 
       <div className="max-w-6xl mx-auto relative z-10">
-        {/* Header */}
         <div className="text-center mb-12">
           <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: '#00E4FF' }}>
             {eyebrow}
@@ -216,7 +211,6 @@ export function ZoneDualAccordionPanel({ eyebrow, title, subtitle, zones }: Zone
           <p className="text-slate-400 text-base max-w-2xl mx-auto leading-relaxed">{subtitle}</p>
         </div>
 
-        {/* Two-column accordions */}
         <div className="grid md:grid-cols-2 gap-6">
           <ZoneColumn zones={firstHalf} />
           <ZoneColumn zones={secondHalf} />

@@ -44,7 +44,7 @@ function PillarIcon({ name }: { name: string }) {
   return <>{icons[name] ?? icons['zap']}</>;
 }
 
-// ─── Nested zone visualiser (Z0 outer → Z1–Z12 inner) ────────────────────────
+// ─── Nested zone visualiser ───────────────────────────────────────────────────
 
 function ZoneNestDiagram() {
   const outerZones = [
@@ -62,7 +62,6 @@ function ZoneNestDiagram() {
           className="rounded-xl border p-4"
           style={{ borderColor: `${outer.color}40`, backgroundColor: `${outer.color}08` }}
         >
-          {/* Outer zone label */}
           <div className="flex items-center gap-2 mb-3">
             <span
               className="text-xs font-black font-mono px-2 py-0.5 rounded border"
@@ -72,8 +71,6 @@ function ZoneNestDiagram() {
             </span>
             <span className="text-xs text-slate-400">{outer.label} — its own internal framework:</span>
           </div>
-
-          {/* Inner mini zones */}
           <div className="flex items-center gap-1.5 flex-wrap">
             {innerBadges.map((b) => (
               <span
@@ -109,7 +106,6 @@ export function ZoneConceptPanel({ eyebrow, title, subtitle, body, pillars }: Zo
       <div className="absolute inset-0" style={{ backgroundColor: 'rgba(6,11,22,0.68)' }} />
 
       <div className="max-w-6xl mx-auto relative z-10">
-        {/* Header */}
         <div className="text-center mb-14">
           <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: '#2DF4A1' }}>
             {eyebrow}
@@ -123,9 +119,7 @@ export function ZoneConceptPanel({ eyebrow, title, subtitle, body, pillars }: Zo
           <p className="text-slate-400 text-lg">{subtitle}</p>
         </div>
 
-        {/* Split: text left, diagram right */}
         <div className="grid md:grid-cols-2 gap-12 items-start mb-14">
-          {/* Body text */}
           <div className="space-y-5">
             {body.map((para, i) => (
               <p key={i} className="text-slate-300 text-sm leading-relaxed">
@@ -133,12 +127,9 @@ export function ZoneConceptPanel({ eyebrow, title, subtitle, body, pillars }: Zo
               </p>
             ))}
           </div>
-
-          {/* Diagram */}
           <ZoneNestDiagram />
         </div>
 
-        {/* Pillars */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {pillars.map((p) => (
             <div

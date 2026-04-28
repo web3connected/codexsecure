@@ -1,9 +1,22 @@
 'use client';
 
 import React, { useState } from 'react';
-import type { ZoneEntry } from '@/data/zones.data';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
+
+export interface ZoneEntry {
+  id: number;
+  badge: string;
+  name: string;
+  tier: string;
+  tierColor: string;
+  tagline: string;
+  description: string;
+  methods: string[];
+  requirements: { label: string; met: boolean }[];
+  useCases: string[];
+  defaultOpen?: boolean;
+}
 
 export interface ZoneAccordionPanelProps {
   eyebrow: string;
@@ -66,13 +79,11 @@ function ZoneAccordionItem({
         backdropFilter: 'blur(6px)',
       }}
     >
-      {/* Header row */}
       <button
         type="button"
         onClick={onToggle}
         className="w-full flex items-center gap-4 px-5 py-4 text-left group"
       >
-        {/* Zone badge */}
         <span
           className="shrink-0 w-12 h-12 rounded-lg flex items-center justify-center text-sm font-black font-mono border"
           style={{
@@ -84,7 +95,6 @@ function ZoneAccordionItem({
           {zone.badge}
         </span>
 
-        {/* Name + tagline */}
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-3 flex-wrap">
             <span className="font-semibold text-white text-base">{zone.name}</span>
@@ -102,7 +112,6 @@ function ZoneAccordionItem({
           <p className="text-slate-400 text-sm mt-0.5 truncate">{zone.tagline}</p>
         </div>
 
-        {/* Chevron */}
         <span
           className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 border"
           style={{
@@ -123,14 +132,11 @@ function ZoneAccordionItem({
         </span>
       </button>
 
-      {/* Expanded body */}
       {isOpen && (
         <div className="px-5 pb-5 border-t" style={{ borderColor: `${zone.tierColor}20` }}>
           <div className="pt-5 grid md:grid-cols-2 gap-6">
-            {/* Left — description + use cases */}
             <div className="space-y-4">
               <p className="text-slate-300 text-sm leading-relaxed">{zone.description}</p>
-
               <div>
                 <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Example Routes</p>
                 <ul className="space-y-1">
@@ -144,7 +150,6 @@ function ZoneAccordionItem({
               </div>
             </div>
 
-            {/* Right — methods + requirements */}
             <div className="space-y-5">
               <div>
                 <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Allowed Methods</p>
@@ -154,7 +159,6 @@ function ZoneAccordionItem({
                   ))}
                 </div>
               </div>
-
               <div>
                 <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Requirements</p>
                 <div className="flex flex-wrap gap-2">
@@ -176,7 +180,6 @@ function ZoneAccordionItem({
 export function ZoneAccordionPanel({ eyebrow, title, subtitle, zones }: ZoneAccordionPanelProps) {
   const defaultOpen = zones.find((z) => z.defaultOpen)?.id ?? 1;
   const [openId, setOpenId] = useState<number | null>(defaultOpen);
-
   const toggle = (id: number) => setOpenId((prev) => (prev === id ? null : id));
 
   return (
@@ -190,10 +193,8 @@ export function ZoneAccordionPanel({ eyebrow, title, subtitle, zones }: ZoneAcco
         backgroundRepeat: 'no-repeat',
       }}
     >
-      {/* Dark overlay at 60% so the bg shows at ~40% */}
       <div className="absolute inset-0" style={{ backgroundColor: 'rgba(8,13,26,0.60)' }} />
       <div className="max-w-4xl mx-auto relative z-10">
-        {/* Section header */}
         <div className="text-center mb-14">
           <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: '#2DF4A1' }}>
             {eyebrow}
@@ -204,7 +205,6 @@ export function ZoneAccordionPanel({ eyebrow, title, subtitle, zones }: ZoneAcco
           <p className="text-slate-400 text-base max-w-2xl mx-auto leading-relaxed">{subtitle}</p>
         </div>
 
-        {/* Accordion list */}
         <div className="space-y-3">
           {zones.map((zone) => (
             <ZoneAccordionItem

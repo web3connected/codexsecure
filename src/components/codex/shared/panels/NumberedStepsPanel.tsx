@@ -16,8 +16,6 @@ export interface NumberedStepsPanelProps {
   /** Optional formula lines rendered in a code block */
   formulaTitle?: string;
   formulaLines?: string[];
-  /** Optional full-bleed background image URL (public path) */
-  backgroundImage?: string;
 }
 
 export const NumberedStepsPanel: React.FC<NumberedStepsPanelProps> = ({
@@ -26,9 +24,8 @@ export const NumberedStepsPanel: React.FC<NumberedStepsPanelProps> = ({
   steps,
   formulaTitle = 'Formula',
   formulaLines,
-  backgroundImage,
 }) => {
-  const inner = (
+  return (
     <div className="bg-slate-900/50 rounded-lg border border-slate-700 p-8 space-y-8">
       <div>
         <h1 className="text-3xl font-bold text-white mb-3">{title}</h1>
@@ -65,32 +62,6 @@ export const NumberedStepsPanel: React.FC<NumberedStepsPanelProps> = ({
         </div>
       )}
     </div>
-  );
-
-  if (backgroundImage) {
-    return (
-      <section
-        className="py-16 lg:py-24 relative"
-        style={{
-          backgroundImage: `url(${backgroundImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <div className="absolute inset-0 bg-slate-950/90" />
-        <div className="relative z-10 container mx-auto px-4 max-w-4xl">
-          {inner}
-        </div>
-      </section>
-    );
-  }
-
-  return (
-    <section className="py-16 lg:py-24 bg-slate-900">
-      <div className="container mx-auto px-4 max-w-4xl">
-        {inner}
-      </div>
-    </section>
   );
 };
 

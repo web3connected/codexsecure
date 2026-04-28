@@ -1,6 +1,20 @@
 /* Import Tailwind for utility classes */
 @import "tailwindcss";
 
+/* Force-generate gradient classes used via props (Tailwind v4 dynamic class fix) */
+@layer utilities {
+  .from-secure-secondary {
+    --tw-gradient-from: #2DF4A1;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(45 244 161 / 0));
+  }
+  .to-secure-accent { --tw-gradient-to: #00E4FF; }
+  .from-hash-primary {
+    --tw-gradient-from: #7C3AED;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(124 58 237 / 0));
+  }
+  .to-hash-secondary { --tw-gradient-to: #2DF4A1; }
+}
+
 /* Business Professional Typography */
 * {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;

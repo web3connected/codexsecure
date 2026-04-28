@@ -25,7 +25,7 @@ export const DocsSidebarLayout: React.FC<DocsSidebarLayoutProps> = ({
   children,
 }) => {
   return (
-    <div className="min-h-screen bg-hash-bg">
+    <div className="min-h-screen bg-slate-950">
       <div className="container mx-auto px-6 py-8 max-w-7xl">
         <div className="grid lg:grid-cols-4 gap-8">
           {/* Sidebar */}

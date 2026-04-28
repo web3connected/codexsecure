@@ -111,14 +111,14 @@ export const ProductSlider: React.FC<ProductSliderProps> = ({
           <div style={{ 
             display: 'grid', 
             gridTemplateColumns: '1fr 1fr', 
-            gap: '0', 
-            alignItems: 'stretch',
+            gap: '2rem', 
+            alignItems: 'center',
             width: '100%', 
             height: '100%',
-            padding: '0'
+            padding: '2rem 3rem'
           }}>
             {/* Content Column */}
-            <div style={{ padding: '3rem 3rem 3rem 4rem', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <div>
               {slide.tag && (
                 <div style={{ marginBottom: '1.5rem' }}>
                   <span style={{ 
@@ -160,13 +160,12 @@ export const ProductSlider: React.FC<ProductSliderProps> = ({
                 <button onClick={() => handleCtaClick(slide)} style={{ 
                   display: 'inline-flex', 
                   alignItems: 'center', 
-                  alignSelf: 'flex-start',
                   padding: '0.875rem 2rem', 
                   backgroundColor: '#ffffff', 
                   color: '#111827', 
                   fontWeight: 700, 
                   fontSize: '1rem', 
-                  borderRadius: '0.375rem',
+                  borderRadius: '0.375rem', // Sharp corners
                   border: 'none', 
                   cursor: 'pointer',
                   transition: 'all 0.3s ease'
@@ -180,12 +179,12 @@ export const ProductSlider: React.FC<ProductSliderProps> = ({
             </div>
 
             {/* Image Column */}
-            <div style={{ height: '100%', minHeight: '400px', overflow: 'hidden' }}>
+            <div style={{ height: '100%', minHeight: '400px' }}>
               {slide.image && (
                 <img
                   src={slide.image}
                   alt={slide.imageAlt || slide.title}
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '0', display: 'block' }}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '0.5rem' }}
                   onError={(e) => {
                     const t = e.currentTarget as HTMLImageElement;
                     t.onerror = null;
@@ -312,115 +311,128 @@ export const ProductSlider: React.FC<ProductSliderProps> = ({
         );
 
       case 'overlay':
-        // LAYOUT 3: Full-bleed background image with centered content box overlay
+        // LAYOUT 3: Stacked Row Grid (Title Bar + Full Image + Bottom CTA) - auto 1fr auto rows
+        // Top bar design, large dramatic titles, full-width CTA bar - Cinematic hero feel
         return (
-          <div style={{
-            position: 'relative',
-            width: '100%',
+          <div style={{ 
+            display: 'grid', 
+            gridTemplateRows: 'auto 1fr auto', 
+            width: '100%', 
             height: '100%',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
+            position: 'relative'
           }}>
-            {/* Full-bleed background image */}
+            {/* Background Image */}
             {slide.image && (
-              <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
+              <div style={{ 
+                position: 'absolute', 
+                inset: 0, 
+                zIndex: 0 
+              }}>
                 <img
                   src={slide.image}
                   alt={slide.imageAlt || slide.title}
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   onError={(e) => {
                     const t = e.currentTarget as HTMLImageElement;
                     t.onerror = null;
                     t.src = makePlaceholderDataUri(slide.title || 'image');
                   }}
                 />
-                {/* Dark gradient so text is always readable */}
-                <div style={{
-                  position: 'absolute',
-                  inset: 0,
-                  background: 'linear-gradient(135deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.50) 50%, rgba(0,0,0,0.65) 100%)',
+                <div style={{ 
+                  position: 'absolute', 
+                  inset: 0, 
+                  background: 'linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.4), rgba(0,0,0,0.7))' 
                 }} />
               </div>
             )}
 
-            {/* Centered content box */}
-            <div style={{
-              position: 'relative',
+            {/* Top Title Bar */}
+            <div style={{ 
+              position: 'relative', 
               zIndex: 1,
               display: 'flex',
-              flexDirection: 'column',
               alignItems: 'center',
-              textAlign: 'center',
-              padding: '3rem 3.5rem',
-              maxWidth: '760px',
-              width: '90%',
-              background: 'rgba(0,0,0,0.35)',
-              backdropFilter: 'blur(12px)',
-              WebkitBackdropFilter: 'blur(12px)',
-              borderRadius: '1.25rem',
-              border: '1px solid rgba(255,255,255,0.10)',
-              boxShadow: '0 24px 80px rgba(0,0,0,0.45)',
+              justifyContent: 'space-between',
+              padding: '2rem 3rem',
+              background: 'rgba(0,0,0,0.3)',
+              backdropFilter: 'blur(10px)'
             }}>
               {slide.tag && (
-                <span style={{
-                  display: 'inline-block',
-                  marginBottom: '1.25rem',
-                  padding: '0.375rem 1.125rem',
-                  borderRadius: '9999px',
-                  fontSize: '0.7rem',
-                  fontWeight: 700,
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.12em',
-                  backgroundColor: slide.tagColor || '#3b82f6',
-                  color: '#fff',
+                <span style={{ 
+                  display: 'inline-block', 
+                  padding: '0.5rem 1.25rem', 
+                  borderRadius: '9999px', 
+                  fontSize: '0.875rem', 
+                  fontWeight: 600, 
+                  textTransform: 'uppercase', 
+                  backgroundColor: slide.tagColor || '#3b82f6', 
+                  color: '#ffffff'
                 }}>
                   {slide.tag}
                 </span>
               )}
-              <h2 style={{
-                fontFamily: 'var(--font-orbitron, "Orbitron", sans-serif)',
-                fontSize: 'clamp(2rem, 4vw, 3.5rem)',
-                fontWeight: 800,
-                lineHeight: 1.15,
-                letterSpacing: '-0.01em',
+              <h2 style={{ 
+                fontSize: 'clamp(2.5rem, 4vw, 4.5rem)', 
+                fontWeight: 900, 
+                lineHeight: 1.1, 
                 color: slide.textColor || '#ffffff',
-                marginBottom: '1.25rem',
+                marginLeft: slide.tag ? '2rem' : '0'
               }}>
                 {slide.title}
               </h2>
-              <p style={{
-                fontFamily: 'var(--font-poppins, "Poppins", sans-serif)',
-                fontSize: 'clamp(0.95rem, 1.5vw, 1.125rem)',
-                lineHeight: 1.75,
-                fontWeight: 400,
-                color: 'rgba(255,255,255,0.80)',
-                marginBottom: '2rem',
-                maxWidth: '580px',
+            </div>
+
+            {/* Middle Content (Overlaid on Image) */}
+            <div style={{ 
+              position: 'relative', 
+              zIndex: 1,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '2rem 3rem'
+            }}>
+              <p style={{ 
+                fontSize: 'clamp(1.5rem, 2.5vw, 2.5rem)', 
+                lineHeight: 1.5, 
+                fontWeight: 300, 
+                textAlign: 'center',
+                maxWidth: '900px',
+                color: 'rgba(255,255,255,0.95)'
               }}>
                 {slide.description}
               </p>
-              {slide.ctaText && (
-                <button onClick={() => handleCtaClick(slide)} style={{
+            </div>
+
+            {/* Bottom CTA Bar */}
+            {slide.ctaText && (
+              <div style={{ 
+                position: 'relative', 
+                zIndex: 1,
+                padding: '1.75rem 3rem',
+                background: 'rgba(0,0,0,0.45)',
+                backdropFilter: 'blur(10px)',
+                display: 'flex',
+                justifyContent: 'center'
+              }}>
+                <button onClick={() => handleCtaClick(slide)} style={{ 
                   display: 'inline-flex',
                   alignItems: 'center',
-                  gap: '0.5rem',
-                  padding: '0.875rem 2.25rem',
-                  backgroundColor: slide.tagColor || '#3b82f6',
-                  color: '#fff',
-                  fontFamily: 'var(--font-poppins, "Poppins", sans-serif)',
-                  fontWeight: 600,
-                  fontSize: '1rem',
-                  borderRadius: '0.625rem',
-                  border: 'none',
+                  justifyContent: 'center',
+                  padding: '0.875rem 2.5rem', 
+                  backgroundColor: slide.tagColor || '#3b82f6', 
+                  color: '#ffffff', 
+                  fontWeight: 700, 
+                  fontSize: '1.125rem', 
+                  borderRadius: '0.5rem',
+                  border: 'none', 
                   cursor: 'pointer',
-                  boxShadow: `0 8px 32px ${slide.tagColor ? slide.tagColor + '55' : 'rgba(59,130,246,0.4)'}`,
-                  transition: 'all 0.25s ease',
+                  transition: 'all 0.3s ease',
+                  letterSpacing: '0.025em'
                 }}>
                   {slide.ctaText}
                 </button>
-              )}
-            </div>
+              </div>
+            )}
           </div>
         );
 
@@ -607,107 +619,88 @@ export const ProductSlider: React.FC<ProductSliderProps> = ({
         );
 
       case 'grid':
-        // LAYOUT 6: Full-bleed bg image + centered content + bottom stats row
+        // LAYOUT 6: Hero + Bottom Stats Grid - Row layout with 3-column grid below
+        // Corner badges, glass-morphism stat cards - Data-focused dashboard feel
         return (
-          <div style={{
-            position: 'relative',
-            width: '100%',
+          <div style={{ 
+            display: 'grid', 
+            gridTemplateRows: '1fr auto', 
+            gap: '2rem',
+            width: '100%', 
             height: '100%',
-            overflow: 'hidden',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
+            padding: '2rem 3rem',
+            position: 'relative'
           }}>
-            {/* Background image */}
+            {/* Background Image */}
             {slide.image && (
-              <img
-                src={slide.image}
-                alt={slide.imageAlt || slide.title}
-                style={{
-                  position: 'absolute', inset: 0,
-                  width: '100%', height: '100%',
-                  objectFit: 'cover', objectPosition: 'center',
-                  zIndex: 0,
-                }}
-                onError={(e) => {
-                  const t = e.currentTarget as HTMLImageElement;
-                  t.onerror = null;
-                  t.src = makePlaceholderDataUri(slide.title || 'image');
-                }}
-              />
+              <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
+                <img
+                  src={slide.image}
+                  alt={slide.imageAlt || slide.title}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  onError={(e) => {
+                    const t = e.currentTarget as HTMLImageElement;
+                    t.onerror = null;
+                    t.src = makePlaceholderDataUri(slide.title || 'image');
+                  }}
+                />
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(0,0,0,0.75) 40%, rgba(0,0,0,0.45))' }} />
+              </div>
             )}
-            {/* Dark gradient overlay */}
-            <div style={{
-              position: 'absolute', inset: 0,
-              background: 'linear-gradient(to bottom, rgba(10,22,40,0.70) 0%, rgba(10,22,40,0.55) 60%, rgba(10,22,40,0.85) 100%)',
-              zIndex: 1,
-            }} />
-
-            {/* Centered content */}
-            <div style={{
-              position: 'relative', zIndex: 2,
-              display: 'flex', flexDirection: 'column', alignItems: 'center',
-              textAlign: 'center',
-              padding: '3rem 2rem 2rem',
-              flex: 1,
-              justifyContent: 'center',
-              width: '100%',
-              maxWidth: '860px',
-            }}>
+            {/* Hero Section */}
+            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', position: 'relative', zIndex: 1, marginTop: '40px' }}>
               {slide.tag && (
                 <div style={{ marginBottom: '1.25rem' }}>
-                  <span style={{
-                    display: 'inline-block',
-                    padding: '0.4rem 1rem',
-                    borderRadius: '999px',
-                    fontSize: '0.7rem',
-                    fontWeight: 700,
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.12em',
-                    backgroundColor: slide.tagColor || '#3b82f6',
-                    color: '#ffffff',
+                  <span style={{ 
+                    display: 'inline-block', 
+                    padding: '0.5rem 1rem', 
+                    borderRadius: '0.25rem', // Minimal round
+                    fontSize: '0.75rem', 
+                    fontWeight: 600, 
+                    textTransform: 'uppercase', 
+                    letterSpacing: '0.1em', 
+                    backgroundColor: slide.tagColor || '#3b82f6', 
+                    color: '#ffffff'
                   }}>
                     {slide.tag}
                   </span>
                 </div>
               )}
-              <h2 style={{
-                fontFamily: 'var(--font-brand, Orbitron, sans-serif)',
-                fontSize: 'clamp(1.75rem, 3.5vw, 3rem)',
-                fontWeight: 800,
-                marginBottom: '1rem',
-                lineHeight: 1.2,
-                color: slide.textColor || '#ffffff',
+              <h2 style={{ 
+                fontSize: 'clamp(1.75rem, 2.5vw, 3rem)', 
+                fontWeight: 700, 
+                marginBottom: '1rem', 
+                lineHeight: 1.3, 
+                textAlign: 'left',
+                color: slide.textColor || '#ffffff'
               }}>
                 {slide.title}
               </h2>
-              <p style={{
-                fontFamily: 'var(--font-body, Poppins, sans-serif)',
-                fontSize: 'clamp(0.95rem, 1.4vw, 1.1rem)',
-                marginBottom: '1.75rem',
-                lineHeight: 1.7,
-                fontWeight: 400,
-                maxWidth: '620px',
-                color: 'rgba(255,255,255,0.82)',
+              <p style={{ 
+                fontSize: 'clamp(1rem, 1.25vw, 1.25rem)', 
+                marginBottom: '1.5rem', 
+                lineHeight: 1.7, 
+                fontWeight: 400, 
+                textAlign: 'left',
+                maxWidth: '700px',
+                color: 'rgba(255,255,255,0.85)'
               }}>
                 {slide.description}
               </p>
               {slide.ctaText && (
-                <button onClick={() => handleCtaClick(slide)} style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  padding: '0.8rem 2rem',
-                  backgroundColor: slide.tagColor || '#3b82f6',
-                  color: '#ffffff',
-                  fontFamily: 'var(--font-body, Poppins, sans-serif)',
-                  fontWeight: 600,
-                  fontSize: '0.95rem',
-                  borderRadius: '0.625rem',
-                  border: 'none',
+                <button onClick={() => handleCtaClick(slide)} style={{ 
+                  display: 'inline-flex', 
+                  alignItems: 'center', 
+                  alignSelf: 'flex-start',
+                  padding: '0.875rem 2rem', 
+                  backgroundColor: '#ffffff', 
+                  color: '#111827', 
+                  fontWeight: 600, 
+                  fontSize: '1rem', 
+                  borderRadius: '0.375rem',
+                  border: 'none', 
                   cursor: 'pointer',
-                  boxShadow: `0 0 20px ${slide.tagColor || '#3b82f6'}55`,
-                  transition: 'all 0.3s ease',
+                  transition: 'all 0.3s ease'
                 }}>
                   {slide.ctaText}
                   <svg style={{ width: '1rem', height: '1rem', marginLeft: '0.5rem' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -717,35 +710,91 @@ export const ProductSlider: React.FC<ProductSliderProps> = ({
               )}
             </div>
 
-            {/* Bottom Stats Row */}
-            {Array.isArray((slide as any).stats) && (
-              <div style={{
-                position: 'relative', zIndex: 2,
-                display: 'grid',
-                gridTemplateColumns: 'repeat(3, 1fr)',
-                gap: '1rem',
-                width: '100%',
-                padding: '0 2rem 2rem',
-              }}>
-                {(slide as any).stats.slice(0, 3).map((s: any, idx: number) => (
-                  <div key={idx} style={{
-                    background: 'rgba(255,255,255,0.08)',
-                    padding: '1.25rem',
+            {/* Bottom Stats Grid (3 columns) */}
+            <div style={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(3, 1fr)', 
+              gap: '1rem',
+              position: 'relative',
+              zIndex: 1
+            }}>
+              {Array.isArray((slide as any).stats) ? (
+                (slide as any).stats.slice(0, 3).map((s: any, idx: number) => (
+                  <div key={idx} style={{ 
+                    background: 'rgba(255,255,255,0.08)', 
+                    padding: '1.5rem', 
                     borderRadius: '0.75rem',
-                    backdropFilter: 'blur(10px)',
-                    border: '1px solid rgba(255,255,255,0.12)',
-                    textAlign: 'center',
+                    backdropFilter: 'blur(10px)', // Glass-morphism
+                    border: '1px solid rgba(255,255,255,0.1)',
+                    textAlign: 'center'
                   }}>
-                    <div style={{ fontSize: '1.75rem', fontWeight: 800, marginBottom: '0.3rem', color: slide.tagColor || '#ffffff' }}>
+                    <div style={{ 
+                      fontSize: '2rem', 
+                      fontWeight: 800, 
+                      marginBottom: '0.5rem', 
+                      color: slide.textColor || '#ffffff' 
+                    }}>
                       {s.value}
                     </div>
-                    <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.7)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                    <div style={{ 
+                      fontSize: '0.875rem', 
+                      color: 'rgba(255,255,255,0.75)', 
+                      fontWeight: 500 
+                    }}>
                       {s.label}
                     </div>
                   </div>
-                ))}
-              </div>
-            )}
+                ))
+              ) : (
+                <>
+                  <div style={{ 
+                    background: 'rgba(255,255,255,0.08)', 
+                    padding: '1.5rem', 
+                    borderRadius: '0.75rem',
+                    backdropFilter: 'blur(10px)',
+                    border: '1px solid rgba(255,255,255,0.1)',
+                    textAlign: 'center',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}>
+                    <div style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.6)' }}>
+                      Add stats data
+                    </div>
+                  </div>
+                  <div style={{ 
+                    background: 'rgba(255,255,255,0.08)', 
+                    padding: '1.5rem', 
+                    borderRadius: '0.75rem',
+                    backdropFilter: 'blur(10px)',
+                    border: '1px solid rgba(255,255,255,0.1)',
+                    textAlign: 'center',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}>
+                    <div style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.6)' }}>
+                      to display here
+                    </div>
+                  </div>
+                  <div style={{ 
+                    background: 'rgba(255,255,255,0.08)', 
+                    padding: '1.5rem', 
+                    borderRadius: '0.75rem',
+                    backdropFilter: 'blur(10px)',
+                    border: '1px solid rgba(255,255,255,0.1)',
+                    textAlign: 'center',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}>
+                    <div style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.6)' }}>
+                      in grid layout
+                    </div>
+                  </div>
+                </>
+              )}
+            </div>
           </div>
         );
 

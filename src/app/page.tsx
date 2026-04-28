@@ -39,7 +39,6 @@ export default function HomePage() {
         steps={howItWorksSteps}
         formulaTitle={howItWorksFormula.title}
         formulaLines={howItWorksFormula.lines}
-        backgroundImage="/assets/images/quantum-computing.jpg"
       />
 
       {/* By the Numbers */}

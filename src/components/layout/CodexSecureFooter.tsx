@@ -10,7 +10,6 @@ const footerLinks = {
     { label: 'Security Zones',  href: '/zones' },
     { label: 'Getting Started', href: '/getting-started' },
     { label: 'API Docs',        href: '/docs' },
-    { label: 'About',           href: '/about' },
   ],
   sdks: [
     { label: 'Go Client',               href: 'https://github.com/web3connected/codexsecure', external: true },
@@ -18,7 +17,7 @@ const footerLinks = {
   ],
   company: [
     { label: 'About', href: '/about' },
-    { label: 'Blog',  href: 'https://web3connected.com/blog', external: true },
+    { label: 'Blog',  href: '/blog' },
   ],
   legal: [
     { label: 'Terms of Service', href: '/terms' },
