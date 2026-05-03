@@ -10,6 +10,8 @@ export interface HeroBgImagePanelProps {
   /** Tailwind classes for the highlighted title word. Defaults to a hash-primary → hash-secondary gradient.
    *  Override per service to match brand colors, e.g. 'text-transparent bg-clip-text bg-gradient-to-r from-secure-secondary to-secure-accent' */
   titleHighlightClassName?: string;
+  /** Inline style for the highlighted title word — use this to apply CSS gradients without relying on Tailwind JIT scanning. */
+  titleHighlightStyle?: React.CSSProperties;
   subtitle: string;
   backgroundImageSrc?: string;
 }
@@ -20,6 +22,7 @@ export const HeroBgImagePanel: React.FC<HeroBgImagePanelProps> = ({
   title,
   titleHighlight,
   titleHighlightClassName = 'text-transparent bg-clip-text bg-gradient-to-r from-hash-primary to-hash-secondary',
+  titleHighlightStyle,
   subtitle,
   backgroundImageSrc,
 }) => {
@@ -55,7 +58,7 @@ export const HeroBgImagePanel: React.FC<HeroBgImagePanelProps> = ({
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
             <span className="text-white">{title}</span>
             <br />
-            <span className={titleHighlightClassName}>
+            <span className={titleHighlightStyle ? undefined : titleHighlightClassName} style={titleHighlightStyle}>
               {titleHighlight}
             </span>
           </h1>

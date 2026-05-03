@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import { Inter, Poppins, JetBrains_Mono, Orbitron } from "next/font/google";
 import CodexSecureDataLayer from "./CodexSecureDataLayer";
+import ZoneDevBar from "@/components/layout/ZoneDevBar";
+import { CodexSecureInit } from "@/lib/codexsecure";
 import "./globals.css";
+
+// ── App entry point — boot CodexSecure (zone structure + route loading) ───────
+CodexSecureInit({ debug: process.env.NODE_ENV === 'development' });
 
 const inter = Inter({
   subsets: ["latin"],
@@ -61,6 +66,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body className="bg-secure-bg text-foreground font-body antialiased">
+        {process.env.NODE_ENV === 'development' && <ZoneDevBar />}
         <CodexSecureDataLayer>
           {children}
         </CodexSecureDataLayer>

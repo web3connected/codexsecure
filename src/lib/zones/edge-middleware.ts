@@ -118,9 +118,12 @@ export function createZoneMiddleware(config: ZoneEdgeConfig = {}) {
     const response = NextResponse.next();
 
     // Add zone headers
+    // X-Codex-Zone uses the canonical network format: Z1, Z4, Z12 etc.
+    // This matches codexsecure-networks classifier (X-Codex-Zone: Z4, not 4).
     if (addHeaders) {
-      response.headers.set('X-Codex-Zone', zone_id.toString());
+      response.headers.set('X-Codex-Zone', `Z${zone_id}`);
       response.headers.set('X-Codex-Zone-Name', zone_name);
+      response.headers.set('X-Codex-Zone-Id', zone_id.toString());
     }
 
     // Debug headers

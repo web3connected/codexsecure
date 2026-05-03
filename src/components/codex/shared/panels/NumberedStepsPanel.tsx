@@ -16,6 +16,8 @@ export interface NumberedStepsPanelProps {
   /** Optional formula lines rendered in a code block */
   formulaTitle?: string;
   formulaLines?: string[];
+  /** Optional background image URL for the panel */
+  backgroundImage?: string;
 }
 
 export const NumberedStepsPanel: React.FC<NumberedStepsPanelProps> = ({
@@ -24,9 +26,13 @@ export const NumberedStepsPanel: React.FC<NumberedStepsPanelProps> = ({
   steps,
   formulaTitle = 'Formula',
   formulaLines,
+  backgroundImage,
 }) => {
   return (
-    <div className="bg-slate-900/50 rounded-lg border border-slate-700 p-8 space-y-8">
+    <div
+      className="bg-slate-900/50 rounded-lg border border-slate-700 p-8 space-y-8"
+      style={backgroundImage ? { backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' } : undefined}
+    >
       <div>
         <h1 className="text-3xl font-bold text-white mb-3">{title}</h1>
         {subtitle && <p className="text-xl text-slate-300">{subtitle}</p>}
