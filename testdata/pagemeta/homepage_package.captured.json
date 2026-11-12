@@ -1,0 +1,44 @@
+{
+    "package_uuid": null,
+    "data": {
+        "method": "GET",
+        "route": {
+            "name": "home",
+            "uri": "/",
+            "methods": [
+                "GET",
+                "HEAD"
+            ],
+            "controller": "App\\Http\\Controllers\\CodexHomeController",
+            "action": "__invoke"
+        },
+        "declared_zone": "Z1",
+        "provenance": {
+            "route_file": "C:\\laragon\\www\\web3codex\\routes\\zones\\z1\\public.php",
+            "registration": {
+                "loader": "Web3Codex\\CodexSecure\\Routing\\ZonedRouteLoader",
+                "root": "C:\\laragon\\www\\web3codex\\routes\\zones",
+                "file": "C:\\laragon\\www\\web3codex\\routes\\zones\\z1\\public.php",
+                "zone": "Z1"
+            }
+        },
+        "intent": "home",
+        "evidence": {
+            "route": "home",
+            "controller": "App\\Http\\Controllers\\CodexHomeController",
+            "method": "__invoke"
+        },
+        "view": null,
+        "models": []
+    },
+    "validation": {
+        "result": "valid",
+        "zone_folder": "z1",
+        "reason": null
+    },
+    "submitted_json": "{\"payload\":{\"method\":\"GET\",\"route\":{\"name\":\"home\",\"uri\":\"/\",\"methods\":[\"GET\",\"HEAD\"],\"controller\":\"App\\\\Http\\\\Controllers\\\\CodexHomeController\",\"action\":\"__invoke\"},\"declared_zone\":\"Z1\",\"provenance\":{\"route_file\":\"C:\\\\laragon\\\\www\\\\web3codex\\\\routes\\\\zones\\\\z1\\\\public.php\",\"registration\":{\"loader\":\"Web3Codex\\\\CodexSecure\\\\Routing\\\\ZonedRouteLoader\",\"root\":\"C:\\\\laragon\\\\www\\\\web3codex\\\\routes\\\\zones\",\"file\":\"C:\\\\laragon\\\\www\\\\web3codex\\\\routes\\\\zones\\\\z1\\\\public.php\",\"zone\":\"Z1\"}},\"intent\":\"home\",\"evidence\":{\"route\":\"home\",\"controller\":\"App\\\\Http\\\\Controllers\\\\CodexHomeController\",\"method\":\"__invoke\"},\"view\":null,\"models\":[]}}",
+    "security": {
+        "codexhash": "76794aa325110fc995dde9eb01198c61a3133f6f6c79a6c085da1dc25db8f3ab8b51d3549d96819b63314ed13784f61f6f7c2974364bbda923d39d34a233b7da",
+        "tiu": 214014006.591195
+    }
+}

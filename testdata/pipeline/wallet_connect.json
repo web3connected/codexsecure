@@ -1,0 +1,29 @@
+{
+  "method": "POST",
+  "path": "/wallet/connect",
+  "route_name": "wallet.connect",
+  "controller": "WalletController",
+  "headers": {
+    "user-agent": "pipeline-matrix",
+    "x-codex-tiu": "2026-04-10T00:00:00Z"
+  },
+  "payload": {
+    "wallet": "0xabc123",
+    "message": "connect"
+  },
+  "actor": {
+    "authenticated": true,
+    "user_id": "42",
+    "session_id": "sess_wallet",
+    "device_id": "dev_wallet",
+    "role": "member"
+  },
+  "source": {
+    "source_type": "http",
+    "transport": "http",
+    "service": "codexsecure-api",
+    "environment": "production",
+    "ip": "127.0.0.1"
+  },
+  "middleware": ["codex.tiu", "codex.analysis", "codex.method"]
+}

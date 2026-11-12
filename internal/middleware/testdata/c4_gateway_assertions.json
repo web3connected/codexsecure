@@ -1,0 +1,33 @@
+{
+  "generator": "codex_gateway dist/auth/gatewayAssertion.js issueAssertion (C4), throwaway key; private key discarded",
+  "kid": "gw-test-c6",
+  "public_key_x": "nNCXoX3V14jX8WiF6vnf8j15hZKdbKXCQAZWyc9ShNs",
+  "iat": 1793361600,
+  "channel": "3f0e1c2a-8b4d-4e6f-9a1b-2c3d4e5f6a7b",
+  "assertions": {
+    "open": {
+      "method": "POST",
+      "path": "/api/v1/sites/web3codex-local/channels",
+      "rid": "00000000-0000-4000-8000-000000000001",
+      "token": "eyJhbGciOiJFZERTQSIsImtpZCI6Imd3LXRlc3QtYzYiLCJ0eXAiOiJjb2RleHNlY3VyZS1nYXRld2F5K2p3dCJ9.eyJhcHAiOiJ3ZWIzY29ubmVjdGVkLWRlbW8iLCJhdWQiOiJjb2RleHNlY3VyZS1hcGkiLCJjaGFubmVsX3NpdGVzIjpbIndlYjNjb2RleC1sb2NhbCJdLCJleHAiOjE3OTMzNjE2MzAsImlhdCI6MTc5MzM2MTYwMCwiaXNzIjoiY29kZXgtZ2F0ZXdheSIsIm1ldGhvZCI6IlBPU1QiLCJwYXRoIjoiL2FwaS92MS9zaXRlcy93ZWIzY29kZXgtbG9jYWwvY2hhbm5lbHMiLCJyaWQiOiIwMDAwMDAwMC0wMDAwLTQwMDAtODAwMC0wMDAwMDAwMDAwMDEiLCJzdWIiOiJhcHBsaWNhdGlvbjp3ZWIzY29ubmVjdGVkLWRlbW8ifQ.7zenyJiltAmNZ0HA84KtoSTYoMaOnc-7Lwv_IyLedN2De9FZYaIY8l0eK-QrrOeB-nSDSbRPxyaA3j1S4t59Cw"
+    },
+    "get": {
+      "method": "GET",
+      "path": "/api/v1/sites/web3codex-local/channels/3f0e1c2a-8b4d-4e6f-9a1b-2c3d4e5f6a7b",
+      "rid": "00000000-0000-4000-8000-000000000002",
+      "token": "eyJhbGciOiJFZERTQSIsImtpZCI6Imd3LXRlc3QtYzYiLCJ0eXAiOiJjb2RleHNlY3VyZS1nYXRld2F5K2p3dCJ9.eyJhcHAiOiJ3ZWIzY29ubmVjdGVkLWRlbW8iLCJhdWQiOiJjb2RleHNlY3VyZS1hcGkiLCJjaGFubmVsX3NpdGVzIjpbIndlYjNjb2RleC1sb2NhbCJdLCJleHAiOjE3OTMzNjE2MzAsImlhdCI6MTc5MzM2MTYwMCwiaXNzIjoiY29kZXgtZ2F0ZXdheSIsIm1ldGhvZCI6IkdFVCIsInBhdGgiOiIvYXBpL3YxL3NpdGVzL3dlYjNjb2RleC1sb2NhbC9jaGFubmVscy8zZjBlMWMyYS04YjRkLTRlNmYtOWExYi0yYzNkNGU1ZjZhN2IiLCJyaWQiOiIwMDAwMDAwMC0wMDAwLTQwMDAtODAwMC0wMDAwMDAwMDAwMDIiLCJzdWIiOiJhcHBsaWNhdGlvbjp3ZWIzY29ubmVjdGVkLWRlbW8ifQ.XXfAfRvEvx0DqSPhesi4GFJOO0aWPpPocKDZ-DnyHSFAvRo9LLKAzbiPe6OTYtvpm6ySWerepNAPD_zXZLKJCQ"
+    },
+    "activate": {
+      "method": "POST",
+      "path": "/api/v1/sites/web3codex-local/channels/3f0e1c2a-8b4d-4e6f-9a1b-2c3d4e5f6a7b/activate",
+      "rid": "00000000-0000-4000-8000-000000000003",
+      "token": "eyJhbGciOiJFZERTQSIsImtpZCI6Imd3LXRlc3QtYzYiLCJ0eXAiOiJjb2RleHNlY3VyZS1nYXRld2F5K2p3dCJ9.eyJhcHAiOiJ3ZWIzY29ubmVjdGVkLWRlbW8iLCJhdWQiOiJjb2RleHNlY3VyZS1hcGkiLCJjaGFubmVsX3NpdGVzIjpbIndlYjNjb2RleC1sb2NhbCJdLCJleHAiOjE3OTMzNjE2MzAsImlhdCI6MTc5MzM2MTYwMCwiaXNzIjoiY29kZXgtZ2F0ZXdheSIsIm1ldGhvZCI6IlBPU1QiLCJwYXRoIjoiL2FwaS92MS9zaXRlcy93ZWIzY29kZXgtbG9jYWwvY2hhbm5lbHMvM2YwZTFjMmEtOGI0ZC00ZTZmLTlhMWItMmMzZDRlNWY2YTdiL2FjdGl2YXRlIiwicmlkIjoiMDAwMDAwMDAtMDAwMC00MDAwLTgwMDAtMDAwMDAwMDAwMDAzIiwic3ViIjoiYXBwbGljYXRpb246d2ViM2Nvbm5lY3RlZC1kZW1vIn0.JieR4fDhyZqWJdKJCqz6SPK5cREzQlFFniNzxVGziXP0D83NlalK_sTq_PUnGKsIQBuI4TzwWdgW1_-WtOwrDQ"
+    },
+    "close": {
+      "method": "POST",
+      "path": "/api/v1/sites/web3codex-local/channels/3f0e1c2a-8b4d-4e6f-9a1b-2c3d4e5f6a7b/close",
+      "rid": "00000000-0000-4000-8000-000000000004",
+      "token": "eyJhbGciOiJFZERTQSIsImtpZCI6Imd3LXRlc3QtYzYiLCJ0eXAiOiJjb2RleHNlY3VyZS1nYXRld2F5K2p3dCJ9.eyJhcHAiOiJ3ZWIzY29ubmVjdGVkLWRlbW8iLCJhdWQiOiJjb2RleHNlY3VyZS1hcGkiLCJjaGFubmVsX3NpdGVzIjpbIndlYjNjb2RleC1sb2NhbCJdLCJleHAiOjE3OTMzNjE2MzAsImlhdCI6MTc5MzM2MTYwMCwiaXNzIjoiY29kZXgtZ2F0ZXdheSIsIm1ldGhvZCI6IlBPU1QiLCJwYXRoIjoiL2FwaS92MS9zaXRlcy93ZWIzY29kZXgtbG9jYWwvY2hhbm5lbHMvM2YwZTFjMmEtOGI0ZC00ZTZmLTlhMWItMmMzZDRlNWY2YTdiL2Nsb3NlIiwicmlkIjoiMDAwMDAwMDAtMDAwMC00MDAwLTgwMDAtMDAwMDAwMDAwMDA0Iiwic3ViIjoiYXBwbGljYXRpb246d2ViM2Nvbm5lY3RlZC1kZW1vIn0.hNUK-jgW4OfhNSVDnxfXmMMMTtJq4u87LUkhUxNP5ScmA4CddZDBlk9E24THG5sIMfMaHw5ttQs4ONnkAdMBAw"
+    }
+  }
+}

@@ -1,0 +1,61 @@
+# Only Go sources, go.mod/go.sum and runtime assets are needed in the build context.
+.git
+.github
+.gitignore
+.dockerignore
+
+# Secrets — never baked into the image; Coolify injects env vars at runtime.
+.env
+.env.*
+*.pem
+*.key
+*.crt
+*.p12
+*.jwk
+
+# Prebuilt local binaries (the image builds its own)
+bin/
+codexsecure
+codexsecure-api
+codexsecure-api-new
+codexsecure-static
+codexsecure_api
+server
+*.exe
+*.test
+*.out
+
+# Local databases, dumps, backups
+*.sqlite
+*.sqlite3
+*.db
+*.dump
+*.backup
+*.bak
+*.bak-*
+*.tgz
+*.tar.gz
+backups/
+pgdata/
+
+# Development-only material
+docs/
+scripts/
+testdata/
+**/testdata/
+**/*_test.go
+docker-compose*.yml
+deploy-codexweb3.sh
+README*.md
+DEPLOYMENT.md
+
+# IDE / OS / logs
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+*.log
+logs/
+tmp/
+temp/

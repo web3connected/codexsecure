@@ -1,0 +1,28 @@
+{
+  "method": "POST",
+  "path": "/auth/login",
+  "route_name": "auth.login",
+  "controller": "LoginController",
+  "headers": {
+    "user-agent": "pipeline-matrix",
+    "x-codex-tiu": "2026-04-10T00:00:00Z"
+  },
+  "payload": {
+    "email": "user@example.com",
+    "password": "secret-password"
+  },
+  "actor": {
+    "authenticated": false,
+    "session_id": "sess_login",
+    "device_id": "dev_login",
+    "role": "guest"
+  },
+  "source": {
+    "source_type": "http",
+    "transport": "http",
+    "service": "codexsecure-api",
+    "environment": "production",
+    "ip": "127.0.0.1"
+  },
+  "middleware": ["codex.tiu", "codex.analysis", "codex.method"]
+}

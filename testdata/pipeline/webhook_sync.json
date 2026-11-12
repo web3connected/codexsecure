@@ -1,0 +1,30 @@
+{
+  "method": "POST",
+  "path": "/api/webhooks/external/sync",
+  "route_name": "webhooks.external.sync",
+  "controller": "WebhookSyncController",
+  "headers": {
+    "user-agent": "pipeline-matrix",
+    "x-codex-tiu": "2026-04-10T00:00:00Z"
+  },
+  "payload": {
+    "resource": "customer",
+    "event": "updated",
+    "external_id": "cus_123"
+  },
+  "actor": {
+    "authenticated": true,
+    "user_id": "84",
+    "session_id": "sess_sync",
+    "device_id": "dev_sync",
+    "role": "service"
+  },
+  "source": {
+    "source_type": "http",
+    "transport": "http",
+    "service": "codexsecure-api",
+    "environment": "production",
+    "ip": "127.0.0.1"
+  },
+  "middleware": ["codex.tiu", "codex.analysis", "codex.method"]
+}

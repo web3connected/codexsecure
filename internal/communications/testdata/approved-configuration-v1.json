@@ -1,0 +1,38 @@
+{
+    "description": "Shared fixtures for approved communication configuration schema version 1. Consumed by the PHP validator (ApprovedConfiguration), the codex_zones SQL validator (codex_communications_configuration_valid) and, when implemented, the CodexSecure Go API validator. 'input' is what a client submits; 'normalized' is the stored document. Invalid cases must be rejected by every validator; SQL validates stored (normalized) documents only.",
+    "zones": ["Z0", "Z1", "Z2", "Z3", "Z4", "Z5", "Z6", "Z7", "Z8", "Z9", "Z10", "Z11", "Z12"],
+    "valid": [
+        {"name": "single method", "input": {"schema_version": 1, "destination": "/api/products", "destination_match": "exact", "methods": ["GET"], "type": "fetch", "zone": "Z1", "enabled": true},
+            "normalized": {"schema_version": 1, "destination": "/api/products", "destination_match": "exact", "methods": ["GET"], "type": "fetch", "zone": "Z1", "enabled": true}},
+        {"name": "multiple methods normalized to canonical order", "input": {"schema_version": 1, "destination": "/api/products", "destination_match": "exact", "methods": ["patch", "Get", " post ", "PUT"], "type": "fetch", "zone": "Z1", "enabled": true},
+            "normalized": {"schema_version": 1, "destination": "/api/products", "destination_match": "exact", "methods": ["GET", "POST", "PUT", "PATCH"], "type": "fetch", "zone": "Z1", "enabled": true}},
+        {"name": "ajax alias", "input": {"schema_version": 1, "destination": "/api/profile", "destination_match": "exact", "methods": ["GET"], "type": "ajax", "zone": "Z2", "enabled": false},
+            "normalized": {"schema_version": 1, "destination": "/api/profile", "destination_match": "exact", "methods": ["GET"], "type": "fetch", "zone": "Z2", "enabled": false}},
+        {"name": "form with spoofed methods", "input": {"schema_version": 1, "destination": "/account/preferences", "destination_match": "exact", "methods": ["DELETE", "PATCH", "POST"], "type": "form", "zone": "Z2", "enabled": true},
+            "normalized": {"schema_version": 1, "destination": "/account/preferences", "destination_match": "exact", "methods": ["POST", "PATCH", "DELETE"], "type": "form", "zone": "Z2", "enabled": true}},
+        {"name": "absolute https destination with port and query", "input": {"schema_version": 1, "destination": "https://api.example.com:8443/v1/messages?x=1", "destination_match": "exact", "methods": ["POST"], "type": "fetch", "zone": "Z7", "enabled": true},
+            "normalized": {"schema_version": 1, "destination": "https://api.example.com:8443/v1/messages?x=1", "destination_match": "exact", "methods": ["POST"], "type": "fetch", "zone": "Z7", "enabled": true}},
+        {"name": "link root path zone Z12", "input": {"schema_version": 1, "destination": "/", "destination_match": "exact", "methods": ["GET"], "type": "link", "zone": "Z12", "enabled": true},
+            "normalized": {"schema_version": 1, "destination": "/", "destination_match": "exact", "methods": ["GET"], "type": "link", "zone": "Z12", "enabled": true}}
+    ],
+    "invalid": [
+        {"name": "empty methods", "input": {"schema_version": 1, "destination": "/a", "destination_match": "exact", "methods": [], "type": "fetch", "zone": "Z1", "enabled": true}},
+        {"name": "duplicate methods", "input": {"schema_version": 1, "destination": "/a", "destination_match": "exact", "methods": ["GET", "GET"], "type": "fetch", "zone": "Z1", "enabled": true}},
+        {"name": "unsupported method", "input": {"schema_version": 1, "destination": "/a", "destination_match": "exact", "methods": ["TRACE"], "type": "fetch", "zone": "Z1", "enabled": true}},
+        {"name": "link with POST", "input": {"schema_version": 1, "destination": "/a", "destination_match": "exact", "methods": ["GET", "POST"], "type": "link", "zone": "Z1", "enabled": true}},
+        {"name": "form with HEAD", "input": {"schema_version": 1, "destination": "/a", "destination_match": "exact", "methods": ["HEAD"], "type": "form", "zone": "Z1", "enabled": true}},
+        {"name": "protocol-relative destination", "input": {"schema_version": 1, "destination": "//evil.test/a", "destination_match": "exact", "methods": ["GET"], "type": "fetch", "zone": "Z1", "enabled": true}},
+        {"name": "relative destination without slash", "input": {"schema_version": 1, "destination": "products", "destination_match": "exact", "methods": ["GET"], "type": "fetch", "zone": "Z1", "enabled": true}},
+        {"name": "credentials in URL", "input": {"schema_version": 1, "destination": "https://user:secret@api.example.com/x", "destination_match": "exact", "methods": ["GET"], "type": "fetch", "zone": "Z1", "enabled": true}},
+        {"name": "fragment", "input": {"schema_version": 1, "destination": "/a#b", "destination_match": "exact", "methods": ["GET"], "type": "fetch", "zone": "Z1", "enabled": true}},
+        {"name": "javascript scheme", "input": {"schema_version": 1, "destination": "javascript:alert(1)", "destination_match": "exact", "methods": ["GET"], "type": "fetch", "zone": "Z1", "enabled": true}},
+        {"name": "unknown zone", "input": {"schema_version": 1, "destination": "/a", "destination_match": "exact", "methods": ["GET"], "type": "fetch", "zone": "Z13", "enabled": true}},
+        {"name": "unsupported schema version", "input": {"schema_version": 2, "destination": "/a", "destination_match": "exact", "methods": ["GET"], "type": "fetch", "zone": "Z1", "enabled": true}},
+        {"name": "non-exact destination match", "input": {"schema_version": 1, "destination": "/a", "destination_match": "prefix", "methods": ["GET"], "type": "fetch", "zone": "Z1", "enabled": true}},
+        {"name": "string enabled", "input": {"schema_version": 1, "destination": "/a", "destination_match": "exact", "methods": ["GET"], "type": "fetch", "zone": "Z1", "enabled": "true"}},
+        {"name": "unknown type", "input": {"schema_version": 1, "destination": "/a", "destination_match": "exact", "methods": ["GET"], "type": "websocket", "zone": "Z1", "enabled": true}},
+        {"name": "reserved field", "input": {"schema_version": 1, "destination": "/a", "destination_match": "exact", "methods": ["GET"], "type": "fetch", "zone": "Z1", "enabled": true, "content_types": ["application/json"]}},
+        {"name": "identity field is not configuration", "input": {"schema_version": 1, "destination": "/a", "destination_match": "exact", "methods": ["GET"], "type": "fetch", "zone": "Z1", "enabled": true, "scope": "universal"}},
+        {"name": "missing enabled", "input": {"schema_version": 1, "destination": "/a", "destination_match": "exact", "methods": ["GET"], "type": "fetch", "zone": "Z1"}}
+    ]
+}

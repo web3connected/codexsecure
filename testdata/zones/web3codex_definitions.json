@@ -1,0 +1,202 @@
+{
+    "zones": {
+        "Z0": {
+            "key": "lobby",
+            "name": "Lobby / Gateway",
+            "description": "Default entry boundary for incoming communications and initial MCP harmonization recognition. Unaligned communications remain in the lobby pending CodexSecure handling.",
+            "role": "Common entry and default zone; not an operational destination granted by recognition alone.",
+            "rules": {
+                "read_only": true,
+                "methods_allowed": [
+                    "GET"
+                ]
+            },
+            "subzones": []
+        },
+        "Z1": {
+            "key": "public",
+            "name": "Public",
+            "description": "Open information exchange, public content, and guest-facing communications.",
+            "rules": {
+                "read_only": false,
+                "methods_allowed": [
+                    "GET",
+                    "POST",
+                    "OPTIONS"
+                ]
+            },
+            "subzones": []
+        },
+        "Z2": {
+            "key": "identity",
+            "name": "Identity",
+            "description": "Authentication, credentials, identity verification, and identity lifecycle communications.",
+            "rules": {
+                "read_only": false,
+                "methods_allowed": [
+                    "GET",
+                    "POST",
+                    "OPTIONS"
+                ]
+            },
+            "subzones": []
+        },
+        "Z3": {
+            "key": "operations",
+            "name": "Operations",
+            "description": "Operational commands, account-owned resource management, and delegated control actions by authorized representatives or services.",
+            "rules": {
+                "read_only": false,
+                "methods_allowed": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE",
+                    "OPTIONS"
+                ]
+            },
+            "subzones": []
+        },
+        "Z4": {
+            "key": "protected",
+            "name": "Protected Data",
+            "description": "Controlled exchange of confidential or sensitive data and protected resources.",
+            "rules": {
+                "read_only": false,
+                "methods_allowed": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "OPTIONS"
+                ]
+            },
+            "subzones": []
+        },
+        "Z5": {
+            "key": "processing",
+            "name": "Processing",
+            "description": "Execution requests, background jobs, worker tasks, scheduling, and workflows.",
+            "rules": {
+                "read_only": false,
+                "methods_allowed": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE",
+                    "OPTIONS"
+                ]
+            },
+            "subzones": []
+        },
+        "Z6": {
+            "key": "logging",
+            "name": "Logging",
+            "description": "Audit events, diagnostic logs, traces, and operational telemetry.",
+            "rules": {
+                "read_only": false,
+                "methods_allowed": [
+                    "GET",
+                    "POST",
+                    "OPTIONS"
+                ]
+            },
+            "subzones": []
+        },
+        "Z7": {
+            "key": "communications",
+            "name": "Communications",
+            "description": "Messages, notifications, alerts, and interactive communications. Distinct from CodexSecure Communication Objects, which govern approved interfaces across zones.",
+            "rules": {
+                "read_only": false,
+                "methods_allowed": [
+                    "POST",
+                    "GET",
+                    "OPTIONS"
+                ]
+            },
+            "subzones": []
+        },
+        "Z8": {
+            "key": "payments",
+            "name": "Payments",
+            "description": "Financial transaction traffic, including checkout, billing, subscriptions, refunds, and settlement interactions.",
+            "rules": {
+                "read_only": false,
+                "methods_allowed": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "OPTIONS"
+                ]
+            },
+            "subzones": []
+        },
+        "Z9": {
+            "key": "analytics",
+            "name": "Analytics",
+            "description": "Read-oriented reports, measurements, statistics, and visualized metrics.",
+            "rules": {
+                "read_only": true,
+                "methods_allowed": [
+                    "GET",
+                    "OPTIONS"
+                ]
+            },
+            "subzones": []
+        },
+        "Z10": {
+            "key": "streaming",
+            "name": "Streaming",
+            "description": "Continuous audio, video, live broadcasts, and media-stream delivery.",
+            "rules": {
+                "read_only": false,
+                "methods_allowed": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "OPTIONS"
+                ]
+            },
+            "subzones": []
+        },
+        "Z11": {
+            "key": "synchronization",
+            "name": "Synchronization",
+            "description": "Distributed state exchange, replication, peer coordination, and consistency-oriented synchronization traffic.",
+            "rules": {
+                "read_only": false,
+                "methods_allowed": [
+                    "GET",
+                    "POST",
+                    "PATCH",
+                    "OPTIONS"
+                ],
+                "executive": true
+            },
+            "subzones": []
+        },
+        "Z12": {
+            "key": "administration",
+            "name": "Administration",
+            "description": "Privileged platform-wide configuration, oversight, and administrative control communications.",
+            "rules": {
+                "read_only": false,
+                "methods_allowed": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE",
+                    "OPTIONS"
+                ],
+                "executive": true
+            },
+            "subzones": []
+        }
+    }
+}

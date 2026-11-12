@@ -1,0 +1,17 @@
+{
+    "zones": {
+        "Z0": "lobby",
+        "Z1": "public",
+        "Z2": "identity",
+        "Z3": "operations",
+        "Z4": "protected",
+        "Z5": "processing",
+        "Z6": "logging",
+        "Z7": "communications",
+        "Z8": "payments",
+        "Z9": "analytics",
+        "Z10": "streaming",
+        "Z11": "synchronization",
+        "Z12": "administration"
+    }
+}

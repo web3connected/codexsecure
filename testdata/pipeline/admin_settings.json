@@ -1,0 +1,30 @@
+{
+  "method": "PATCH",
+  "path": "/admin/settings/security",
+  "route_name": "admin.settings.security",
+  "controller": "AdminSettingsController",
+  "headers": {
+    "user-agent": "pipeline-matrix",
+    "x-codex-tiu": "2026-04-10T00:00:00Z",
+    "x-executive-access": "true"
+  },
+  "payload": {
+    "setting": "mfa_required",
+    "value": true
+  },
+  "actor": {
+    "authenticated": true,
+    "user_id": "1",
+    "session_id": "sess_admin",
+    "device_id": "dev_admin",
+    "role": "admin"
+  },
+  "source": {
+    "source_type": "http",
+    "transport": "http",
+    "service": "codexsecure-api",
+    "environment": "production",
+    "ip": "127.0.0.1"
+  },
+  "middleware": ["codex.tiu", "codex.analysis", "codex.method"]
+}

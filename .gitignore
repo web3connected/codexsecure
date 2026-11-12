@@ -1,43 +1,58 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# --- Build output (root-anchored so cmd/server and internal/server stay tracked) ---
+/bin/
+/codexsecure
+/codexsecure-api
+/codexsecure-api-new
+/codexsecure-static
+/codexsecure_api
+/server
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
-
-# testing
-/coverage
-
-# next.js
-/.next/
-/out/
-
-# production
-/build
-
-# misc
-.DS_Store
+# --- Secrets and environment files (only .env.example is tracked) ---
+.env
+.env.*
+!.env.example
 *.pem
+*.key
+*.crt
+*.p12
+*.jwk
 
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
+# --- Local databases, dumps and backups ---
+*.sqlite
+*.sqlite3
+*.db
+*.dump
+*.backup
+*.bak
+*.bak-*
+*.tgz
+*.tar.gz
+backups/
+pgdata/
 
-# env files (can opt-in for committing if needed)
-.env*
+# --- Go tooling ---
+vendor/
+go.work
+go.work.sum
 
-# vercel
-.vercel
+# --- IDE / OS ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
 
-# typescript
-*.tsbuildinfo
-next-env.d.ts
-
-/src/generated/prisma
+# --- Logs and temp ---
+*.log
+logs/
+tmp/
+temp/

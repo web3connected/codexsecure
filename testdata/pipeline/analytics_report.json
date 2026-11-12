@@ -1,0 +1,25 @@
+{
+  "method": "GET",
+  "path": "/analytics/reports/monthly",
+  "route_name": "analytics.reports.monthly",
+  "controller": "AnalyticsReportController",
+  "headers": {
+    "user-agent": "pipeline-matrix"
+  },
+  "payload": {},
+  "actor": {
+    "authenticated": true,
+    "user_id": "21",
+    "session_id": "sess_analytics",
+    "device_id": "dev_analytics",
+    "role": "analyst"
+  },
+  "source": {
+    "source_type": "http",
+    "transport": "http",
+    "service": "codexsecure-api",
+    "environment": "production",
+    "ip": "127.0.0.1"
+  },
+  "middleware": ["codex.analysis", "codex.method"]
+}

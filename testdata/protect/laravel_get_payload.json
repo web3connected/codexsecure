@@ -1,0 +1,25 @@
+{
+  "payload": {
+    "route": {
+      "uri": "/",
+      "name": "home",
+      "methods": ["GET", "HEAD"],
+      "controller": "App\\Http\\Controllers\\CodexHomeController",
+      "action": "__invoke"
+    },
+    "communication_id": "8f14e45f-ceea-467a-9b1e-5d2c3a1b7e10",
+    "request": {"path": "/", "method": "GET"},
+    "declared_zone": "Z1",
+    "route_validation": {"status": "valid", "checks": 3},
+    "communication_metadata": {
+      "received_at": "2026-10-11T20:00:00+00:00",
+      "intent": "Page d'accueil — public & open",
+      "evidence": []
+    },
+    "received_request": {
+      "path": "/",
+      "method": "GET",
+      "payload": {"content_type": null, "query": {}, "body": [], "form": {}}
+    }
+  }
+}

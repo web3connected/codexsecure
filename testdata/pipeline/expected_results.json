@@ -1,0 +1,51 @@
+{
+  "admin_settings": {
+    "final_status": "rejected",
+    "accepted": false,
+    "stage1": "Z12",
+    "stage4": "administration",
+    "stage6": "administration"
+  },
+  "admin_settings_mfa": {
+    "final_status": "accepted",
+    "accepted": true,
+    "stage1": "Z12",
+    "stage4": "administration",
+    "stage6": "administration"
+  },
+  "analytics_report": {
+    "final_status": "accepted",
+    "accepted": true,
+    "stage1": "Z9",
+    "stage4": "analytics",
+    "stage6": "analytics"
+  },
+  "auth_login": {
+    "final_status": "accepted",
+    "accepted": true,
+    "stage1": "Z2",
+    "stage4": "identity",
+    "stage6": "identity"
+  },
+  "trap_quarantine": {
+    "final_status": "quarantined",
+    "accepted": false,
+    "stage1": "Z0",
+    "stage4": "unassigned",
+    "stage6": "boundary"
+  },
+  "wallet_connect": {
+    "final_status": "accepted",
+    "accepted": true,
+    "stage1": "Z8",
+    "stage4": "payments",
+    "stage6": "payments"
+  },
+  "webhook_sync": {
+    "final_status": "accepted",
+    "accepted": true,
+    "stage1": "Z8",
+    "stage4": "operations",
+    "stage6": "operations"
+  }
+}

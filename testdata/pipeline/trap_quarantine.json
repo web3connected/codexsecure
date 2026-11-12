@@ -1,0 +1,22 @@
+{
+  "method": "POST",
+  "path": "/trap/quarantine",
+  "route_name": "trap.quarantine",
+  "controller": "TrapController",
+  "headers": {
+    "user-agent": "pipeline-matrix"
+  },
+  "payload": {
+    "probe": true
+  },
+  "actor": {
+    "authenticated": false
+  },
+  "source": {
+    "source_type": "http",
+    "transport": "http",
+    "service": "codexsecure-api",
+    "environment": "production",
+    "ip": "127.0.0.1"
+  }
+}
