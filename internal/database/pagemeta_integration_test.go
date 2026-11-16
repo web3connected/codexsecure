@@ -11,6 +11,7 @@ import (
 	"crypto/sha512"
 	"encoding/hex"
 	"encoding/json"
+	"strings"
 	"testing"
 	"time"
 )
@@ -27,9 +28,35 @@ func testPage(t *testing.T) (string, func(view string) PageMetaRecord) {
 			"declared_zone": "Z1", "view": view,
 		}
 		raw, _ := json.Marshal(data)
+		// I01: the column holds CodexHash v2 evidence. TEST DOUBLE digest in that form (the store does not
+		// recompute; the handler does, through CodexHash). Every write is rolled back.
 		sum := sha512.Sum512(raw)
-		payload, _ := json.Marshal(map[string]any{"package_uuid": nil, "data": data, "security": map[string]any{"codexhash": hex.EncodeToString(sum[:]), "tiu": 1}})
-		return PageMetaRecord{Method: "GET", URI: uri, Hash: hex.EncodeToString(sum[:]), TIU: "214000000.123456", Payload: payload}
+		evidence := "ch2:inv-dual/1:512:" + hex.EncodeToString(sum[:])
+		payload, _ := json.Marshal(map[string]any{"package_uuid": nil, "data": data, "security": map[string]any{"codexhash": evidence, "tiu": 1}})
+		return PageMetaRecord{Method: "GET", URI: uri, Hash: evidence, TIU: "214000000.123456", Payload: payload}
+	}
+}
+
+// I01: the database itself refuses a conventional SHA-512 value (pagemeta_packages_hash_codexhash_v2_check).
+func TestPageMetaDatabaseRefusesLegacySHA512(t *testing.T) {
+	db, err := Connect(runtimeConfig(t))
+	if err != nil {
+		t.Fatalf("Connect: %v", err)
+	}
+	defer db.Close()
+	ctx := context.Background()
+	_, record := testPage(t)
+	legacy := record("v1")
+	sum := sha512.Sum512([]byte("legacy"))
+	legacy.Hash = hex.EncodeToString(sum[:])
+
+	tx, err := db.Pool.Begin(ctx)
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer tx.Rollback(ctx)
+	if _, err := RecordPageMetaTx(ctx, tx, legacy); err == nil || !strings.Contains(err.Error(), "pagemeta_packages_hash_codexhash_v2_check") {
+		t.Fatalf("legacy SHA-512 hash was not refused by the v2 check: %v", err)
 	}
 }
 

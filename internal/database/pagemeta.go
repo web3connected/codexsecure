@@ -21,7 +21,7 @@ const (
 type PageMetaRecord struct {
 	Method  string // payload.data.method — part of page identity
 	URI     string // payload.data.route.uri — part of page identity
-	Hash    string // verified structural CodexHash (SHA-512 of canonical data)
+	Hash    string // verified structural CodexHash v2 evidence (ch2:inv-dual/1:512:<hex> over canonical data; I01)
 	TIU     string // CodexTime TIU as a decimal string (numeric(20,6))
 	Payload []byte // complete protected package, stored as received (JSONB)
 }

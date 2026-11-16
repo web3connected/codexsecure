@@ -23,6 +23,7 @@ import (
 	"io"
 	"net/http"
 	"os"
+	"regexp"
 	"strconv"
 	"strings"
 	"time"
@@ -239,6 +240,110 @@ func (c *Client) PayloadHash(ctx context.Context, data string, algo string, hash
 	var result PayloadHashResult
 	if err := json.Unmarshal(body, &result); err != nil {
 		return PayloadHashResult{}, fmt.Errorf("%w: decode: %v", ErrUnavailable, err)
+	}
+	return result, nil
+}
+
+// ─── CodexHash v2 (I01 correction) ───────────────────────────────────────────
+//
+// CodexSecure protection evidence is produced by the proprietary CodexHash v2
+// engine (POST /api/v2/hash), never by conventional SHA. The legacy
+// /api/hash/payload endpoint (SHA-512) above remains only for consumers whose
+// correction is pending (Communication Objects, the communications snapshot, channel binding).
+
+const (
+	// V2Algorithm is the CodexHash v2 algorithm identifier.
+	V2Algorithm = "ch2-tuplehash256"
+	// V2Profile is the documented portable profile: verification does not depend on
+	// an installation's weave assignment.
+	V2Profile = "inv-dual/1"
+	// V2OutputBits is the documented default output length.
+	V2OutputBits = 512
+)
+
+// ErrInvalidResponse reports a CodexHash answer that does not satisfy the v2 contract.
+var ErrInvalidResponse = errors.New("codexhash invalid response")
+
+// v2Digest is the versioned digest for V2Profile/V2OutputBits: ch2:<profile>:<bits>:<lowercase hex>.
+var v2Digest = regexp.MustCompile(`^ch2:inv-dual/1:512:([0-9a-f]{128})$`)
+
+// IsV2Evidence reports whether digest is CodexSecure protection evidence: a CodexHash v2
+// inv-dual/1, 512-bit digest in its native form. A bare hex string (SHA-512) is not.
+func IsV2Evidence(digest string) bool {
+	return v2Digest.MatchString(digest)
+}
+
+// V2HashResult is the relevant subset of a CodexHash v2 hash response.
+type V2HashResult struct {
+	Algorithm  string `json:"algorithm"`
+	Version    int    `json:"version"`
+	Profile    string `json:"profile"`
+	OutputBits int    `json:"output_bits"`
+	Digest     string `json:"digest"`
+	DigestHex  string `json:"digest_hex"`
+}
+
+type v2Payload struct {
+	Encoding string `json:"encoding"`
+	Data     string `json:"data"`
+}
+
+type v2HashRequest struct {
+	Payload    v2Payload `json:"payload"`
+	OutputBits int       `json:"output_bits"`
+	Profile    string    `json:"profile"`
+}
+
+// V2Hash hashes text with CodexHash v2 (POST /api/v2/hash) as the exact UTF-8
+// bytes (payload encoding "utf8"), profile inv-dual/1, 512-bit output and no
+// context. It fails closed: no local or conventional hash is ever substituted,
+// regardless of CODEXHASH_FAIL_OPEN. The text itself is not logged.
+func (c *Client) V2Hash(ctx context.Context, text string) (V2HashResult, error) {
+	if !c.enabled {
+		return V2HashResult{}, fmt.Errorf("%w: disabled", ErrUnavailable)
+	}
+
+	reqBody, err := json.Marshal(v2HashRequest{
+		Payload:    v2Payload{Encoding: "utf8", Data: text},
+		OutputBits: V2OutputBits,
+		Profile:    V2Profile,
+	})
+	if err != nil {
+		return V2HashResult{}, fmt.Errorf("%w: marshal: %v", ErrUnavailable, err)
+	}
+
+	httpReq, err := http.NewRequestWithContext(ctx, http.MethodPost, c.baseURL+"/api/v2/hash", bytes.NewReader(reqBody))
+	if err != nil {
+		return V2HashResult{}, fmt.Errorf("%w: build request: %v", ErrUnavailable, err)
+	}
+	httpReq.Header.Set("Content-Type", "application/json")
+
+	resp, err := c.httpClient.Do(httpReq)
+	if err != nil {
+		log.Warn().Err(err).Str("base_url", c.baseURL).Msg("CodexHash v2 hash request failed")
+		return V2HashResult{}, fmt.Errorf("%w: http: %v", ErrUnavailable, err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode < 200 || resp.StatusCode >= 300 {
+		log.Warn().Int("status", resp.StatusCode).Str("base_url", c.baseURL).Msg("CodexHash v2 hash rejected")
+		return V2HashResult{}, fmt.Errorf("%w: codexhash status %d", ErrUnavailable, resp.StatusCode)
+	}
+
+	body, err := io.ReadAll(io.LimitReader(resp.Body, 16*1024))
+	if err != nil {
+		return V2HashResult{}, fmt.Errorf("%w: read body: %v", ErrUnavailable, err)
+	}
+
+	var result V2HashResult
+	if err := json.Unmarshal(body, &result); err != nil {
+		return V2HashResult{}, fmt.Errorf("%w: decode: %v", ErrInvalidResponse, err)
+	}
+	match := v2Digest.FindStringSubmatch(result.Digest)
+	if result.Algorithm != V2Algorithm || result.Version != 2 || result.Profile != V2Profile ||
+		result.OutputBits != V2OutputBits || match == nil || match[1] != result.DigestHex {
+		log.Warn().Str("profile", result.Profile).Int("output_bits", result.OutputBits).Msg("CodexHash v2 returned an unexpected result")
+		return V2HashResult{}, fmt.Errorf("%w: not a %s %s/%d digest", ErrInvalidResponse, V2Algorithm, V2Profile, V2OutputBits)
 	}
 	return result, nil
 }

@@ -21,15 +21,17 @@ type Dependencies struct {
 	HealthHandler  *handlers.HealthHandler
 	MetricsHandler *handlers.MetricsHandler
 
-	ZoneHandler          *handlers.ZoneHandler
-	PolicyHandler        *handlers.PolicyHandler
-	AnalyzerHandler      *handlers.AnalyzerHandler
-	FingerprintHandler   *handlers.FingerprintHandler
-	PhaseLockHandler     *handlers.PhaseLockHandler
-	PipelineHandler      *handlers.PipelineHandler
-	ObservationHandler   *handlers.ObservationHandler
-	ProtectHandler       *handlers.ProtectHandler
-	PageMetaHandler      *handlers.PageMetaHandler
-	CommunicationHandler *handlers.CommunicationHandler
-	ChannelHandler       *handlers.ChannelHandler
+	ZoneHandler             *handlers.ZoneHandler
+	PolicyHandler           *handlers.PolicyHandler
+	AnalyzerHandler         *handlers.AnalyzerHandler
+	FingerprintHandler      *handlers.FingerprintHandler
+	PhaseLockHandler        *handlers.PhaseLockHandler
+	PipelineHandler         *handlers.PipelineHandler
+	ObservationHandler      *handlers.ObservationHandler
+	ProtectHandler          *handlers.ProtectHandler
+	PageMetaHandler         *handlers.PageMetaHandler
+	CommunicationHandler    *handlers.CommunicationHandler
+	ChannelHandler          *handlers.ChannelHandler
+	AlignmentHandler        *handlers.AlignmentHandler
+	PhaseLockStorageHandler *handlers.PhaseLockStorageHandler
 }

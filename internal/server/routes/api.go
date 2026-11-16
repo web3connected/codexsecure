@@ -20,6 +20,14 @@ func LoadAPIRoutes(v1 *gin.RouterGroup, deps Dependencies) {
 	if deps.ChannelHandler != nil {
 		deps.ChannelHandler.RegisterRoutes(v1)
 	}
+	// Harmonic Alignment recording (Step 3B): gateway assertion + service key, as the channel routes.
+	if deps.AlignmentHandler != nil {
+		deps.AlignmentHandler.RegisterRoutes(v1)
+	}
+	// Phase Lock pattern storage (P3): the same gateway assertion + service key contract.
+	if deps.PhaseLockStorageHandler != nil {
+		deps.PhaseLockStorageHandler.RegisterRoutes(v1)
+	}
 
 	v1.GET("/status", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
@@ -106,6 +114,8 @@ func LoadAPIRoutes(v1 *gin.RouterGroup, deps Dependencies) {
 	{
 		if deps.ProtectHandler != nil {
 			protectGroup.POST("/codexhash", deps.ProtectHandler.GenerateCodexHash)
+			// I01: the Seven-Fold Send Hash and validatedHash, through the proprietary CodexHash v2 engine.
+			protectGroup.POST("/codexhash/v2", deps.ProtectHandler.GenerateCodexHashV2)
 			protectGroup.POST("/tiu", deps.ProtectHandler.IssueTIU)
 		}
 	}

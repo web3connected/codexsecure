@@ -15,6 +15,7 @@ import (
 	"github.com/web3connected/codexsecure-api/internal/database"
 	"github.com/web3connected/codexsecure-api/internal/policy"
 	"github.com/web3connected/codexsecure-api/internal/protect"
+	"github.com/web3connected/codexsecure-api/pkg/codexhash"
 )
 
 // numeric(20,6): up to 14 integer digits and 6 decimals.
@@ -28,14 +29,18 @@ type pageMetaStore interface {
 // PageMetaHandler receives protected PageMeta packages (Stage 5 Record, GET
 // PageMeta only) and recognizes or records them in codex_zones. It performs no
 // approval, harmonization or enforcement.
+//
+// I01: PageMeta's structural hash is CodexHash v2 evidence (ch2:inv-dual/1:512:<hex>)
+// over the canonical data, verified by recomputing it through the proprietary
+// CodexHash v2 engine. SHA-512 was an implementation error; it is not accepted.
 type PageMetaHandler struct {
-	hasher payloadHasher
-	store  pageMetaStore
+	v2    v2Hasher
+	store pageMetaStore
 }
 
 // NewPageMetaHandler creates a PageMeta Record handler.
-func NewPageMetaHandler(hasher payloadHasher, store pageMetaStore) *PageMetaHandler {
-	return &PageMetaHandler{hasher: hasher, store: store}
+func NewPageMetaHandler(hasher v2Hasher, store pageMetaStore) *PageMetaHandler {
+	return &PageMetaHandler{v2: hasher, store: store}
 }
 
 type pageMetaPackage struct {
@@ -93,15 +98,25 @@ func (h *PageMetaHandler) Record(c *gin.Context) {
 		return
 	}
 
-	// The submitted CodexHash must belong to this data: recompute it through
-	// CodexHash (stateless SHA-512 of the canonical data). No local hashing.
-	computed, err := h.hasher.PayloadHash(c.Request.Context(), canonical, protectHashAlgo, protectHashSize)
-	if err != nil || computed.Algo != protectHashAlgo || !sha512Hex.MatchString(computed.PayloadHash) {
+	// The submitted CodexHash must belong to this data: recompute it through CodexHash v2
+	// over the canonical data. No local hashing and no conventional-hash fallback.
+	if h.v2 == nil {
+		log.Warn().Str("operation", "pagemeta.record").Msg("CodexHash v2 not configured for PageMeta verification")
+		pageMetaError(c, http.StatusServiceUnavailable, "codexhash_unavailable", "CodexHash could not verify the package hash")
+		return
+	}
+	computed, err := h.v2.V2Hash(c.Request.Context(), canonical)
+	if errors.Is(err, codexhash.ErrInvalidResponse) {
+		log.Warn().Str("operation", "pagemeta.record").Msg("CodexHash v2 returned an invalid response for PageMeta verification")
+		pageMetaError(c, http.StatusBadGateway, "invalid_service_response", "CodexHash returned an invalid response")
+		return
+	}
+	if err != nil {
 		log.Warn().Str("operation", "pagemeta.record").Msg("CodexHash unavailable for PageMeta verification")
 		pageMetaError(c, http.StatusServiceUnavailable, "codexhash_unavailable", "CodexHash could not verify the package hash")
 		return
 	}
-	if computed.PayloadHash != pkg.Security.CodexHash {
+	if computed.Digest != pkg.Security.CodexHash {
 		pageMetaError(c, http.StatusUnprocessableEntity, "hash_mismatch", "security.codexhash does not match the package data")
 		return
 	}
@@ -191,8 +206,8 @@ func validatePageMetaPackage(pkg pageMetaPackage) (string, pageMetaIdentity, str
 		}
 	}
 
-	if pkg.Security == nil || !sha512Hex.MatchString(pkg.Security.CodexHash) {
-		return "", identity, "invalid_package", "security.codexhash must be a lowercase SHA-512 hex string"
+	if pkg.Security == nil || !codexhash.IsV2Evidence(pkg.Security.CodexHash) {
+		return "", identity, "invalid_package", "security.codexhash must be CodexHash v2 evidence (ch2:inv-dual/1:512:<lowercase hex>)"
 	}
 	tiu := pkg.Security.TIU.String()
 	if !tiuPattern.MatchString(tiu) || strings.Trim(strings.ReplaceAll(tiu, ".", ""), "0") == "" {

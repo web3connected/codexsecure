@@ -19,11 +19,19 @@ services:
       - DB_SSL_MODE=${DB_SSL_MODE:-prefer}
       - DB_MAX_CONNS=${DB_MAX_CONNS:-25}
       - DB_MIN_CONNS=${DB_MIN_CONNS:-5}
-      - ZONE_ROUTER_ID=${ZONE_ROUTER_ID:-Z0}
-      - ZONE_COUNT=${ZONE_COUNT:-12}
-      - ZONE_FRACTAL_DEPTH=${ZONE_FRACTAL_DEPTH:-12}
-      - PATTERN_CACHE_SIZE=${PATTERN_CACHE_SIZE:-10000}
-      - PATTERN_HASH_ALGORITHM=${PATTERN_HASH_ALGORITHM:-sha256}
+      # RESERVED / CURRENTLY UNUSED
+      # These settings are loaded by the Go configuration
+      # but have no runtime consumers as of November 2026.
+      # Preserved for future CodexZone development.
+      # Do not reactivate without verifying their implementation.
+      #
+      # ZONE_ROUTER_ID is also scheduled to be renamed
+      # to BOUNDARY_ID when boundary configuration is implemented.
+      # - ZONE_ROUTER_ID=${ZONE_ROUTER_ID:-Z0}
+      # - ZONE_COUNT=${ZONE_COUNT:-12}
+      # - ZONE_FRACTAL_DEPTH=${ZONE_FRACTAL_DEPTH:-12}
+      # - PATTERN_CACHE_SIZE=${PATTERN_CACHE_SIZE:-10000}
+      # - PATTERN_HASH_ALGORITHM=${PATTERN_HASH_ALGORITHM:-sha256}
       - MCP_ENABLED=${MCP_ENABLED:-false}
       - MCP_NODE_SERVER_URL=${MCP_NODE_SERVER_URL:-}
       - LOG_LEVEL=${LOG_LEVEL:-info}
@@ -49,7 +57,7 @@ services:
     networks:
       - codex-net
     healthcheck:
-      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8084/health"]
+      test: ["CMD", "wget", "-q", "--tries=1", "-O", "/dev/null", "http://localhost:8084/health"]
       interval: 30s
       timeout: 3s
       retries: 3

@@ -1,0 +1,45 @@
+{
+    "data": {
+        "view": null,
+        "route": {
+            "uri": "/",
+            "name": "home",
+            "action": "__invoke",
+            "methods": [
+                "GET",
+                "HEAD"
+            ],
+            "controller": "Illuminate\\Routing\\RedirectController"
+        },
+        "intent": "home",
+        "method": "GET",
+        "models": [
+        ],
+        "evidence": {
+            "route": "home",
+            "method": "__invoke",
+            "controller": "Illuminate\\Routing\\RedirectController"
+        },
+        "provenance": {
+            "route_file": "C:\\laragon\\www\\web3codex\\routes\\zones\\z1\\public.php",
+            "registration": {
+                "file": "C:\\laragon\\www\\web3codex\\routes\\zones\\z1\\public.php",
+                "root": "C:\\laragon\\www\\web3codex\\routes\\zones",
+                "zone": "Z1",
+                "loader": "Web3Codex\\CodexSecure\\Routing\\ZonedRouteLoader"
+            }
+        },
+        "declared_zone": "Z1"
+    },
+    "security": {
+        "tiu": 216755332.736178,
+        "codexhash": "ch2:inv-dual/1:512:d40f91fc118fc83178b28db60a9bbe65036c43e8ad54232c15bff551fa590d4115963dff949b35d395d3669f2fdde65bd9d0468664fd6c2b55b651d751a3faad"
+    },
+    "validation": {
+        "reason": null,
+        "result": "valid",
+        "zone_folder": "z1"
+    },
+    "package_uuid": null,
+    "submitted_json": "{\"payload\":{\"method\":\"GET\",\"route\":{\"name\":\"home\",\"uri\":\"/\",\"methods\":[\"GET\",\"HEAD\"],\"controller\":\"Illuminate\\\\Routing\\\\RedirectController\",\"action\":\"__invoke\"},\"declared_zone\":\"Z1\",\"provenance\":{\"route_file\":\"C:\\\\laragon\\\\www\\\\web3codex\\\\routes\\\\zones\\\\z1\\\\public.php\",\"registration\":{\"loader\":\"Web3Codex\\\\CodexSecure\\\\Routing\\\\ZonedRouteLoader\",\"root\":\"C:\\\\laragon\\\\www\\\\web3codex\\\\routes\\\\zones\",\"file\":\"C:\\\\laragon\\\\www\\\\web3codex\\\\routes\\\\zones\\\\z1\\\\public.php\",\"zone\":\"Z1\"}},\"intent\":\"home\",\"evidence\":{\"route\":\"home\",\"controller\":\"Illuminate\\\\Routing\\\\RedirectController\",\"method\":\"__invoke\"},\"view\":null,\"models\":[]}}"
+}

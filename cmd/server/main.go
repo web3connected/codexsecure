@@ -245,27 +245,33 @@ func startHTTPServer(ctx context.Context, cfg *config.Config, db *database.DB, m
 	}
 	communicationHandler := handlers.NewCommunicationHandler(communications.NewPostgresStore(db.Pool, communicationZones).WithSnapshots(codexHashClient, communications.SnapshotTTLFromEnv()))
 	channelHandler := handlers.NewChannelHandler(channels.NewManager(db.Pool, codexHashClient, codextime.NewClient()))
+	// Harmonic Alignment recording (Step 3B): harmonic_zones through the runtime role.
+	alignmentHandler := handlers.NewAlignmentHandler(db)
+	// Phase Lock pattern storage (P3): CodexHash v2 verification, P2 tables through the runtime role.
+	phaseLockStorageHandler := handlers.NewPhaseLockStorageHandler(codexHashClient, db)
 
 	deps := routes.Dependencies{
-		CommunicationHandler: communicationHandler,
-		ChannelHandler:       channelHandler,
-		AppVersion:           AppVersion,
-		PolicyVersion:        policy.Version,
-		RouteAnalyzer:        routeAnalyzer,
-		FingerprintAnalyzer:  fingerprintAnalyzer,
-		PolicyRegistry:       policyRegistry,
-		SchemaRegistry:       schemaRegistry,
-		HealthHandler:        healthHandler,
-		MetricsHandler:       metricsHandler,
-		ZoneHandler:          zoneHandler,
-		PolicyHandler:        policyHandler,
-		AnalyzerHandler:      analyzerHandler,
-		FingerprintHandler:   fingerprintHandler,
-		PhaseLockHandler:     phaseLockHandler,
-		PipelineHandler:      pipelineHandler,
-		ObservationHandler:   observationHandler,
-		ProtectHandler:       protectHandler,
-		PageMetaHandler:      pageMetaHandler,
+		CommunicationHandler:    communicationHandler,
+		ChannelHandler:          channelHandler,
+		AlignmentHandler:        alignmentHandler,
+		PhaseLockStorageHandler: phaseLockStorageHandler,
+		AppVersion:              AppVersion,
+		PolicyVersion:           policy.Version,
+		RouteAnalyzer:           routeAnalyzer,
+		FingerprintAnalyzer:     fingerprintAnalyzer,
+		PolicyRegistry:          policyRegistry,
+		SchemaRegistry:          schemaRegistry,
+		HealthHandler:           healthHandler,
+		MetricsHandler:          metricsHandler,
+		ZoneHandler:             zoneHandler,
+		PolicyHandler:           policyHandler,
+		AnalyzerHandler:         analyzerHandler,
+		FingerprintHandler:      fingerprintHandler,
+		PhaseLockHandler:        phaseLockHandler,
+		PipelineHandler:         pipelineHandler,
+		ObservationHandler:      observationHandler,
+		ProtectHandler:          protectHandler,
+		PageMetaHandler:         pageMetaHandler,
 	}
 
 	// Web routes are opt-in for this API service.
