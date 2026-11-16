@@ -74,13 +74,6 @@ func main() {
 		log.Info().Str("version", version).Msg("Connected to PostgreSQL")
 	}
 
-	zoneCount, err := db.GetZoneCount(ctx)
-	if err != nil {
-		log.Warn().Err(err).Msg("Failed to get zone count")
-	} else {
-		log.Info().Int("count", zoneCount).Msg("Zones in database")
-	}
-
 	// Initialize MCP client
 	mcpClient := mcp.NewClient(cfg.MCP.NodeServerURL, cfg.MCP.Enabled)
 	if cfg.MCP.Enabled {
@@ -220,7 +213,6 @@ func startHTTPServer(ctx context.Context, cfg *config.Config, db *database.DB, m
 	// Setup handlers
 	healthHandler := handlers.NewHealthHandler(db, policyRegistry)
 	metricsHandler := handlers.NewMetricsHandler(tracker)
-	zoneHandler := handlers.NewZoneHandler(db)
 	policyHandler := handlers.NewPolicyHandler(policyRegistry)
 	analyzerHandler := handlers.NewAnalyzerHandler(routeAnalyzer)
 	fingerprintHandler := handlers.NewFingerprintHandler(fingerprintAnalyzer)
@@ -263,7 +255,6 @@ func startHTTPServer(ctx context.Context, cfg *config.Config, db *database.DB, m
 		SchemaRegistry:          schemaRegistry,
 		HealthHandler:           healthHandler,
 		MetricsHandler:          metricsHandler,
-		ZoneHandler:             zoneHandler,
 		PolicyHandler:           policyHandler,
 		AnalyzerHandler:         analyzerHandler,
 		FingerprintHandler:      fingerprintHandler,

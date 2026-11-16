@@ -49,16 +49,9 @@ func LoadAPIRoutes(v1 *gin.RouterGroup, deps Dependencies) {
 	applyMiddlewareChain(z5Group, zoneChain.BuildWithExecutionSync(deps.AppVersion))
 	z5.Register(z5Group)
 
-	// Zone endpoints — service key required for detect/lookup calls.
-	// Health and listing remain open for monitoring.
-	v1.GET("/zones/health", deps.ZoneHandler.ZoneHealth)
-	authenticatedZones := v1.Group("/zones")
-	authenticatedZones.Use(middleware.ServiceKeyMiddleware())
-	{
-		authenticatedZones.GET("", deps.ZoneHandler.ListZones)
-		authenticatedZones.POST("/detect", deps.ZoneHandler.DetectZone)
-		authenticatedZones.GET("/:code", deps.ZoneHandler.GetZone)
-	}
+	// The legacy SQL zone endpoints (/zones, /zones/health, /zones/detect,
+	// /zones/:code) read the retired security_zones table and were removed.
+	// Zone definitions are served by the policy registry under /policy/zones.
 
 	policyGroup := v1.Group("/policy")
 	{

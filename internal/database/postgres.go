@@ -113,16 +113,6 @@ func (db *DB) Stats() *pgxpool.Stat {
 	return db.Pool.Stat()
 }
 
-// GetZoneCount returns the number of zones in the database
-func (db *DB) GetZoneCount(ctx context.Context) (int, error) {
-	var count int
-	err := db.Pool.QueryRow(ctx, "SELECT COUNT(*) FROM security_zones WHERE is_active = true").Scan(&count)
-	if err != nil {
-		return 0, fmt.Errorf("failed to get zone count: %w", err)
-	}
-	return count, nil
-}
-
 // GetDatabaseVersion returns PostgreSQL version
 func (db *DB) GetDatabaseVersion(ctx context.Context) (string, error) {
 	var version string
@@ -146,125 +136,7 @@ func (db *DB) TestConnection(ctx context.Context) error {
 		return fmt.Errorf("query test failed: %w", err)
 	}
 
-	// Test table access
-	var tableExists bool
-	err := db.Pool.QueryRow(ctx, `
-		SELECT EXISTS (
-			SELECT FROM information_schema.tables 
-			WHERE table_name = 'security_zones'
-		)
-	`).Scan(&tableExists)
-	if err != nil {
-		return fmt.Errorf("table check failed: %w", err)
-	}
-
-	if !tableExists {
-		log.Warn().Msg("security_zones table does not exist - run migrations")
-	}
-
 	return nil
-}
-
-// SecurityZone represents a zone from the security_zones table
-type SecurityZone struct {
-	ID            int      `json:"id"`
-	ZoneCode      string   `json:"zone_code"`
-	ZoneName      string   `json:"zone_name"`
-	Description   string   `json:"description"`
-	SecurityTier  string   `json:"security_tier"`
-	RiskLevel     int      `json:"risk_level"`
-	Prefixes      []string `json:"prefixes"`
-	Middleware    []string `json:"middleware_stack"`
-	RateLimitRPM  int      `json:"rate_limit_rpm"`
-	RateLimitBurst int     `json:"rate_limit_burst"`
-	TimeoutMs     int      `json:"timeout_ms"`
-	RequiresAuth  bool     `json:"requires_auth"`
-	RequiresMfa   bool     `json:"requires_mfa"`
-	IsActive      bool     `json:"is_active"`
-}
-
-// GetAllZones returns all active security zones
-func (db *DB) GetAllZones(ctx context.Context) ([]SecurityZone, error) {
-	rows, err := db.Pool.Query(ctx, `
-		SELECT id, zone_code, zone_name, description, security_tier, risk_level,
-		       prefixes, middleware_stack, rate_limit_rpm, rate_limit_burst,
-		       timeout_ms, requires_auth, requires_mfa, is_active
-		FROM security_zones
-		WHERE is_active = true
-		ORDER BY risk_level
-	`)
-	if err != nil {
-		return nil, fmt.Errorf("failed to query zones: %w", err)
-	}
-	defer rows.Close()
-
-	var zones []SecurityZone
-	for rows.Next() {
-		var z SecurityZone
-		err := rows.Scan(
-			&z.ID, &z.ZoneCode, &z.ZoneName, &z.Description, &z.SecurityTier,
-			&z.RiskLevel, &z.Prefixes, &z.Middleware, &z.RateLimitRPM,
-			&z.RateLimitBurst, &z.TimeoutMs, &z.RequiresAuth, &z.RequiresMfa, &z.IsActive,
-		)
-		if err != nil {
-			return nil, fmt.Errorf("failed to scan zone row: %w", err)
-		}
-		zones = append(zones, z)
-	}
-
-	return zones, nil
-}
-
-// GetZoneByCode returns a zone by its code (e.g., "Z4")
-func (db *DB) GetZoneByCode(ctx context.Context, code string) (*SecurityZone, error) {
-	var z SecurityZone
-	err := db.Pool.QueryRow(ctx, `
-		SELECT id, zone_code, zone_name, description, security_tier, risk_level,
-		       prefixes, middleware_stack, rate_limit_rpm, rate_limit_burst,
-		       timeout_ms, requires_auth, requires_mfa, is_active
-		FROM security_zones
-		WHERE zone_code = $1 AND is_active = true
-	`, code).Scan(
-		&z.ID, &z.ZoneCode, &z.ZoneName, &z.Description, &z.SecurityTier,
-		&z.RiskLevel, &z.Prefixes, &z.Middleware, &z.RateLimitRPM,
-		&z.RateLimitBurst, &z.TimeoutMs, &z.RequiresAuth, &z.RequiresMfa, &z.IsActive,
-	)
-	if err != nil {
-		return nil, fmt.Errorf("zone not found: %w", err)
-	}
-	return &z, nil
-}
-
-// GetZonesByTier returns zones matching a security tier
-func (db *DB) GetZonesByTier(ctx context.Context, tier string) ([]SecurityZone, error) {
-	rows, err := db.Pool.Query(ctx, `
-		SELECT id, zone_code, zone_name, description, security_tier, risk_level,
-		       prefixes, middleware_stack, rate_limit_rpm, rate_limit_burst,
-		       timeout_ms, requires_auth, requires_mfa, is_active
-		FROM security_zones
-		WHERE security_tier = $1 AND is_active = true
-		ORDER BY risk_level
-	`, tier)
-	if err != nil {
-		return nil, fmt.Errorf("failed to query zones by tier: %w", err)
-	}
-	defer rows.Close()
-
-	var zones []SecurityZone
-	for rows.Next() {
-		var z SecurityZone
-		err := rows.Scan(
-			&z.ID, &z.ZoneCode, &z.ZoneName, &z.Description, &z.SecurityTier,
-			&z.RiskLevel, &z.Prefixes, &z.Middleware, &z.RateLimitRPM,
-			&z.RateLimitBurst, &z.TimeoutMs, &z.RequiresAuth, &z.RequiresMfa, &z.IsActive,
-		)
-		if err != nil {
-			return nil, fmt.Errorf("failed to scan zone row: %w", err)
-		}
-		zones = append(zones, z)
-	}
-
-	return zones, nil
 }
 
 // RouteObservation is a single upserted row from route_observations.

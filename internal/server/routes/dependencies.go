@@ -21,7 +21,6 @@ type Dependencies struct {
 	HealthHandler  *handlers.HealthHandler
 	MetricsHandler *handlers.MetricsHandler
 
-	ZoneHandler             *handlers.ZoneHandler
 	PolicyHandler           *handlers.PolicyHandler
 	AnalyzerHandler         *handlers.AnalyzerHandler
 	FingerprintHandler      *handlers.FingerprintHandler
