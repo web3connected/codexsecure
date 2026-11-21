@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"os"
 	"reflect"
+	"strings"
 	"testing"
 )
 
@@ -122,5 +123,30 @@ func TestEvaluation(t *testing.T) {
 	protectedObservation.Destination = "https://example.test/jobs/queue"
 	if got := Evaluate("approved", "valid", 2, 2, &protectedDestination, protectedObservation, "https://example.test"); got.Effective != "unauthorized" {
 		t.Fatal(got)
+	}
+}
+
+// The approved structure binding (HTTP Codex7FP Stage 3) is stored exactly as approved, and a document
+// without one marshals as it always did, so existing drafts, revisions and snapshots are unchanged.
+func TestStructureBindingRoundTrip(t *testing.T) {
+	zones := map[string]bool{"Z2": true}
+	plain := `{"schema_version":1,"destination":"/admin/login","destination_match":"exact","methods":["POST"],"type":"form","zone":"Z2","enabled":true}`
+	doc, e := Validate([]byte(plain), zones)
+	if e != nil {
+		t.Fatal(e)
+	}
+	if raw, _ := json.Marshal(doc); string(raw) != plain {
+		t.Fatalf("unbound document changed: %s", raw)
+	}
+	bound := plain[:len(plain)-1] + `,"structure":{"schema":"codexsecure-communication-structure-v1","form_id":"admin_auth_login","fields":[{"part":"form","path":"email","shape":"value","presence":"always"}],"codex_hash":"ch2:inv-dual/1:512:` + strings.Repeat("ab", 64) + `"}}`
+	doc, e = Validate([]byte(bound), zones)
+	if e != nil {
+		t.Fatal(e)
+	}
+	if raw, _ := json.Marshal(doc); string(raw) != bound {
+		t.Fatalf("bound document changed:\n%s\n%s", raw, bound)
+	}
+	if _, e = Validate([]byte(bound[:len(bound)-2]+`,"values":{"email":"a@b.c"}}}`), zones); e == nil {
+		t.Fatal("a structure carrying values was accepted")
 	}
 }

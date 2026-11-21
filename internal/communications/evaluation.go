@@ -8,7 +8,30 @@ import (
 	"github.com/web3connected/codexsecure-api/internal/policy"
 )
 
-var destinationRouteAnalyzer = analyzer.NewAnalyzer(policy.NewRegistry())
+var (
+	destinationPolicy        = policy.NewRegistry()
+	destinationRouteAnalyzer = analyzer.NewAnalyzer(destinationPolicy)
+)
+
+// zoneAligned reports whether an approved zone fits the area its destination's URI belongs to.
+// Zones are recursive (Web3Codex routes/zones/z12/z2, zone path Z12:Z2): the URI names the area,
+// and a communication may be a door into it. Here that is the identity door: an approved identity
+// (Z2) communication is the way into any area that requires authentication ("sign in to enter").
+// Every other difference stays a zone mismatch.
+func zoneAligned(approved, area string) bool {
+	if approved == area {
+		return true
+	}
+	identity, ok := destinationPolicy.GetZoneByKey("identity")
+	if !ok || approved != policy.ZoneIDToCode(identity.ID) {
+		return false
+	}
+	var id int
+	if _, e := fmt.Sscanf(area, "Z%d", &id); e != nil || policy.ZoneIDToCode(id) != area || !policy.IsOperationalZone(id) {
+		return false
+	}
+	return destinationPolicy.RequiresAuth(id)
+}
 
 type Observation struct {
 	ID          int64  `json:"id"`
@@ -67,7 +90,7 @@ func Evaluate(status, structure string, revision, approvedStructure int64, doc *
 	if kind != doc.Type {
 		result.Mismatches = append(result.Mismatches, "type_mismatch")
 	}
-	if routeZone := destinationZone(observed.Destination, baseURL); routeZone != doc.Zone {
+	if !zoneAligned(doc.Zone, destinationZone(observed.Destination, baseURL)) {
 		result.Mismatches = append(result.Mismatches, "zone_mismatch")
 	}
 	if len(result.Mismatches) > 0 {
