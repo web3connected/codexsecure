@@ -10,6 +10,8 @@ package codextime
 //   CODEXTIME_ENABLED       - "true"/"false" (default: true)
 //   CODEXTIME_FAIL_OPEN     - "true"/"false" (default: true)
 //   CODEXTIME_TIMEOUT_SEC   - float seconds (default: 3)
+//   CODEXTIME_API_KEY       - sent as X-Api-Key when set; required by a CodexTime
+//                             that has CODEXTIME_API_KEYS configured (production)
 
 import (
 	"context"
@@ -41,6 +43,7 @@ type Client struct {
 	httpClient *http.Client
 	enabled    bool
 	failOpen   bool
+	apiKey     string
 }
 
 // NewClient builds a client from environment variables.
@@ -64,6 +67,7 @@ func NewClient() *Client {
 		baseURL:  baseURL,
 		enabled:  enabled,
 		failOpen: failOpen,
+		apiKey:   strings.TrimSpace(os.Getenv("CODEXTIME_API_KEY")),
 		httpClient: &http.Client{
 			Timeout: time.Duration(timeoutSec * float64(time.Second)),
 		},
@@ -77,8 +81,7 @@ func (c *Client) CurrentTIU(ctx context.Context) (TIUResponse, error) {
 		return TIUResponse{Source: "disabled"}, nil
 	}
 
-	req, err := http.NewRequestWithContext(ctx, http.MethodGet,
-		c.baseURL+"/api/time/current-tiu", nil)
+	req, err := c.newRequest(ctx, "/api/time/current-tiu")
 	if err != nil {
 		return c.fallback(fmt.Errorf("build request: %w", err))
 	}
@@ -111,7 +114,7 @@ func (c *Client) Health(ctx context.Context) bool {
 	if !c.enabled {
 		return false
 	}
-	req, err := http.NewRequestWithContext(ctx, http.MethodGet, c.baseURL+"/health", nil)
+	req, err := c.newRequest(ctx, "/health")
 	if err != nil {
 		return false
 	}
@@ -121,6 +124,18 @@ func (c *Client) Health(ctx context.Context) bool {
 	}
 	resp.Body.Close()
 	return resp.StatusCode < 300
+}
+
+// newRequest builds a GET to CodexTime, authenticated with X-Api-Key when CODEXTIME_API_KEY is set.
+func (c *Client) newRequest(ctx context.Context, path string) (*http.Request, error) {
+	req, err := http.NewRequestWithContext(ctx, http.MethodGet, c.baseURL+path, nil)
+	if err != nil {
+		return nil, err
+	}
+	if c.apiKey != "" {
+		req.Header.Set("X-Api-Key", c.apiKey)
+	}
+	return req, nil
 }
 
 func (c *Client) fallback(err error) (TIUResponse, error) {

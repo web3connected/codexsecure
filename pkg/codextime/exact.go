@@ -7,7 +7,6 @@ import (
 	"errors"
 	"fmt"
 	"io"
-	"net/http"
 	"regexp"
 	"strings"
 
@@ -53,7 +52,7 @@ func (c *Client) CurrentTIUExact(ctx context.Context) (ExactTIU, error) {
 	if !c.enabled {
 		return ExactTIU{}, fmt.Errorf("%w: disabled", ErrTIUUnavailable)
 	}
-	req, err := http.NewRequestWithContext(ctx, http.MethodGet, c.baseURL+"/api/time/current-tiu", nil)
+	req, err := c.newRequest(ctx, "/api/time/current-tiu")
 	if err != nil {
 		return ExactTIU{}, fmt.Errorf("%w: build request: %v", ErrTIUUnavailable, err)
 	}
